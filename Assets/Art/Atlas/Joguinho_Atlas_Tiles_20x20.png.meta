@@ -1,0 +1,881 @@
+fileFormatVersion: 2
+guid: f72c4612f74507d41ab5c55d81eab82a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6142591224043690861
+    second: Joguinho_Atlas_Tiles_20x20_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 920
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b5e856c2ede3550800000000000000
+      internalID: 6142591224043690861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 920
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a58adbf101428a4c99fef24577d3a34
+      internalID: -1627293995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 920
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4b07b8cb697da49962f8c711cc0351
+      internalID: -925884174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 920
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46f48cdd6c364045a39a16fe60f3d23
+      internalID: 555598044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 920
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34fa04a07e4f49748bdc583e179f5fb9
+      internalID: 1584035113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 920
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e735522152581cd478a515d14a943d94
+      internalID: 306011460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 920
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f01fe0439960b94d959eae1c1692dad
+      internalID: 1896877787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_7
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 920
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba01d701179fd7479c0f92b9e8a5f4a
+      internalID: -848004595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_8
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 920
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae01608a856105488917e112706e737
+      internalID: 1633778892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 760
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ca05bcfa139984e938cd3783f35690
+      internalID: 318248734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 760
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0788c5cff8bbc4ea9fde80123f6730
+      internalID: 1298403947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 760
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ec451d36294da489460c83cea2a7e4
+      internalID: 548869916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_12
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 760
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c19c7ce6d91ca6448fbe83bf263e762
+      internalID: 387967880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 760
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24fa475d1cbc38648a9745fe7113471c
+      internalID: -630724836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 760
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098084e318a04e44b91e9a9e704b8cc7
+      internalID: -1832247351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 760
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01864b2bc29777546a48451ea49137d9
+      internalID: -920863192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_16
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 760
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ab53700fa33144ca67f267834abe2b
+      internalID: 2121855854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_17
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 760
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56615bd26d87c1a4ebfaf3cd5da9795a
+      internalID: -986287644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16eff231c40995043b413d095c663f55
+      internalID: 2069500611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_19
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 600
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb1c321911734a4f9ddb37f4295356c
+      internalID: 438241922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 600
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0391d1f3bc1f9f64393b506c8596a6ad
+      internalID: -1245535708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_21
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 600
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e05aa7ec978184ab93366c284e668a
+      internalID: 1659141315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_22
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 600
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 531420e8d07e796418e6efeefb409f8b
+      internalID: -1646904042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_23
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 600
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b195a4c0d1533f94eb4205056fa9b839
+      internalID: 1349838050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_24
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 600
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72519e764c19ebc4a85ce693a90eecff
+      internalID: 1128635263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_25
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 600
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d38be64da1bed540b5020e3b70d0ee5
+      internalID: 2072555542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_26
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 600
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a720ecd7113f44ab37bfadb9e3697f
+      internalID: 1824431580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 440
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deade2a6cba4ac445b16ab61cd4515b0
+      internalID: 590174312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_28
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 440
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6b788d307773342a5083e398b31eec
+      internalID: 1701709531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 440
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1252c97eec3b47428a01e160d7d8e5c
+      internalID: 1099529960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa446760b272fe4fb848aa6a4cd772c
+      internalID: -909383818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_31
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 280
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb8ff0e8cb8b29418ae360748179906
+      internalID: -1675096792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho_Atlas_Tiles_20x20_32
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 280
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7019cd9db044e4ab857789f4014946
+      internalID: -1926795408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3a27411f38731a7499812e36e0434d5f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Joguinho_Atlas_Tiles_20x20_0: 6142591224043690861
+      Joguinho_Atlas_Tiles_20x20_1: -1627293995
+      Joguinho_Atlas_Tiles_20x20_10: 1298403947
+      Joguinho_Atlas_Tiles_20x20_11: 548869916
+      Joguinho_Atlas_Tiles_20x20_12: 387967880
+      Joguinho_Atlas_Tiles_20x20_13: -630724836
+      Joguinho_Atlas_Tiles_20x20_14: -1832247351
+      Joguinho_Atlas_Tiles_20x20_15: -920863192
+      Joguinho_Atlas_Tiles_20x20_16: 2121855854
+      Joguinho_Atlas_Tiles_20x20_17: -986287644
+      Joguinho_Atlas_Tiles_20x20_18: 2069500611
+      Joguinho_Atlas_Tiles_20x20_19: 438241922
+      Joguinho_Atlas_Tiles_20x20_2: -925884174
+      Joguinho_Atlas_Tiles_20x20_20: -1245535708
+      Joguinho_Atlas_Tiles_20x20_21: 1659141315
+      Joguinho_Atlas_Tiles_20x20_22: -1646904042
+      Joguinho_Atlas_Tiles_20x20_23: 1349838050
+      Joguinho_Atlas_Tiles_20x20_24: 1128635263
+      Joguinho_Atlas_Tiles_20x20_25: 2072555542
+      Joguinho_Atlas_Tiles_20x20_26: 1824431580
+      Joguinho_Atlas_Tiles_20x20_27: 590174312
+      Joguinho_Atlas_Tiles_20x20_28: 1701709531
+      Joguinho_Atlas_Tiles_20x20_29: 1099529960
+      Joguinho_Atlas_Tiles_20x20_3: 555598044
+      Joguinho_Atlas_Tiles_20x20_30: -909383818
+      Joguinho_Atlas_Tiles_20x20_31: -1675096792
+      Joguinho_Atlas_Tiles_20x20_32: -1926795408
+      Joguinho_Atlas_Tiles_20x20_4: 1584035113
+      Joguinho_Atlas_Tiles_20x20_5: 306011460
+      Joguinho_Atlas_Tiles_20x20_6: 1896877787
+      Joguinho_Atlas_Tiles_20x20_7: -848004595
+      Joguinho_Atlas_Tiles_20x20_8: 1633778892
+      Joguinho_Atlas_Tiles_20x20_9: 318248734
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
