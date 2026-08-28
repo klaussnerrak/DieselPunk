@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 160
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,6 +96,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -103,12 +116,12 @@ TextureImporter:
       name: Joguinho - Mockup e Medidas_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 60
+        y: 860
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -121,11 +134,693 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_1
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 860
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f256778c650ffa8468239d00d0153801
+      internalID: 97757510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_2
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 860
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c20608f42042149903798b6ef568f7
+      internalID: -1156648359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 860
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83de82a07360a84795c48ae8f350cfb
+      internalID: 1050848620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_4
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 860
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e414fc24e1eee84b8e1c489476775f3
+      internalID: 339404223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_5
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 860
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d879c461aa0bbd646b95f3261b56e301
+      internalID: 1465086956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_6
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 860
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c12055ac35191e49b70aca30519552e
+      internalID: 866559303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_7
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 860
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76fa00baa2e668944ae87ed978c33315
+      internalID: 549476642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_8
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 880
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e6ee2f45604e3e4c825056883da9b6f
+      internalID: -275617376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_9
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 880
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a7514abf624274a8ea8ceab521e6c5
+      internalID: -1947200175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_10
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 880
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b6a33a2954acb4e800703d8c7ba097
+      internalID: -1951061887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_11
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 700
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627108e9634d64e43b426fa2655bffc2
+      internalID: 2073764377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_13
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 775
+        width: 160
+        height: 70
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9019ec48bfe1fb44fa75dab13604f600
+      internalID: 1697528998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_20
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 640
+        width: 140
+        height: 140
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3e28f80e39d2741a0ce87dcdfd3c6a
+      internalID: 2020752679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_21
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 640
+        width: 140
+        height: 140
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec5c13210b8228842b6e6b4aab88f2dd
+      internalID: -2111400906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_22
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 540
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7100fd9cca74845835e1701b7ec159
+      internalID: -1067964803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_23
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 540
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f118aeaaa06fb4ca8d1ff55eb45e04
+      internalID: 1710009648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_24
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 540
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4002366d91cac4f8f2e8d2422d3f57
+      internalID: -796954240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_25
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 540
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84ac522bf6c1b743a9bb53b04f16bf0
+      internalID: -779454216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_27
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 540
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e85053509882c43a3407ec517c54eb
+      internalID: 119475819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_32
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 460
+        width: 140
+        height: 140
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956f89f414e076146b0d420e989b127d
+      internalID: 1260084819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_33
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 380
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d5eb1ae621340478015c6442b6ccba
+      internalID: 827812644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_34
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 380
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9517cea33570e4b8fae37cf4597666
+      internalID: 1744923225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_38
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 380
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9307957fb1f9344a39abf576e827ec
+      internalID: 1040525434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_43
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 280
+        width: 140
+        height: 140
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9fcb0cfa6a39304889b60b73fb792ba
+      internalID: -352374656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_44
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 220
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b180274427194a49b87c8a601c26d3f
+      internalID: 8732998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_45
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 220
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890c437619343c940adab9fb461a6349
+      internalID: -1312860843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_48
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 220
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31ddac5fc299aa43a853b7d35ac78bf
+      internalID: -616232147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_49
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 220
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89746e11ff9a9b4489ccc33d80d5fde9
+      internalID: -2023778001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_54
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 100
+        width: 140
+        height: 140
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449ebf585d2838147b5442df7f9a5887
+      internalID: 1132315045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_55
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 60
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3019bd2aa15883c4885c8d6ea20a12c5
+      internalID: -544535305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joguinho - Mockup e Medidas_56
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 60
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8955e5563262b44903cfaf04604d6c
+      internalID: 1646815259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 23a2ec5f833f8c44aa6450d5c5facf46
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +828,76 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":60.0,"y":60.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Joguinho - Mockup e Medidas_0: -1690549161641839812
+      Joguinho - Mockup e Medidas_1: 97757510
+      Joguinho - Mockup e Medidas_10: -1951061887
+      Joguinho - Mockup e Medidas_11: 2073764377
+      Joguinho - Mockup e Medidas_12: -708123770
+      Joguinho - Mockup e Medidas_13: 1697528998
+      Joguinho - Mockup e Medidas_14: -2038543229
+      Joguinho - Mockup e Medidas_15: 55187050
+      Joguinho - Mockup e Medidas_16: -1003527937
+      Joguinho - Mockup e Medidas_17: -1635138061
+      Joguinho - Mockup e Medidas_18: 1580452754
+      Joguinho - Mockup e Medidas_19: 1978211636
+      Joguinho - Mockup e Medidas_2: -1156648359
+      Joguinho - Mockup e Medidas_20: 2020752679
+      Joguinho - Mockup e Medidas_21: -2111400906
+      Joguinho - Mockup e Medidas_22: -1067964803
+      Joguinho - Mockup e Medidas_23: 1710009648
+      Joguinho - Mockup e Medidas_24: -796954240
+      Joguinho - Mockup e Medidas_25: -779454216
+      Joguinho - Mockup e Medidas_26: 836975988
+      Joguinho - Mockup e Medidas_27: 119475819
+      Joguinho - Mockup e Medidas_28: 1492367063
+      Joguinho - Mockup e Medidas_29: -387488589
+      Joguinho - Mockup e Medidas_3: 1050848620
+      Joguinho - Mockup e Medidas_30: -1790443282
+      Joguinho - Mockup e Medidas_31: 360288541
+      Joguinho - Mockup e Medidas_32: 1260084819
+      Joguinho - Mockup e Medidas_33: 827812644
+      Joguinho - Mockup e Medidas_34: 1744923225
+      Joguinho - Mockup e Medidas_35: -1904552294
+      Joguinho - Mockup e Medidas_36: -265069069
+      Joguinho - Mockup e Medidas_37: 1514752433
+      Joguinho - Mockup e Medidas_38: 1040525434
+      Joguinho - Mockup e Medidas_39: -1303852876
+      Joguinho - Mockup e Medidas_4: 339404223
+      Joguinho - Mockup e Medidas_40: 1847264424
+      Joguinho - Mockup e Medidas_41: -2142620883
+      Joguinho - Mockup e Medidas_42: 1452568312
+      Joguinho - Mockup e Medidas_43: -352374656
+      Joguinho - Mockup e Medidas_44: 8732998
+      Joguinho - Mockup e Medidas_45: -1312860843
+      Joguinho - Mockup e Medidas_46: 816080905
+      Joguinho - Mockup e Medidas_47: 696789812
+      Joguinho - Mockup e Medidas_48: -616232147
+      Joguinho - Mockup e Medidas_49: -2023778001
+      Joguinho - Mockup e Medidas_5: 1465086956
+      Joguinho - Mockup e Medidas_50: -1816603897
+      Joguinho - Mockup e Medidas_51: 883000794
+      Joguinho - Mockup e Medidas_52: 2094634802
+      Joguinho - Mockup e Medidas_53: 1506688440
+      Joguinho - Mockup e Medidas_54: 1132315045
+      Joguinho - Mockup e Medidas_55: -544535305
+      Joguinho - Mockup e Medidas_56: 1646815259
+      Joguinho - Mockup e Medidas_57: -1157635695
+      Joguinho - Mockup e Medidas_58: 1152855357
+      Joguinho - Mockup e Medidas_59: 1051430363
+      Joguinho - Mockup e Medidas_6: 866559303
+      Joguinho - Mockup e Medidas_60: 187587947
+      Joguinho - Mockup e Medidas_61: 254052967
+      Joguinho - Mockup e Medidas_62: 1227181574
+      Joguinho - Mockup e Medidas_63: -1801127466
+      Joguinho - Mockup e Medidas_64: 2123819060
+      Joguinho - Mockup e Medidas_65: 615619688
+      Joguinho - Mockup e Medidas_7: 549476642
+      Joguinho - Mockup e Medidas_8: -275617376
+      Joguinho - Mockup e Medidas_9: -1947200175
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

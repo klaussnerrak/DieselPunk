@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class TrainScript : MonoBehaviour
 {
     private Vector2 startPosition;    
-    private NavMeshAgent agent;       
+    private NavMeshAgent agent;      
+    
 
     [SerializeField] private List<Transform> pivotPoints = new List<Transform>();
     [SerializeField] private Button startButton;
@@ -52,11 +53,13 @@ public class TrainScript : MonoBehaviour
     
     private void Waiting()
     {
-        if(playerStart == true)
+        if(playerStart == true || TimerScript.instance.timeCounter<=1)
         {
             state = StateMachineType.Moving;
             playerStart = false;
+            
         }
+        
     }
     
     private void Moving()
