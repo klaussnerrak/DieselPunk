@@ -18,7 +18,8 @@ public class MapScript : MonoBehaviour
 
     public void StartLevel1()
     {
-        SceneManager.LoadScene("Scenes/StartScene");        
+        //SceneManager.LoadScene("Scenes/StartScene"); 
+        SceneManager.LoadScene("Scenes/HudScene");             
         //AudioManager.instance.PlayMusic("MenuTrainSound");
         
     }
