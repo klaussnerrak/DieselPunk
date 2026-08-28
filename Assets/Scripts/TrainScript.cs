@@ -81,6 +81,7 @@ public class TrainScript : MonoBehaviour
     {
         
         Debug.Log("Finish");
+        Application.Quit();
         //Condicao de vitoria
     }
 
