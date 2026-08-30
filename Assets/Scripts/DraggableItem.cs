@@ -5,29 +5,23 @@ using UnityEngine.UI;
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
-    public Image image;
+    public int gridSize;
     [HideInInspector]public Transform parentAfterDrag;
 
     public void OnBeginDrag(PointerEventData eventData)
-    {
-        Debug.Log("Begin Drag");
-        parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);
-        transform.SetAsFirstSibling();
-        image.raycastTarget = false;
+    { 
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Dragging");
-        transform.position = Input.mousePosition;
+        transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("End drag");
-        transform.SetParent(parentAfterDrag);
-        image.raycastTarget = true;
+        Debug.Log("End drag"); 
+        transform.position = new Vector2(Mathf.Round(transform.position.x / gridSize) * gridSize, Mathf.Round(transform.position.y / gridSize) * gridSize);
     }
  
 }
