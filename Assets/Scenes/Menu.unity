@@ -272,7 +272,17 @@ MonoBehaviour:
   SoundTrack:
   - soundName: MenuTrainSound
     soundClip: {fileID: 8300000, guid: 7b231ae930bece94fb464dfa75712452, type: 3}
-  SoundEffects: []
+  - soundName: PlayMusic
+    soundClip: {fileID: 8300000, guid: 4e5be67d2be33e74cb4cd94e73ae263c, type: 3}
+  - soundName: MapMusic
+    soundClip: {fileID: 8300000, guid: f800c4e05c0df5348b73f1cf80642f2c, type: 3}
+  SoundEffects:
+  - soundName: TrainHorn
+    soundClip: {fileID: 8300000, guid: 2f98f685a9ab9304a915a0b85c1334a3, type: 3}
+  - soundName: Supla
+    soundClip: {fileID: 8300000, guid: 5298c40bd70e2e743965970704069bd9, type: 3}
+  - soundName: HAHAHA
+    soundClip: {fileID: 8300000, guid: 0ec68dc6e4b63574481b72971ac41bea, type: 3}
   btnVolume: {fileID: 1443790034}
 --- !u!4 &110511222
 Transform:
