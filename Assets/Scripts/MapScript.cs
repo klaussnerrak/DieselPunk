@@ -20,7 +20,7 @@ public class MapScript : MonoBehaviour
     {
         //SceneManager.LoadScene("Scenes/StartScene"); 
         SceneManager.LoadScene("Scenes/HudScene");             
-        //AudioManager.instance.PlayMusic("MenuTrainSound");
+        AudioManager.instance.PlayMusic("PlayMusic");
         
     }
 }

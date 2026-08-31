@@ -34,7 +34,7 @@ public class Menu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Scenes/MapScene");        
-        AudioManager.instance.PlayMusic("MenuTrainSound");
+        AudioManager.instance.PlayMusic("MapMusic");
         
     }
     public void OptionsScreen()

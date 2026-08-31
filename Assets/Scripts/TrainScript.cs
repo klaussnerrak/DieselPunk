@@ -57,6 +57,8 @@ public class TrainScript : MonoBehaviour
         {
             state = StateMachineType.Moving;
             playerStart = false;
+            TimerScript.instance.StartPlayCounter();
+            AudioManager.instance.PlaySFX("TrainHorn");
             
         }
         
@@ -64,25 +66,50 @@ public class TrainScript : MonoBehaviour
     
     private void Moving()
     {
-        if (Vector2.Distance(transform.position, 
-            pivotPoints[pivotIndex].position) < 0.1f )
+        if(TimerScript.instance.timeCounter>1)
         {
-            
-            pivotIndex += 1;
-            if (pivotIndex == pivotPoints.Count) state = StateMachineType.Finish;
-            
-            agent.SetDestination(pivotPoints[pivotIndex].position);
-           
-        } 
+            if (Vector2.Distance(transform.position, 
+            pivotPoints[pivotIndex].position) < 0.1f )
+            {            
+                pivotIndex += 1;
+                if (pivotIndex < pivotPoints.Count)
+                {      
+                    agent.SetDestination(pivotPoints[pivotIndex].position);              
+                }
+                else if (pivotIndex == pivotPoints.Count)
+                {                    
+                    state = StateMachineType.Finish;
+                    TimerScript.instance.pauseTimer = true;
+                } 
+                
+                
+                  
+            } 
         RotateTrain();       
+        }
+        else 
+        {
+            state = StateMachineType.Finish;
+            TimerScript.instance.pauseTimer = true;
+        }
+        
     }
 
     private void Finish()
     {
+       if(TimerScript.instance.timeCounter>1)
+       {
+            GameController.instance.WinCondition();
+            state = StateMachineType.Waiting;
+       }
+       else 
+       {
+            GameController.instance.LoseCondition();
+            state = StateMachineType.Waiting;
+       
+       } 
+      
         
-        Debug.Log("Finish");
-        Application.Quit();
-        //Condicao de vitoria
     }
 
     private void RotateTrain()
