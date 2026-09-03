@@ -33,8 +33,12 @@ public class TimerScript : MonoBehaviour
     }
 
     public void StartPlayCounter()
-    {
+    {    
         timeCounter = playCounter;
+        if(pauseTimer==false)
+        {          
+            AudioManager.instance.PlaySFX("TrainHorn");
+        }  
     }
 
     void updateText(float currentTime)
