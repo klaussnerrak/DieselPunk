@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
                 musicIndex = i;
             }
         }
-        if (HasFoundMusic == true)
+        if (HasFoundMusic == true && SFXActive == true)
         {
             SFXChannel.PlayOneShot(SoundEffects[musicIndex].soundClip);
         }

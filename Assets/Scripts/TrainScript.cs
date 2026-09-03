@@ -58,7 +58,7 @@ public class TrainScript : MonoBehaviour
             state = StateMachineType.Moving;
             playerStart = false;
             TimerScript.instance.StartPlayCounter();
-            AudioManager.instance.PlaySFX("TrainHorn");
+            
             
         }
         
@@ -80,10 +80,7 @@ public class TrainScript : MonoBehaviour
                 {                    
                     state = StateMachineType.Finish;
                     TimerScript.instance.pauseTimer = true;
-                } 
-                
-                
-                  
+                }                      
             } 
         RotateTrain();       
         }
