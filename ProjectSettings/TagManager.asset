@@ -11,7 +11,7 @@ TagManager:
   - Movable
   - Water
   - UI
-  - Rail
+  - 
   - 
   - 
   - 
@@ -40,6 +40,18 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: MapTrainTrack
+    uniqueID: 1394573537
+    locked: 0
+  - name: PlayerTrainTrack
+    uniqueID: 3755073249
+    locked: 0
+  - name: Player
+    uniqueID: 3464268741
+    locked: 0
+  - name: Inventory
+    uniqueID: 302348743
     locked: 0
   m_RenderingLayers:
   - Default

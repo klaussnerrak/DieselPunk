@@ -1,27 +1,60 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DraggableItem : MonoBehaviour,
+    IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [SerializeField] private MapManager board;
 
-    public int gridSize;
-    [HideInInspector]public Transform parentAfterDrag;
+    private Vector3 previousPosition;
+    private CanvasGroup canvasGroup;
+
+    private void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    public void Configure(MapManager mapManager)
+    {
+        board = mapManager;
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
-    { 
+    {
+        MapManager map = RequireBoard();
+        previousPosition = transform.position;
+        map.Remove(this);
+
+        if (canvasGroup != null)
+            canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Dragging");
-        transform.position = eventData.position;
+        transform.position = RequireBoard().SnapToGrid(eventData.position);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("End drag"); 
-        transform.position = new Vector2(Mathf.Round(transform.position.x / gridSize) * gridSize, Mathf.Round(transform.position.y / gridSize) * gridSize);
+        if (canvasGroup != null)
+            canvasGroup.blocksRaycasts = true;
+
+        MapManager map = RequireBoard();
+        if (!map.TryPlace(this, eventData.position, out Vector3 snappedPosition))
+        {
+            transform.position = previousPosition;
+            map.Register(this);
+            return;
+        }
+
+        transform.position = snappedPosition;
     }
- 
+
+    private MapManager RequireBoard()
+    {
+        if (board == null)
+            throw new MissingReferenceException("DraggableItem requires a MapManager.");
+
+        return board;
+    }
 }
