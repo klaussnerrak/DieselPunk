@@ -6,6 +6,7 @@ public class TrainTrackShop : MonoBehaviour
     [SerializeField] private Transform piecesContainer;
     [SerializeField] private MapManager board;
     [SerializeField] private int coins = 10;
+    private DraggableItem selectedPiece;
 
     public void BuyTrack(int index)
     {
@@ -46,5 +47,18 @@ public class TrainTrackShop : MonoBehaviour
         piece.Configure(board);
         board.Register(piece);
         pieceObject.SetActive(true);
+        selectedPiece = piece;
+    }
+
+    public void RotateSelectedPiece()
+    {
+        if (selectedPiece == null)
+            return;
+
+        TrackPiece track = selectedPiece.GetComponent<TrackPiece>();
+        if (track == null)
+            throw new MissingComponentException("Track prefabs require TrackPiece.");
+
+        track.RotatePiece();
     }
 }

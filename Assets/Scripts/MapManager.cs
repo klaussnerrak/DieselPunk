@@ -10,6 +10,12 @@ public class MapManager : MonoBehaviour
 
     public Grid Grid => grid;
 
+    public void Configure(Grid mapGrid, Camera cameraToUse)
+    {
+        grid = mapGrid;
+        mainCamera = cameraToUse;
+    }
+
     private void Awake()
     {
         if (grid == null)
@@ -52,9 +58,12 @@ public class MapManager : MonoBehaviour
 
     public void Register(DraggableItem item)
     {
+        if (item == null || grid == null)
+            throw new MissingReferenceException("MapManager requires a Grid and a valid item.");
+
         Vector3Int cell = grid.WorldToCell(item.transform.position);
-        if (!occupiedCells.ContainsKey(cell))
-            occupiedCells.Add(cell, item);
+        if (!occupiedCells.TryGetValue(cell, out DraggableItem occupant) || occupant == item)
+            occupiedCells[cell] = item;
     }
 
     public void Remove(DraggableItem item)

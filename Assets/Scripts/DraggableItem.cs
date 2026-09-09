@@ -12,11 +12,36 @@ public class DraggableItem : MonoBehaviour,
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+
+        if (GetComponent<Collider2D>() == null && GetComponent<SpriteRenderer>() != null)
+            gameObject.AddComponent<BoxCollider2D>();
+    }
+
+    private void Update()
+    {
+        if (!Input.GetMouseButtonDown(1))
+            return;
+
+        Camera camera = Camera.main;
+        Collider2D collider = GetComponent<Collider2D>();
+        if (camera == null || collider == null)
+            return;
+
+        Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+        if (collider.OverlapPoint(mousePosition))
+            GetComponent<TrackPiece>()?.RotatePiece();
     }
 
     public void Configure(MapManager mapManager)
     {
         board = mapManager;
+    }
+
+    public void SetPosition(Vector3 position)
+    {
+        transform.position = position;
+        if (board != null)
+            board.Register(this);
     }
 
     public void OnBeginDrag(PointerEventData eventData)

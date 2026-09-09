@@ -18,6 +18,16 @@ public class TrackPiece : MonoBehaviour
 
     public TrackType Type => type;
 
+    public void Configure(TrackType pieceType, bool connectsNorth, bool connectsSouth,
+        bool connectsEast, bool connectsWest)
+    {
+        type = pieceType;
+        north = connectsNorth;
+        south = connectsSouth;
+        east = connectsEast;
+        west = connectsWest;
+    }
+
     public bool HasConnection(Vector2Int direction)
     {
         int rotation = Mathf.RoundToInt(transform.eulerAngles.z / 90f) % 4;

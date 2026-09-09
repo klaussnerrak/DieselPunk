@@ -11,10 +11,13 @@ public class TrainScript : MonoBehaviour
 
     [SerializeField] private List<Transform> pivotPoints = new List<Transform>();
     [SerializeField] private Button startButton;
+    [SerializeField] private Transform mapEnd;
+    [SerializeField] private PathValidator pathValidator;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float spriteAngleOffset = -90f;
 
     private int pivotIndex = 0;
+    private readonly List<Vector3> pathPositions = new List<Vector3>();
     bool playerStart = false;
 
     enum StateMachineType
@@ -28,7 +31,8 @@ public class TrainScript : MonoBehaviour
 
     void Awake()
     {
-        startButton.onClick.AddListener(() => playerStart=true);
+        if (startButton != null)
+            startButton.onClick.AddListener(() => playerStart = true);
 
     }  
     
@@ -36,9 +40,32 @@ public class TrainScript : MonoBehaviour
     {
         startPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-		agent.updateUpAxis = false;
-        agent.SetDestination(pivotPoints[pivotIndex].position);
+        if (agent != null)
+        {
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+        }
+
+        if (pivotPoints.Count == 0 && mapEnd != null)
+            pivotPoints.Add(mapEnd);
+
+        if (agent != null && pivotPoints.Count > 0)
+            agent.SetDestination(pivotPoints[pivotIndex].position);
+    }
+
+    public void Configure(PathValidator configuredPathValidator, Transform configuredMapEnd)
+    {
+        pathValidator = configuredPathValidator;
+        mapEnd = configuredMapEnd;
+        pivotPoints.Clear();
+        pathPositions.Clear();
+        pivotIndex = 0;
+        state = StateMachineType.Waiting;
+    }
+
+    public void StartMovement()
+    {
+        playerStart = true;
     }
 
     // Update is called once per frame
@@ -53,48 +80,105 @@ public class TrainScript : MonoBehaviour
     
     private void Waiting()
     {
-        if(playerStart == true || TimerScript.instance.timeCounter<=1)
+        if (playerStart && CanStart())
         {
+            if (!PreparePath())
+            {
+                playerStart = false;
+                return;
+            }
+
             state = StateMachineType.Moving;
             playerStart = false;
-            TimerScript.instance.StartPlayCounter();
+            if (TimerScript.instance != null)
+                TimerScript.instance.StartPlayCounter();
             
             
         }
-        
+
+    }
+
+    private bool PreparePath()
+    {
+        pathPositions.Clear();
+
+        if (pathValidator != null)
+        {
+            var cells = new List<Vector3Int>();
+            if (!pathValidator.TryGetPath(cells) || pathValidator.Board == null ||
+                pathValidator.Board.Grid == null)
+                return false;
+
+            foreach (Vector3Int cell in cells)
+                pathPositions.Add(pathValidator.Board.Grid.GetCellCenterWorld(cell));
+        }
+        else if (mapEnd != null)
+        {
+            pathPositions.Add(transform.position);
+            pathPositions.Add(mapEnd.position);
+        }
+
+        pivotIndex = pathPositions.Count > 1 ? 1 : 0;
+        return pathPositions.Count > 0;
+    }
+
+    private bool CanStart()
+    {
+        return pathValidator == null || pathValidator.HasValidPath();
     }
     
     private void Moving()
     {
-        if(TimerScript.instance.timeCounter>1)
+        if (pathPositions.Count == 0 && pivotPoints.Count == 0)
+        {
+            state = StateMachineType.Finish;
+            return;
+        }
+
+        Vector3 target = pathPositions.Count > 0
+            ? pathPositions[pivotIndex]
+            : pivotPoints[pivotIndex].position;
+
+        if (TimerScript.instance == null || TimerScript.instance.timeCounter > 1)
         {
             if (Vector2.Distance(transform.position, 
-            pivotPoints[pivotIndex].position) < 0.1f )
+            target) < 0.1f )
             {            
                 pivotIndex += 1;
-                if (pivotIndex < pivotPoints.Count)
+                int pathCount = pathPositions.Count > 0 ? pathPositions.Count : pivotPoints.Count;
+                if (pivotIndex < pathCount)
                 {      
-                    agent.SetDestination(pivotPoints[pivotIndex].position);              
+                    if (agent != null && pathPositions.Count == 0)
+                        agent.SetDestination(pivotPoints[pivotIndex].position);
                 }
-                else if (pivotIndex == pivotPoints.Count)
+                else if (pivotIndex == pathCount)
                 {                    
                     state = StateMachineType.Finish;
-                    TimerScript.instance.pauseTimer = true;
+                    if (TimerScript.instance != null)
+                        TimerScript.instance.pauseTimer = true;
+                    return;
                 }                      
             } 
-        RotateTrain();       
+            if (agent == null || pathPositions.Count > 0)
+                MoveWithoutNavMesh();
+            else
+                RotateTrain();
         }
         else 
         {
             state = StateMachineType.Finish;
-            TimerScript.instance.pauseTimer = true;
+            if (TimerScript.instance != null)
+                TimerScript.instance.pauseTimer = true;
         }
         
     }
 
     private void Finish()
     {
-       if(TimerScript.instance.timeCounter>1)
+       if (GameController.instance == null)
+           return;
+
+       if (TimerScript.instance == null || TimerScript.instance.timeCounter > 1)
        {
             GameController.instance.WinCondition();
             state = StateMachineType.Waiting;
@@ -118,6 +202,24 @@ public class TrainScript : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.Euler(0f,0f,angle + spriteAngleOffset);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+    }
+
+    private void MoveWithoutNavMesh()
+    {
+        Vector3 target = pathPositions.Count > 0
+            ? pathPositions[pivotIndex]
+            : pivotPoints[pivotIndex].position;
+        Vector3 direction = target - transform.position;
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            target,
+            rotationSpeed * Time.fixedDeltaTime);
+
+        if (direction.sqrMagnitude > 0.001f)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, angle + spriteAngleOffset);
+        }
     }
     
     

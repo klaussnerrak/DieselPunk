@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6345366945628817663}
   - component: {fileID: 5751233662958753994}
   - component: {fileID: 310473108016599876}
+  - component: {fileID: 310473108016599877}
   m_Layer: 0
   m_Name: TrainRail
   m_TagString: Untagged
@@ -120,6 +121,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrackPiece
   type: 0
   north: 1
-  south: 0
+  south: 1
   east: 0
   west: 0
+--- !u!58 &310473108016599877
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187463410404424828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.75
