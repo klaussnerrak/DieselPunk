@@ -7,7 +7,7 @@ public class TrainTrackSlot : MonoBehaviour, IDropHandler
     {
         GameObject droppedTrack = eventData.pointerDrag;
         DraggableItem draggableItem = droppedTrack.GetComponent<DraggableItem>();
-        draggableItem.parentAfterDrag = transform;
+        // draggableItem.parentAfterDrag = transform;
     }
  
 }
