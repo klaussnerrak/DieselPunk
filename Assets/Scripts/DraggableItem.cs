@@ -1,9 +1,11 @@
+using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class DraggableItem : MonoBehaviour
 {
+    private GameObject selectedTrainTrack;
     private bool isDragging = false;
     private Vector3 offset;
     private Vector3 startPosition;
@@ -35,21 +37,45 @@ public class DraggableItem : MonoBehaviour
 
     void Update()
     {
+        Vector3 mousePosition = GetMouseWorldPosition();
         if (isDragging)
         {
-            Vector3 mousePosition = GetMouseWorldPosition();
             transform.position = mousePosition + offset;
         }
+        // Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        // // Cast a 2D ray directly at the point
+        // RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+
+        // if (hit.collider != null)
+        // {
+        //     Debug.Log("Selected 2D Object: " + hit.collider.gameObject.name);
+        // }
 
         if (Input.GetMouseButtonDown(1))
         {
-            RotatePiece();
+            RotatePiece(mousePosition);
         }
     }
 
-    public void RotatePiece()
+    void FixedUpdate()
     {
-        transform.Rotate(0f, 0f, 90f);
+
+    }
+
+    public void RotatePiece(Vector3 mousePosition)
+    {
+        Debug.Log("Right mouse clicked");
+         
+        Debug.DrawLine(mousePosition + Vector3.left, mousePosition + Vector3.right, Color.red, 2f);
+        Debug.DrawLine(mousePosition + Vector3.up, mousePosition + Vector3.down, Color.red, 2f);
+
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+        if (hit.collider != null)
+        {
+            selectedTrainTrack = hit.collider.gameObject;
+            selectedTrainTrack.transform.Rotate(0f, 0f, 90f); 
+        }
     }
 
 
