@@ -4,8 +4,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class DraggableItem : MonoBehaviour
-{
-    private GameObject selectedTrainTrack;
+{ 
+    public bool isTrainMoving = false;
     private bool isDragging = false;
     private Vector3 offset;
     private Vector3 startPosition;
@@ -42,45 +42,12 @@ public class DraggableItem : MonoBehaviour
         {
             transform.position = mousePosition + offset;
         }
-        // Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePosition);
-
-        // // Cast a 2D ray directly at the point
-        // RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-
-        // if (hit.collider != null)
-        // {
-        //     Debug.Log("Selected 2D Object: " + hit.collider.gameObject.name);
-        // }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            RotatePiece(mousePosition);
-        }
     }
-
-    void FixedUpdate()
-    {
-
-    }
-
-    public void RotatePiece(Vector3 mousePosition)
-    {
-        Debug.Log("Right mouse clicked");
-         
-        Debug.DrawLine(mousePosition + Vector3.left, mousePosition + Vector3.right, Color.red, 2f);
-        Debug.DrawLine(mousePosition + Vector3.up, mousePosition + Vector3.down, Color.red, 2f);
-
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-        if (hit.collider != null)
-        {
-            selectedTrainTrack = hit.collider.gameObject;
-            selectedTrainTrack.transform.Rotate(0f, 0f, 90f); 
-        }
-    }
-
 
     private void OnMouseDown()
     {
+        if (isTrainMoving) return;
+
         isDragging = true;
         startPosition = transform.position;
         offset = transform.position - GetMouseWorldPosition();
@@ -92,10 +59,29 @@ public class DraggableItem : MonoBehaviour
         SnapTileToGrid();
     }
 
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1) && !isDragging && !isTrainMoving)
+        {
+            RotateTrack();
+        }
+    }
+
+    private void RotateTrack()
+    { 
+        transform.Rotate(0f, 0f, 90f);
+ 
+        if (TryGetComponent<BoxCollider2D>(out var collider))
+        {
+            collider.enabled = false;
+            collider.enabled = true;
+        }
+    }
+
     private Vector3 GetMouseWorldPosition()
     {
         Vector3 mousePoint = Input.mousePosition;
-        mousePoint.z = Camera.main.WorldToScreenPoint(transform.position).z;
+        mousePoint.z = Mathf.Abs(Camera.main.transform.position.z);
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 
@@ -111,7 +97,7 @@ public class DraggableItem : MonoBehaviour
 
             snappedPosition.x += targetGrid.cellSize.x / 2;
             snappedPosition.y += targetGrid.cellSize.y / 2;
-            snappedPosition.z = transform.position.z;
+            snappedPosition.z = 0f;
 
             transform.position = snappedPosition;
         }

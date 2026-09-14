@@ -4,8 +4,7 @@ using UnityEngine;
 public class TrainTrackShop : MonoBehaviour
 {
     private GameObject selectedPrefab;
-    [SerializeField] private Transform shopButton;
-    // [SerializeField] private Transform piecesContainer;
+    [SerializeField] private Transform shopButton; 
     [SerializeField] private int coins = 10;
     private DraggableItem selectedPiece;
 
@@ -19,7 +18,7 @@ public class TrainTrackShop : MonoBehaviour
         Debug.Log("PIECE BOUGHT"); 
         
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0;
+        mousePosition.z = 0f;
 
         selectedPrefab = Instantiate(
             selectedTile,
