@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class DraggableItem : MonoBehaviour
-{ 
+{
     public bool isTrainMoving = false;
     private bool isDragging = false;
     private Vector3 offset;
@@ -15,14 +15,6 @@ public class DraggableItem : MonoBehaviour
     void Start()
     {
         targetGrid = FindFirstObjectByType<Grid>();
-
-        if (tilemap == null)
-        {
-            tilemap = FindFirstObjectByType<Tilemap>();
-        }
-
-        targetGrid = FindFirstObjectByType<Grid>();
-
         GameObject tilemapObject = GameObject.Find("Tilemap");
 
         if (tilemapObject != null)
@@ -68,9 +60,9 @@ public class DraggableItem : MonoBehaviour
     }
 
     private void RotateTrack()
-    { 
+    {
         transform.Rotate(0f, 0f, 90f);
- 
+
         if (TryGetComponent<BoxCollider2D>(out var collider))
         {
             collider.enabled = false;
@@ -103,6 +95,7 @@ public class DraggableItem : MonoBehaviour
         }
         else
         {
+            Debug.Log("startPosition: " + startPosition);
             transform.position = startPosition;
         }
     }
