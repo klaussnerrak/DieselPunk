@@ -7,10 +7,10 @@ public class DraggableItem : MonoBehaviour
 {
     public bool isTrainMoving = false;
     private bool isDragging = false;
-    private Vector3 offset;
-    private Vector3 startPosition;
+    private Vector3 offset; 
     private Grid targetGrid;
     private Tilemap tilemap;
+    private Vector3 itemLastPosition;
 
     void Start()
     {
@@ -25,13 +25,15 @@ public class DraggableItem : MonoBehaviour
         {
             Debug.LogError("Tilemap not found");
         }
+
+        itemLastPosition = transform.position;
     }
 
     void Update()
     {
-        Vector3 mousePosition = GetMouseWorldPosition();
         if (isDragging)
         {
+            Vector3 mousePosition = GetMouseWorldPosition();
             transform.position = mousePosition + offset;
         }
     }
@@ -40,8 +42,7 @@ public class DraggableItem : MonoBehaviour
     {
         if (isTrainMoving) return;
 
-        isDragging = true;
-        startPosition = transform.position;
+        isDragging = true;  
         offset = transform.position - GetMouseWorldPosition();
     }
 
@@ -79,7 +80,7 @@ public class DraggableItem : MonoBehaviour
 
     private void SnapTileToGrid()
     {
-        if (targetGrid == null || tilemap == null) return;
+        if (targetGrid == null) return;
 
         Vector3Int cellPosition = targetGrid.WorldToCell(transform.position);
 
@@ -92,11 +93,11 @@ public class DraggableItem : MonoBehaviour
             snappedPosition.z = 0f;
 
             transform.position = snappedPosition;
+            itemLastPosition = transform.position;
         }
         else
         {
-            Debug.Log("startPosition: " + startPosition);
-            transform.position = startPosition;
+            transform.position = itemLastPosition;
         }
     }
 
@@ -112,11 +113,14 @@ public class DraggableItem : MonoBehaviour
         cellWorldPos.y += targetGrid.cellSize.y / 2;
 
         Vector2 checkSize = new Vector2(targetGrid.cellSize.x * 0.8f, targetGrid.cellSize.y * 0.8f);
-        Collider2D hit = Physics2D.OverlapBox(cellWorldPos, checkSize, 0f);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(cellWorldPos, checkSize, 0f);
 
-        if (hit != null && hit.gameObject != gameObject)
+        foreach (Collider2D hit in hits)
         {
-            Debug.Log("this place is already in use");
+            if (hit.transform == transform || hit.transform.IsChildOf(transform))
+            {
+                continue;
+            }
             return false;
         }
 
