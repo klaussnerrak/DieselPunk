@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerTrainScript : MonoBehaviour
 {
-    private Vector2 startPosition;    
-    private NavMeshAgent agent;      
-    
+    private Vector2 startPosition;
+    private NavMeshAgent agent;
+
 
     [SerializeField] private List<Transform> pivotPoints = new List<Transform>();
     [SerializeField] private Button startButton;
@@ -18,26 +18,26 @@ public class PlayerTrainScript : MonoBehaviour
     bool playerStart = false;
 
     enum StateMachineType
-    {        
+    {
         Waiting,
         Moving,
         Finish
     }
 
-    private StateMachineType state = StateMachineType.Waiting;  
+    private StateMachineType state = StateMachineType.Waiting;
 
     void Awake()
     {
-        // startButton.onClick.AddListener(() => playerStart=true);
+        startButton.onClick.AddListener(() => playerStart = true);
 
-    }  
-    
+    }
+
     void Start()
     {
         startPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
-		agent.updateUpAxis = false;
+        agent.updateUpAxis = false;
         agent.SetDestination(pivotPoints[pivotIndex].position);
     }
 
@@ -47,78 +47,78 @@ public class PlayerTrainScript : MonoBehaviour
         if (state == StateMachineType.Waiting) Waiting();
         else if (state == StateMachineType.Moving) Moving();
         else if (state == StateMachineType.Finish) Finish();
-        
+
     }
 
-    
+
     private void Waiting()
     {
-        if(playerStart == true || TimerScript.instance.timeCounter<=1)
+        if (playerStart == true || TimerScript.instance.timeCounter <= 1)
         {
             state = StateMachineType.Moving;
             playerStart = false;
             TimerScript.instance.StartPlayCounter();
-            
-            
+
+
         }
-        
+
     }
-    
+
     private void Moving()
     {
-        if(TimerScript.instance.timeCounter>1)
+        if (TimerScript.instance.timeCounter > 1)
         {
-            if (Vector2.Distance(transform.position, 
-            pivotPoints[pivotIndex].position) < 0.1f )
-            {            
+            if (Vector2.Distance(transform.position,
+            pivotPoints[pivotIndex].position) < 0.1f)
+            {
                 pivotIndex += 1;
                 if (pivotIndex < pivotPoints.Count)
-                {      
-                    agent.SetDestination(pivotPoints[pivotIndex].position);              
+                {
+                    agent.SetDestination(pivotPoints[pivotIndex].position);
                 }
                 else if (pivotIndex == pivotPoints.Count)
-                {                    
+                {
                     state = StateMachineType.Finish;
                     TimerScript.instance.pauseTimer = true;
-                }                      
-            } 
-        RotateTrain();       
+                }
+            }
+            RotateTrain();
         }
-        else 
+        else
         {
             state = StateMachineType.Finish;
             TimerScript.instance.pauseTimer = true;
         }
-        
+
     }
 
     private void Finish()
     {
-       if(TimerScript.instance.timeCounter>1)
-       {
+        if (TimerScript.instance.timeCounter > 1)
+        {
             GameController.instance.WinCondition();
             state = StateMachineType.Waiting;
-       }
-       else 
-       {
+        }
+        else
+        {
             GameController.instance.LoseCondition();
             state = StateMachineType.Waiting;
-       
-       } 
-      
-        
+
+        }
+
+
     }
 
     private void RotateTrain()
     {
-        Vector3 targetPoint = agent.steeringTarget;        
+        Vector3 targetPoint = agent.steeringTarget;
         Vector3 direction = targetPoint - transform.position;
-        
+
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(0f,0f,angle + spriteAngleOffset);
+        Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle + spriteAngleOffset);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
-    
-    
+
+
 }

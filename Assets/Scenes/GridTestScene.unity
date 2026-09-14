@@ -119,54 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &164374516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 164374517}
-  - component: {fileID: 164374518}
-  m_Layer: 0
-  m_Name: PlayerTain
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &164374517
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164374516}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.43058, y: 0.03836, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &164374518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164374516}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90a571b460be89d43af32d5c9f3329a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerTrainScript
-  pivotPoints: []
-  startButton: {fileID: 0}
-  rotationSpeed: 10
-  spriteAngleOffset: -90
 --- !u!1 &192360867
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,8 +265,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 457102693}
+  - component: {fileID: 457102694}
   m_Layer: 0
-  m_Name: TrainTrackGenerator
+  m_Name: ScenarioBuilder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,6 +288,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &457102694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457102692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07923384b16c9624980296778fd6c626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrainTrackGenerator
+  tilemap: {fileID: 1595224514}
+  layoutGrid: {fileID: 192360868}
+  spawnChanceTrainTracks: 3
+  spawnChanceMapAssets: 6
+  trainTracks:
+  - {fileID: 4783782241372137230, guid: f5ee3f98b91ad734ca38f50127338604, type: 3}
+  - {fileID: 8959878057398117624, guid: c9d0abff4d55e5c48975f9a91674abc0, type: 3}
+  - {fileID: 2843544127461654216, guid: 1656291b87feae946905716c1753f29c, type: 3}
+  mapAssets:
+  - {fileID: 4667486723413181364, guid: 420384cce3b79a243a7e077bcafc8474, type: 3}
+  - {fileID: 5717400310135589117, guid: 805fdec5d505e234599c6cb89fe4b6c8, type: 3}
+  mapEnd: {fileID: 1160567166693149856, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+  player: {fileID: 52292171177792573, guid: 2c201da25c7313c498a87e08a9747942, type: 3}
 --- !u!1001 &488090449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2353,12 +2331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db206c1577f6af8419ab63a90c4f7522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
-  tilePrefab: {fileID: -2631453387102274687, guid: c0d8202e3b9126649a88a73916eb6e43, type: 3}
-  width: 15
-  height: 8
-  gameCamera: {fileID: 2100831700}
-  floorTile: {fileID: -2631453387102274687, guid: c0d8202e3b9126649a88a73916eb6e43, type: 3}
-  rockTile: {fileID: 6181833143141672404, guid: 1358b2e8385a0b2479cde37dab909715, type: 3}
 --- !u!4 &2016591416
 Transform:
   m_ObjectHideFlags: 0
@@ -2810,7 +2782,6 @@ SceneRoots:
   - {fileID: 2016591416}
   - {fileID: 2046196499}
   - {fileID: 192360869}
-  - {fileID: 164374517}
   - {fileID: 1697851274}
   - {fileID: 1863796999}
   - {fileID: 1547479423}

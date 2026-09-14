@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 312b02e409fc7794bbb49ef064e505f7
+guid: 52d68a4520c62a44aa62c2f754775b68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -353174158882473217
-    second: EndMap_0
+      213: 1011474312908410842
+    second: Map Scenario - Rock_0
+  - first:
+      213: 4587334359313507284
+    second: Map Scenario - Rock_1
+  - first:
+      213: 1910644002111132592
+    second: Map Scenario - Rock_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EndMap_0
+      name: Map Scenario - Rock_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 156
-        height: 143
+        y: 11
+        width: 131
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ffa76f349f5491bf0800000000000000
-      internalID: -353174158882473217
+      spriteID: adf8650578a790e00800000000000000
+      internalID: 1011474312908410842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Scenario - Rock_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 102
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d363d88b4c79af30800000000000000
+      internalID: 4587334359313507284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Scenario - Rock_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3901ec898f38a10800000000000000
+      internalID: 1910644002111132592
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      EndMap_0: -353174158882473217
+      Map Scenario - Rock_0: 1011474312908410842
+      Map Scenario - Rock_1: 4587334359313507284
+      Map Scenario - Rock_2: 1910644002111132592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

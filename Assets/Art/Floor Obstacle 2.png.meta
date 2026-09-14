@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 15e76359be5dce14f977688376f7993f
+guid: 8f5c82ce950c418408e2d1ff2666cae6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3452003437791708593
-    second: Rock_0
-  - first:
-      213: 709247535313551666
-    second: Rock_1
-  - first:
-      213: 1013366739975189944
-    second: Rock_2
+      213: -3142681450454427257
+    second: Floor Obstacle 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,57 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rock_0
+      name: Floor Obstacle 2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 11
-        width: 131
-        height: 115
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b5800156daf7ef20800000000000000
-      internalID: 3452003437791708593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rock_1
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 102
-        width: 35
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2318f2820e0c7d900800000000000000
-      internalID: 709247535313551666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rock_2
-      rect:
-        serializedVersion: 2
-        x: 2
         y: 0
-        width: 48
-        height: 51
+        width: 156
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b5ba635ea3301e00800000000000000
-      internalID: 1013366739975189944
+      spriteID: 78954771fd3f264d0800000000000000
+      internalID: -3142681450454427257
       vertices: []
       indices: 
       edges: []
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Rock_0: 3452003437791708593
-      Rock_1: 709247535313551666
-      Rock_2: 1013366739975189944
+      Floor Obstacle 2_0: -3142681450454427257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
