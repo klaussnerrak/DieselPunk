@@ -33,8 +33,8 @@ public class MapAssetsManager : MonoBehaviour
         tilemap.CompressBounds();
         bounds = tilemap.cellBounds;
         xMin = bounds.xMin;
-        GenerateScenario(MapAssetType.TrainTrack);
-        GenerateScenario(MapAssetType.Scenario);
+        // GenerateScenario(MapAssetType.TrainTrack);
+        // GenerateScenario(MapAssetType.Scenario);
         GeneratePlayer();
         GenerateEndMap();
     }
