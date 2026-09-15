@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4972221155976806231}
   - component: {fileID: 4481542594980609988}
   - component: {fileID: -4076650144019924885}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: TrainPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTrainScript
   mapEnd: {fileID: 1160567166693149856, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
-  navSurface: {fileID: 0}
   rotationSpeed: 10
   spriteAngleOffset: -90
 --- !u!195 &-4076650144019924885

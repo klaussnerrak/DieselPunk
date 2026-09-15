@@ -1,3 +1,4 @@
+using NavMeshPlus.Components;
 using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -5,9 +6,10 @@ using UnityEngine.Tilemaps;
 
 public class DraggableItem : MonoBehaviour
 {
+    public GridManager gridManager;
     public bool isTrainMoving = false;
     private bool isDragging = false;
-    private Vector3 offset; 
+    private Vector3 offset;
     private Grid targetGrid;
     private Tilemap tilemap;
     private Vector3 itemLastPosition;
@@ -16,6 +18,7 @@ public class DraggableItem : MonoBehaviour
     {
         targetGrid = FindFirstObjectByType<Grid>();
         GameObject tilemapObject = GameObject.Find("Tilemap");
+        GameObject gridManagerObject = GameObject.Find("Grid");
 
         if (tilemapObject != null)
         {
@@ -25,6 +28,16 @@ public class DraggableItem : MonoBehaviour
         {
             Debug.LogError("Tilemap not found");
         }
+
+        if (gridManagerObject != null)
+        {
+            gridManager = gridManagerObject.GetComponent<GridManager>();
+        }
+        else
+        {
+            Debug.LogError("GridManager not found");
+        }
+
 
         itemLastPosition = transform.position;
     }
@@ -42,7 +55,7 @@ public class DraggableItem : MonoBehaviour
     {
         if (isTrainMoving) return;
 
-        isDragging = true;  
+        isDragging = true;
         offset = transform.position - GetMouseWorldPosition();
     }
 
@@ -94,6 +107,7 @@ public class DraggableItem : MonoBehaviour
 
             transform.position = snappedPosition;
             itemLastPosition = transform.position;
+            gridManager.UpdateNavMeshAfterDrop();
         }
         else
         {
@@ -126,6 +140,8 @@ public class DraggableItem : MonoBehaviour
 
         return true;
     }
+
+
 
 
 

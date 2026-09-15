@@ -8,7 +8,7 @@ public class PlayerTrainScript : MonoBehaviour
 {
     private NavMeshAgent agent;
 
-    [SerializeField] private GameObject mapEnd; 
+    [SerializeField] private GameObject mapEnd;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float spriteAngleOffset = -90f;
 
@@ -22,9 +22,6 @@ public class PlayerTrainScript : MonoBehaviour
         Finish
     }
 
-    private StateMachineType state = StateMachineType.Waiting;
-
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -34,22 +31,14 @@ public class PlayerTrainScript : MonoBehaviour
         agent.updateUpAxis = false;
     }
 
-    public void DefinirDestino()
-    {
-        agent.SetDestination(mapEnd.transform.position);
+    public void MoveTrain()
+    { agent.Warp(mapEnd.transform.position);
+        Debug.Log("isActiveAndEnabled: "+isActiveAndEnabled);
+        Debug.Log("agent.isOnNavMesh: "+agent.isOnNavMesh);
+        if (agent.isActiveAndEnabled && agent.isOnNavMesh) { agent.Warp(mapEnd.transform.position); }
+        //agent.SetDestination(mapEnd.transform.position);
     }
 
-
-    private void RotateTrain()
-    {
-        Vector3 targetPoint = agent.steeringTarget;
-        Vector3 direction = targetPoint - transform.position;
-
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle + spriteAngleOffset);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-    }
 
 
 }

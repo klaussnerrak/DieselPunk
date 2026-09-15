@@ -26,6 +26,7 @@ public class MapAssetsManager : MonoBehaviour
 
     [SerializeField] private GameObject mapEnd;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject firstTrack;
 
 
     void Start()
@@ -88,6 +89,7 @@ public class MapAssetsManager : MonoBehaviour
             Debug.Log("Espaço vazio encontrado!");
             Quaternion rotation = Quaternion.Euler(0, 0, -90f);
             Instantiate(player, startWorldPos, rotation); 
+            Instantiate(firstTrack, startWorldPos, rotation); 
         }
         else
         {
