@@ -18,7 +18,7 @@ public class MapAssetsManager : MonoBehaviour
     [SerializeField] private float spawnChanceTrainTracks;
     [Range(0f, 100f)]
     [SerializeField] private float spawnChanceMapAssets;
-    private int xMin; 
+    private int xMin;
 
     [Header("Track Prefabs")]
     [SerializeField] private GameObject[] trainTracks;
@@ -26,14 +26,13 @@ public class MapAssetsManager : MonoBehaviour
 
     [SerializeField] private GameObject mapEnd;
     [SerializeField] private GameObject player;
-    List<Vector3Int> validPositions = new List<Vector3Int>();
 
 
     void Start()
     {
         tilemap.CompressBounds();
         bounds = tilemap.cellBounds;
-        xMin = bounds.xMin; 
+        xMin = bounds.xMin;
         GenerateScenario(MapAssetType.TrainTrack);
         GenerateScenario(MapAssetType.Scenario);
         GeneratePlayer();
@@ -80,8 +79,22 @@ public class MapAssetsManager : MonoBehaviour
         int startY = Random.Range(bounds.yMin, bounds.yMax);
         Vector3Int startCellPos = new Vector3Int(xMin, startY, 0);
         Vector3 startWorldPos = tilemap.GetCellCenterWorld(startCellPos);
-        Quaternion rotation = Quaternion.Euler(0, 0, -90f);
-        Instantiate(player, startWorldPos, rotation); 
+
+        Collider2D hit = Physics2D.OverlapBox(startWorldPos, new Vector2(xMin, startY), 0f);
+
+
+        if (hit == null)
+        {
+            Debug.Log("Espaço vazio encontrado!");
+            Quaternion rotation = Quaternion.Euler(0, 0, -90f);
+            Instantiate(player, startWorldPos, rotation); 
+        }
+        else
+        {
+            Debug.Log("Espaço ocupado, rodando novamente");
+            GeneratePlayer();
+        }
+
     }
 
     void GenerateEndMap()
@@ -91,14 +104,14 @@ public class MapAssetsManager : MonoBehaviour
         Vector3Int endCellPos = new Vector3Int(endX, endY, 0);
 
         Vector3 endWorldPos = tilemap.GetCellCenterWorld(endCellPos);
- 
+
         Quaternion endRotation = Quaternion.identity;
- 
+
         if (endY == (bounds.yMax - 1))
-        { 
+        {
             endRotation = Quaternion.Euler(0, 0, -90f);
         }
 
-        Instantiate(mapEnd, endWorldPos, endRotation); 
+        Instantiate(mapEnd, endWorldPos, endRotation);
     }
 }
