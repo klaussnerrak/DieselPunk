@@ -646,7 +646,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1674660290}
+      - m_Target: {fileID: 1674660293}
         m_TargetAssemblyTypeName: PlayerTrainScript, Assembly-CSharp
         m_MethodName: MoveTrain
         m_Mode: 1
@@ -695,6 +695,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1674660293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674660286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20099269c658ea0439c3bb37dd0e9780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTrainScript
+  mapEnd: {fileID: 1160567166693149856, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+  rotationSpeed: 10
+  spriteAngleOffset: -90
 --- !u!1 &1697851271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,6 +2488,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2069737483180270120, guid: a39a4fadb4da7644bb1752d31e7aa8b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1674660290}
+    - targetCorrespondingSourceObject: {fileID: 2069737483180270120, guid: a39a4fadb4da7644bb1752d31e7aa8b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1674660293}
     - targetCorrespondingSourceObject: {fileID: 2069737483180270120, guid: a39a4fadb4da7644bb1752d31e7aa8b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1674660291}
