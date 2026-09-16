@@ -3,7 +3,7 @@ using TMPro;
 public class TimerScript : MonoBehaviour
 {
     public float timeCounter = 10f;
-    public float playCounter = 10f;
+    public float playCounter = 50f;
     [SerializeField] private TMP_Text timerText;
     public static TimerScript instance;
     public bool pauseTimer = false;
