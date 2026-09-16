@@ -8,16 +8,15 @@ public enum MapAssetType
     Scenario
 }
 
-public class MapAssetsManager : MonoBehaviour
+public class MapManager : MonoBehaviour
 {
     [Header("Tilemap config")]
     BoundsInt bounds;
     [SerializeField] private Tilemap tilemap;
-    [SerializeField] private Grid layoutGrid; 
+    [SerializeField] private Grid layoutGrid;
     private int xMin;
-  
-    [SerializeField] private GameObject mapEnd;
-    [SerializeField] private GameObject player;
+
+    [SerializeField] private GameObject mapEnd; 
     [SerializeField] private GameObject firstTrack;
 
 
@@ -25,13 +24,12 @@ public class MapAssetsManager : MonoBehaviour
     {
         tilemap.CompressBounds();
         bounds = tilemap.cellBounds;
-        xMin = bounds.xMin; 
-        GeneratePlayer();
+        xMin = bounds.xMin;
         GenerateEndMap();
     }
- 
 
-    void GeneratePlayer()
+
+    public void GeneratePlayer(GameObject player)
     {
         int startY = Random.Range(bounds.yMin, bounds.yMax);
         Vector3Int startCellPos = new Vector3Int(xMin, startY, 0);
@@ -44,13 +42,13 @@ public class MapAssetsManager : MonoBehaviour
         {
             Debug.Log("Espaço vazio encontrado!");
             Quaternion rotation = Quaternion.Euler(0, 0, -90f);
-            Instantiate(player, startWorldPos, rotation); 
-            Instantiate(firstTrack, startWorldPos, rotation); 
+            Instantiate(player, startWorldPos, rotation);
+            Instantiate(firstTrack, startWorldPos, rotation);
         }
         else
         {
             Debug.Log("Espaço ocupado, rodando novamente");
-            GeneratePlayer();
+            GeneratePlayer(player);
         }
 
     }

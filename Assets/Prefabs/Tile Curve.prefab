@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   gridManager: {fileID: 0}
   isTrainMoving: 0
+  playerScript: {fileID: 4481542594980609988, guid: 2c201da25c7313c498a87e08a9747942, type: 3}
 --- !u!61 &-3040097143995528368
 BoxCollider2D:
   m_ObjectHideFlags: 0

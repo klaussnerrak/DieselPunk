@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using NavMeshPlus.Components;
 
 public class PlayerTrainScript : MonoBehaviour
 {
     [SerializeField] private GameObject mapEnd;
     [SerializeField] private GameObject firstTrack;
     private NavMeshAgent agent;
-
 
     public List<Transform> pivotPoints = new List<Transform>();
     [SerializeField] private Button startButton;
@@ -27,22 +27,29 @@ public class PlayerTrainScript : MonoBehaviour
 
     private StateMachineType state = StateMachineType.Waiting;
 
+    void Start()
+    {
+
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+
+        if (agent != null) Debug.Log("Agent found");
+
+        mapEnd = GameObject.Find("MapEnd(Clone)");
+
+        if (firstTrack != null && mapEnd != null)
+        {
+            pivotPoints.Add(firstTrack.transform);
+        }
+
+
+
+    }
     void Awake()
     {
         // startButton.onClick.AddListener(() => playerStart = true);
 
-    }
-
-
-    public void StartPath()
-    {
-        Debug.Log("CLICKED");
-        pivotPoints.Add(mapEnd.transform);
-
-        Debug.Log(pivotPoints);
-        // agent.SetDestination(pivotPoints[pivotIndex].position);
-        playerStart = true;
-        Moving();
     }
 
     void Update()
@@ -51,25 +58,19 @@ public class PlayerTrainScript : MonoBehaviour
         // agent.SetDestination(pivotPoints[pivotIndex].position);
     }
 
-    void Start()
+
+
+
+    public void StartPath()
     {
-
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-
-        mapEnd = GameObject.Find("MapEnd(Clone)");
-        if (firstTrack && mapEnd)
-        {
-            Debug.Log("Position first track: " + firstTrack.transform.position);
-            Debug.Log("Position last track: " + mapEnd.transform.position);
-            pivotPoints.Add(firstTrack.transform); 
-        }
-
-
-
+        Debug.Log("TRAIN SCRIPT 2");
+        Debug.Log("CLICKED");
+        pivotPoints.Add(mapEnd.transform);
+        Debug.Log(pivotPoints);
+        // agent.SetDestination(pivotPoints[pivotIndex].position);
+        playerStart = true;
+        Moving();
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -102,12 +103,14 @@ public class PlayerTrainScript : MonoBehaviour
             pivotIndex += 1;
             if (pivotIndex < pivotPoints.Count)
             {
+
+                Debug.Log("pivotIndex: " + pivotIndex);
                 agent.SetDestination(pivotPoints[pivotIndex].position);
             }
             else if (pivotIndex == pivotPoints.Count)
             {
                 state = StateMachineType.Finish;
-                TimerScript.instance.pauseTimer = true;
+                // TimerScript.instance.pauseTimer = true;
             }
         }
         RotateTrain();

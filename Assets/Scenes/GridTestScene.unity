@@ -119,6 +119,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &64389875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64389876}
+  - component: {fileID: 64389877}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &64389876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64389875}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.34484, y: 0.23259, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64389877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64389875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460e5101e1ca34d47bee9877bfdeb91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  navSurface: {fileID: 1547479422}
+  player: {fileID: 52292171177792573, guid: 2c201da25c7313c498a87e08a9747942, type: 3}
+  mapManager: {fileID: 457102694}
 --- !u!1 &192360867
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +241,7 @@ GameObject:
   - component: {fileID: 457102693}
   - component: {fileID: 457102694}
   m_Layer: 0
-  m_Name: ScenarioBuilder
+  m_Name: MapManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,14 +271,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 457102692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07923384b16c9624980296778fd6c626, type: 3}
+  m_Script: {fileID: 11500000, guid: 810006ef3b210a94b963de419ae51512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainTrackGenerator
   tilemap: {fileID: 1986772852}
   layoutGrid: {fileID: 192360868}
   mapEnd: {fileID: 1160567166693149856, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
-  player: {fileID: 52292171177792573, guid: 2c201da25c7313c498a87e08a9747942, type: 3}
-  firstTrack: {fileID: 2843544127461654216, guid: ef915284c65252347a19a2b890f6f80b, type: 3}
+  firstTrack: {fileID: 8959878057398117624, guid: 9e069405f1260d740bf8e4fa14fffcc5, type: 3}
 --- !u!224 &467588786 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8607619777427083636, guid: 8ccae23f6668f03459eb2dd0464ed57e, type: 3}
@@ -649,28 +695,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!195 &1674660291
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674660286}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &1697851271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2446,15 +2470,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2069737483180270120, guid: a39a4fadb4da7644bb1752d31e7aa8b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1674660289}
-    - targetCorrespondingSourceObject: {fileID: 2069737483180270120, guid: a39a4fadb4da7644bb1752d31e7aa8b4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1674660291}
   m_SourcePrefab: {fileID: 100100000, guid: a39a4fadb4da7644bb1752d31e7aa8b4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2100831700}
+  - {fileID: 64389876}
   - {fileID: 2046196499}
   - {fileID: 192360869}
   - {fileID: 1697851274}

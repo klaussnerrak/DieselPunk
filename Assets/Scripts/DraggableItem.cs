@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class DraggableItem : MonoBehaviour
 {
-    public GridManager gridManager;
+    private GridManager gridManager;
     public bool isTrainMoving = false;
     private bool isDragging = false;
     private Vector3 offset;
@@ -19,9 +19,9 @@ public class DraggableItem : MonoBehaviour
     {
         targetGrid = FindFirstObjectByType<Grid>();
         playerScript = FindFirstObjectByType<PlayerTrainScript>();
-        
+
         GameObject tilemapObject = GameObject.Find("Tilemap");
-        GameObject gridManagerObject = GameObject.Find("Grid");
+        GameObject gridManagerObject = GameObject.Find("Grid"); 
 
         if (tilemapObject != null)
         {
@@ -110,7 +110,7 @@ public class DraggableItem : MonoBehaviour
 
             transform.position = snappedPosition;
             itemLastPosition = transform.position;
-            Debug.Log("Item snapped");
+            
             playerScript.pivotPoints.Add(transform);
             gridManager.UpdateNavMeshAfterDrop();
         }
