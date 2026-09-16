@@ -5,7 +5,7 @@ public class TrainTrackShop : MonoBehaviour
 {
     private GameObject selectedPrefab;
     [SerializeField] private Transform shopButton; 
-    [SerializeField] private int coins = 10; 
+    // [SerializeField] private int coins = 10; 
 
     private Camera mainCamera;
     void Start()

@@ -153,6 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTrainScript
   mapEnd: {fileID: 1160567166693149856, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+  firstTrack: {fileID: 8959878057398117624, guid: 9e069405f1260d740bf8e4fa14fffcc5, type: 3}
+  pivotPoints:
+  - {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+  - {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+  startButton: {fileID: 373885404944578587, guid: d52b1bb60e032374faeb29b64f400105, type: 3}
   rotationSpeed: 10
   spriteAngleOffset: -90
 --- !u!195 &-4076650144019924885

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7608205122168780822}
   - component: {fileID: 3192047955483751198}
   m_Layer: 0
-  m_Name: EndMap
+  m_Name: MapEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

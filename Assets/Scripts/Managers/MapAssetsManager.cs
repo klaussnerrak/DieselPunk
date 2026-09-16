@@ -13,17 +13,9 @@ public class MapAssetsManager : MonoBehaviour
     [Header("Tilemap config")]
     BoundsInt bounds;
     [SerializeField] private Tilemap tilemap;
-    [SerializeField] private Grid layoutGrid;
-    [Range(0f, 100f)]
-    [SerializeField] private float spawnChanceTrainTracks;
-    [Range(0f, 100f)]
-    [SerializeField] private float spawnChanceMapAssets;
+    [SerializeField] private Grid layoutGrid; 
     private int xMin;
-
-    [Header("Track Prefabs")]
-    [SerializeField] private GameObject[] trainTracks;
-    [SerializeField] private GameObject[] mapAssets;
-
+  
     [SerializeField] private GameObject mapEnd;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject firstTrack;
@@ -33,47 +25,11 @@ public class MapAssetsManager : MonoBehaviour
     {
         tilemap.CompressBounds();
         bounds = tilemap.cellBounds;
-        xMin = bounds.xMin;
-        // GenerateScenario(MapAssetType.TrainTrack);
-        // GenerateScenario(MapAssetType.Scenario);
+        xMin = bounds.xMin; 
         GeneratePlayer();
         GenerateEndMap();
     }
-
-    void GenerateScenario(MapAssetType type)
-    {
-        foreach (var pos in bounds.allPositionsWithin)
-        {
-            if (tilemap.HasTile(pos))
-            {
-                float randomizer = Random.Range(0f, 100f);
-                Vector3 worldPosition = layoutGrid.CellToWorld(pos);
-
-                worldPosition += new Vector3(layoutGrid.cellSize.x / 2f, layoutGrid.cellSize.y / 2f, 0);
-                worldPosition.z = 0;
-
-                if (type == MapAssetType.TrainTrack)
-                {
-                    if (randomizer > spawnChanceTrainTracks)
-                        continue;
-
-                    GameObject randomPrefab = trainTracks[Random.Range(0, trainTracks.Length)];
-
-                    Instantiate(randomPrefab, worldPosition, Quaternion.identity, transform);
-                }
-
-                if (type == MapAssetType.Scenario)
-                {
-                    if (randomizer > spawnChanceMapAssets)
-                        continue;
-
-                    GameObject randomPrefab = mapAssets[Random.Range(0, mapAssets.Length)];
-
-                    Instantiate(randomPrefab, worldPosition, Quaternion.identity, transform);
-                }
-            }
-        }
-    }
+ 
 
     void GeneratePlayer()
     {
@@ -115,5 +71,6 @@ public class MapAssetsManager : MonoBehaviour
         }
 
         Instantiate(mapEnd, endWorldPos, endRotation);
+        mapEnd.name = "MapEnd";
     }
 }

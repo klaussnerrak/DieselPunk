@@ -13,10 +13,13 @@ public class DraggableItem : MonoBehaviour
     private Grid targetGrid;
     private Tilemap tilemap;
     private Vector3 itemLastPosition;
+    public PlayerTrainScript playerScript;
 
     void Start()
     {
         targetGrid = FindFirstObjectByType<Grid>();
+        playerScript = FindFirstObjectByType<PlayerTrainScript>();
+        
         GameObject tilemapObject = GameObject.Find("Tilemap");
         GameObject gridManagerObject = GameObject.Find("Grid");
 
@@ -107,6 +110,8 @@ public class DraggableItem : MonoBehaviour
 
             transform.position = snappedPosition;
             itemLastPosition = transform.position;
+            Debug.Log("Item snapped");
+            playerScript.pivotPoints.Add(transform);
             gridManager.UpdateNavMeshAfterDrop();
         }
         else
