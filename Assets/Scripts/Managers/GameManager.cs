@@ -7,15 +7,28 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private NavMeshSurface navSurface;
     [SerializeField] private GameObject player;
-    [SerializeField] private MapManager mapManager;
+    [SerializeField] public MapManager mapManager;
+    public static GameManager instance;
 
     void Start()
     {
-        navSurface.BuildNavMesh();
-        if (navSurface != null)
+
+        if (instance == null)
         {
-            mapManager.GeneratePlayer(player);
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+
+            if (navSurface != null)
+            {
+                mapManager.GeneratePlayer(player); 
+                navSurface.BuildNavMesh();
+            }
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
     void Update()

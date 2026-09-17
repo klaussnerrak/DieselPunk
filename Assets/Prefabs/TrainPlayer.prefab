@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 52292171177792573}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -5.5, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0.96001, y: 0.21828, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20099269c658ea0439c3bb37dd0e9780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTrainScript
-  mapEnd: {fileID: 1160567166693149856, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+  mapManager: {fileID: 0}
   firstTrack: {fileID: 8959878057398117624, guid: 9e069405f1260d740bf8e4fa14fffcc5, type: 3}
   pivotPoints: []
   startButton: {fileID: 373885404944578587, guid: d52b1bb60e032374faeb29b64f400105, type: 3}

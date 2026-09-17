@@ -15,9 +15,10 @@ public class MapManager : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private Grid layoutGrid;
     private int xMin;
+    public static MapManager instance;
 
-    [SerializeField] private GameObject mapEnd; 
-    [SerializeField] private GameObject firstTrack;
+    public GameObject mapEnd;
+    [SerializeField] private GameObject firstTrack; 
 
 
     void Start()

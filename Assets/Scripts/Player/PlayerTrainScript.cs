@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using NavMeshPlus.Components;
 
 public class PlayerTrainScript : MonoBehaviour
-{
-    [SerializeField] private GameObject mapEnd;
+{  
     [SerializeField] private GameObject firstTrack;
     private NavMeshAgent agent;
 
@@ -28,19 +27,20 @@ public class PlayerTrainScript : MonoBehaviour
     private StateMachineType state = StateMachineType.Waiting;
 
     void Start()
-    {
-
+    { 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
         if (agent != null) Debug.Log("Agent found");
 
-        mapEnd = GameObject.Find("MapEnd(Clone)");
+        // mapEnd = GameObject.Find("MapEnd(Clone)");
 
-        if (firstTrack != null && mapEnd != null)
+        if (firstTrack != null && MapManager.instance.mapEnd != null)
         {
-            pivotPoints.Add(firstTrack.transform);
+            Debug.Log("first track exists - method called on start");
+            Debug.Log("map manager exists - method called on start");
+            // pivotPoints.Add(firstTrack.transform);
         }
 
 
@@ -63,13 +63,17 @@ public class PlayerTrainScript : MonoBehaviour
 
     public void StartPath()
     {
-        Debug.Log("TRAIN SCRIPT 2");
-        Debug.Log("CLICKED");
-        pivotPoints.Add(mapEnd.transform);
-        Debug.Log(pivotPoints);
-        // agent.SetDestination(pivotPoints[pivotIndex].position);
+        // Debug.Log("TRAIN SCRIPT 2");
+        // Debug.Log("CLICKED");
+        if (MapManager.instance.mapEnd != null)
+        {
+            pivotPoints.Add(MapManager.instance.mapEnd.transform);
+            // Debug.Log("MAP END: " + gameManager.mapEnd.transform.position);
+        }
+        // Debug.Log(pivotPoints);
+        // agent.SetDestination(pivotPoints[0].position);
         playerStart = true;
-        Moving();
+        // Moving();
     }
     // Update is called once per frame
     void FixedUpdate()

@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
   navSurface: {fileID: 1547479422}
+  player: {fileID: 52292171177792573, guid: 2c201da25c7313c498a87e08a9747942, type: 3}
+  mapManager: {fileID: 457102694}
 --- !u!224 &390781125 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4714345047407645065, guid: a39a4fadb4da7644bb1752d31e7aa8b4, type: 3}
