@@ -26,12 +26,12 @@ public class MapAssetsManager : MonoBehaviour
         tilemap.CompressBounds();
         bounds = tilemap.cellBounds;
         xMin = bounds.xMin; 
-        GeneratePlayer();
-        GenerateEndMap();
+        //GeneratePlayer();
+        //GenerateEndMap();
     }
  
 
-    void GeneratePlayer()
+    /*void GeneratePlayer()
     {
         int startY = Random.Range(bounds.yMin, bounds.yMax);
         Vector3Int startCellPos = new Vector3Int(xMin, startY, 0);
@@ -72,5 +72,5 @@ public class MapAssetsManager : MonoBehaviour
 
         Instantiate(mapEnd, endWorldPos, endRotation);
         mapEnd.name = "MapEnd";
-    }
+    }*/
 }

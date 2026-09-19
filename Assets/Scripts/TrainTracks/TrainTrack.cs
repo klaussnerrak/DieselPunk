@@ -9,7 +9,7 @@ public enum TrackType
 
 public class TrainTrack : MonoBehaviour
 {
-    [SerializeField] protected TrackType type;
+    public TrackType type;
     [SerializeField] private bool north;
     [SerializeField] private bool south;
     [SerializeField] private bool east;

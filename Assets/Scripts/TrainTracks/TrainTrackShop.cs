@@ -14,7 +14,7 @@ public class TrainTrackShop : MonoBehaviour
     }
     public void BuyTrack(GameObject selectedTile)
     {
-        Debug.Log("PIECE BOUGHT"); 
+        Debug.Log(selectedTile.type); 
         
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;

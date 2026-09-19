@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
-public class DraggableItem : MonoBehaviour
+public class DraggableItem : TrainTrack
 {
     public GridManager gridManager;
     public bool isTrainMoving = false;
@@ -51,6 +51,7 @@ public class DraggableItem : MonoBehaviour
         {
             Vector3 mousePosition = GetMouseWorldPosition();
             transform.position = mousePosition + offset;
+           
         }
     }
 
@@ -102,7 +103,7 @@ public class DraggableItem : MonoBehaviour
 
         if (IsValidPlace(cellPosition))
         {
-            Vector3 snappedPosition = targetGrid.CellToWorld(cellPosition);
+            Vector3 snappedPosition = targetGrid.CellToWorld(cellPosition);            
 
             snappedPosition.x += targetGrid.cellSize.x / 2;
             snappedPosition.y += targetGrid.cellSize.y / 2;
@@ -110,9 +111,11 @@ public class DraggableItem : MonoBehaviour
 
             transform.position = snappedPosition;
             itemLastPosition = transform.position;
-            Debug.Log("Item snapped");
-            playerScript.pivotPoints.Add(transform);
-            gridManager.UpdateNavMeshAfterDrop();
+            //Debug.Log("Item snapped");
+            //playerScript.pivotPoints.Add(transform);
+            //gridManager.UpdateNavMeshAfterDrop();
+
+            gridManager.AddToTrack(this);
         }
         else
         {
