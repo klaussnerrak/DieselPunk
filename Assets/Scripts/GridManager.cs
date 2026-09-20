@@ -7,7 +7,7 @@ public class GridManager : MonoBehaviour
 {
     //[SerializeField] private NavMeshSurface navSurface;
     public List <TrainTrack> Track = new List <TrainTrack>();
- 
+    
     /*public void UpdateNavMeshAfterDrop()
     { 
         Debug.Log("baked");
@@ -15,10 +15,8 @@ public class GridManager : MonoBehaviour
     }*/
 
     public void AddToTrack(TrainTrack tile)
-    {
-        Debug.Log(tile.type);
+    {        
         Track.Add(tile);
-        
     }
 
 }    

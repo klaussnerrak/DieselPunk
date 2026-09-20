@@ -6,17 +6,23 @@ using UnityEngine.UI;
 public class PlayerTrainScript : MonoBehaviour
 {
     [SerializeField] private GameObject mapEnd;
-    [SerializeField] private GameObject firstTrack;
+    public TrainTrack firstTrack;
     private NavMeshAgent agent;
-
+    
 
     public List<Transform> pivotPoints = new List<Transform>();
     [SerializeField] private Button startButton;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float spriteAngleOffset = -90f;
+    [SerializeField] private float speed = 0.1f;
 
     private int pivotIndex = 0;
+    private int trackIndex = 0;
     bool playerStart = false;
+
+    public GridManager gridManager;
+
+    
 
     enum StateMachineType
     {
@@ -29,7 +35,7 @@ public class PlayerTrainScript : MonoBehaviour
 
     void Awake()
     {
-        // startButton.onClick.AddListener(() => playerStart = true);
+        //startButton.onClick.AddListener(() => playerStart = true);
 
     }
 
@@ -37,12 +43,12 @@ public class PlayerTrainScript : MonoBehaviour
     public void StartPath()
     {
         Debug.Log("CLICKED");
-        pivotPoints.Add(mapEnd.transform);
+        //pivotPoints.Add(mapEnd.transform);
 
-        Debug.Log(pivotPoints);
+       // Debug.Log(pivotPoints);
         // agent.SetDestination(pivotPoints[pivotIndex].position);
         playerStart = true;
-        Moving();
+        //Moving();
     }
 
     void Update()
@@ -53,6 +59,7 @@ public class PlayerTrainScript : MonoBehaviour
 
     void Start()
     {
+        GameObject gridManagerObject = GameObject.Find("Grid");
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -66,6 +73,16 @@ public class PlayerTrainScript : MonoBehaviour
             pivotPoints.Add(firstTrack.transform); 
         }
 
+        if(gridManagerObject != null)
+        {
+            gridManager = gridManagerObject.GetComponent<GridManager>();
+            gridManager.AddToTrack(firstTrack);
+            Quaternion rotation = Quaternion.Euler(0, 0, 0);
+            firstTrack.transform.position = transform.position;
+            Instantiate(firstTrack, transform.position, rotation); 
+            Debug.Log(firstTrack.transform.position);
+
+        }
 
 
     }
@@ -94,10 +111,10 @@ public class PlayerTrainScript : MonoBehaviour
 
     private void Moving()
     {
-        Debug.Log("moving");
+        Debug.Log("moving " + Vector3.Distance(transform.position, gridManager.Track[trackIndex].transform.position));
         // if(TimerScript.instance.timeCounter>1)
         // {
-        if (Vector2.Distance(transform.position, pivotPoints[pivotIndex].position) < 0.1f)
+        /*if (Vector2.Distance(transform.position, pivotPoints[pivotIndex].position) < 0.1f)
         {
             pivotIndex += 1;
             if (pivotIndex < pivotPoints.Count)
@@ -109,8 +126,24 @@ public class PlayerTrainScript : MonoBehaviour
                 state = StateMachineType.Finish;
                 TimerScript.instance.pauseTimer = true;
             }
+        }*/
+        if (trackIndex < gridManager.Track.Count)
+        {
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                gridManager.Track[trackIndex].transform.position,
+                speed * Time.deltaTime
+            );
+
+            if (Vector3.Distance(
+                transform.position,
+                gridManager.Track[trackIndex].transform.position) < 0.1f)
+            {
+                trackIndex++;
+            }
         }
-        RotateTrain();
+
+        //RotateTrain();
         // }
         // else 
         // {

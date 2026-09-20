@@ -124,6 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1842fce47d1754e931fe47ee9a02e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+  type: 1
+  north: 0
+  south: 0
+  east: 0
+  west: 0
   gridManager: {fileID: 0}
   isTrainMoving: 0
   playerScript: {fileID: 0}

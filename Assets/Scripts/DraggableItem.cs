@@ -14,6 +14,7 @@ public class DraggableItem : TrainTrack
     private Tilemap tilemap;
     private Vector3 itemLastPosition;
     public PlayerTrainScript playerScript;
+    private int trackIndex;
 
     void Start()
     {
@@ -40,9 +41,13 @@ public class DraggableItem : TrainTrack
         {
             Debug.LogError("GridManager not found");
         }
-
+        
 
         itemLastPosition = transform.position;
+
+        //adiciona o objeto na lista do gridmanager
+        gridManager.AddToTrack(this);
+        trackIndex = gridManager.Track.Count - 1;
     }
 
     void Update()
@@ -111,11 +116,13 @@ public class DraggableItem : TrainTrack
 
             transform.position = snappedPosition;
             itemLastPosition = transform.position;
-            //Debug.Log("Item snapped");
+
+            //Debug.Log(this.transform.position);
             //playerScript.pivotPoints.Add(transform);
             //gridManager.UpdateNavMeshAfterDrop();
+            gridManager.Track[trackIndex].transform.position = itemLastPosition;
 
-            gridManager.AddToTrack(this);
+            
         }
         else
         {

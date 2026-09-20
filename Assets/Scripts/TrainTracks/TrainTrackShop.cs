@@ -5,17 +5,18 @@ public class TrainTrackShop : MonoBehaviour
 {
     private GameObject selectedPrefab;
     [SerializeField] private Transform shopButton; 
+    
     // [SerializeField] private int coins = 10; 
 
     private Camera mainCamera;
     void Start()
     {
         mainCamera = Camera.main;
+        GameObject gridManagerObject = GameObject.Find("Grid");
     }
     public void BuyTrack(GameObject selectedTile)
     {
-        Debug.Log(selectedTile.type); 
-        
+                
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
 
