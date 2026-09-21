@@ -13,11 +13,12 @@ public class PlayerTrainScript : MonoBehaviour
     public List<Transform> pivotPoints = new List<Transform>();
     [SerializeField] private Button startButton;
     [SerializeField] private float rotationSpeed = 10f;
-    [SerializeField] private float spriteAngleOffset = -90f;
-    [SerializeField] private float speed = 0.1f;
+    [SerializeField] private float spriteAngleOffset = 0f;
+    [SerializeField] private float speed = 1f;
 
-    private int pivotIndex = 0;
+   // private int pivotIndex = 0;
     private int trackIndex = 0;
+//private Vector3 lastDirection;
     bool playerStart = false;
 
     public GridManager gridManager;
@@ -61,9 +62,9 @@ public class PlayerTrainScript : MonoBehaviour
     {
         GameObject gridManagerObject = GameObject.Find("Grid");
 
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+       // agent = GetComponent<NavMeshAgent>();
+        //agent.updateRotation = false;
+       // agent.updateUpAxis = false;
 
         mapEnd = GameObject.Find("MapEnd(Clone)");
         if (firstTrack && mapEnd)
@@ -80,7 +81,7 @@ public class PlayerTrainScript : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(0, 0, 0);
             firstTrack.transform.position = transform.position;
             Instantiate(firstTrack, transform.position, rotation); 
-            Debug.Log(firstTrack.transform.position);
+            //Debug.Log(firstTrack.transform.position);
 
         }
 
@@ -111,39 +112,29 @@ public class PlayerTrainScript : MonoBehaviour
 
     private void Moving()
     {
-        Debug.Log("moving " + Vector3.Distance(transform.position, gridManager.Track[trackIndex].transform.position));
-        // if(TimerScript.instance.timeCounter>1)
-        // {
-        /*if (Vector2.Distance(transform.position, pivotPoints[pivotIndex].position) < 0.1f)
-        {
-            pivotIndex += 1;
-            if (pivotIndex < pivotPoints.Count)
-            {
-                agent.SetDestination(pivotPoints[pivotIndex].position);
-            }
-            else if (pivotIndex == pivotPoints.Count)
-            {
-                state = StateMachineType.Finish;
-                TimerScript.instance.pauseTimer = true;
-            }
-        }*/
-        if (trackIndex < gridManager.Track.Count)
-        {
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                gridManager.Track[trackIndex].transform.position,
-                speed * Time.deltaTime
-            );
+        //Debug.Log("moving ");        
+        
+        if (trackIndex >= gridManager.Track.Count)
+        return;
 
-            if (Vector3.Distance(
-                transform.position,
-                gridManager.Track[trackIndex].transform.position) < 0.1f)
-            {
-                trackIndex++;
-            }
+        Transform target = gridManager.Track[trackIndex].transform;
+
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            target.position,
+            speed * Time.deltaTime
+        );
+
+        RotateTrain();
+
+        if (Vector3.Distance(transform.position, target.position) < 0.1f)
+        {
+            transform.position = target.position;
+            trackIndex++;
         }
-
-        //RotateTrain();
+   
+        
+        //
         // }
         // else 
         // {
@@ -175,14 +166,20 @@ public class PlayerTrainScript : MonoBehaviour
 
     private void RotateTrain()
     {
-        Vector3 targetPoint = agent.steeringTarget;
-        Vector3 direction = targetPoint - transform.position;
+        if (trackIndex >= gridManager.Track.Count)
+            return;
 
+        Vector3 currentPoint = transform.position;
+        Vector3 nextPoint = gridManager.Track[trackIndex].transform.position;
+        Vector3 direction = nextPoint - currentPoint;
+        direction = direction.normalized;
 
+        if (direction.sqrMagnitude < 0.1f)
+            return;
+        
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle + spriteAngleOffset);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation,
+            rotationSpeed * Time.deltaTime);
     }
-
-
 }
