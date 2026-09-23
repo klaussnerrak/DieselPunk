@@ -14,6 +14,7 @@ public class TrainTrack : MonoBehaviour
     [SerializeField] private bool south;
     [SerializeField] private bool east;
     [SerializeField] private bool west;
+    public int dieselCost;
 
     public void Configure(TrackType pieceType, bool connectsNorth, bool connectsSouth,
         bool connectsEast, bool connectsWest)

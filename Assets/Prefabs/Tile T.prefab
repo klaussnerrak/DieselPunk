@@ -151,7 +151,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9189023498879117399, guid: b4cb6f0111580004691451934875c9a8, type: 3}
+  m_Sprite: {fileID: 97757510, guid: 88705dcc20ddc2544af5c1a2fa8d878f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -178,6 +178,7 @@ MonoBehaviour:
   south: 0
   east: 0
   west: 0
+  dieselCost: 0
 --- !u!114 &-93929215073774756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +196,7 @@ MonoBehaviour:
   south: 0
   east: 0
   west: 0
+  dieselCost: 20
   gridManager: {fileID: 0}
   isTrainMoving: 0
   playerScript: {fileID: 0}

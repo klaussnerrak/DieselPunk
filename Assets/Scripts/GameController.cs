@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     {        
         gamePanel.SetActive(false);
         winPanel.SetActive(true);
-        AudioManager.instance.PlaySFX("Supla");
+        // AudioManager.instance.PlaySFX("Supla");
     }
 
     public void LoseCondition()
