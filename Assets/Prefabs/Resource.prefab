@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8139930213688695951}
   - component: {fileID: 3823423939208631772}
   m_Layer: 7
-  m_Name: Floor Obstacle 2
+  m_Name: Resource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1067964803, guid: 88705dcc20ddc2544af5c1a2fa8d878f, type: 3}
+  m_Sprite: {fileID: -658059306, guid: e963dea6fe379104e95c632bc2fcbd4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

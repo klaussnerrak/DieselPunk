@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerTrainScript : MonoBehaviour
 {
-    [SerializeField] private GameObject mapEnd;
+    public TrainTrack mapEnd;
     public TrainTrack firstTrack;
     private NavMeshAgent agent;
     
@@ -62,9 +62,9 @@ public class PlayerTrainScript : MonoBehaviour
     {
         GameObject gridManagerObject = GameObject.Find("Grid");
 
-       // agent = GetComponent<NavMeshAgent>();
-        //agent.updateRotation = false;
-       // agent.updateUpAxis = false;
+       /* agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
 
         mapEnd = GameObject.Find("MapEnd(Clone)");
         if (firstTrack && mapEnd)
@@ -72,7 +72,7 @@ public class PlayerTrainScript : MonoBehaviour
             Debug.Log("Position first track: " + firstTrack.transform.position);
             Debug.Log("Position last track: " + mapEnd.transform.position);
             pivotPoints.Add(firstTrack.transform); 
-        }
+        }*/
 
         if(gridManagerObject != null)
         {
@@ -105,6 +105,7 @@ public class PlayerTrainScript : MonoBehaviour
         {
             state = StateMachineType.Moving;
             playerStart = false;
+            gridManager.AddToTrack(mapEnd);
             // TimerScript.instance.StartPlayCounter();   
         }
 
@@ -114,8 +115,13 @@ public class PlayerTrainScript : MonoBehaviour
     {
         //Debug.Log("moving ");        
         
-        if (trackIndex >= gridManager.Track.Count)
-        return;
+        if (trackIndex >= gridManager.Track.Count){
+            state = StateMachineType.Finish;
+            TimerScript.instance.pauseTimer = true;
+            return;
+        }
+
+        
 
         Transform target = gridManager.Track[trackIndex].transform;
 
@@ -124,12 +130,13 @@ public class PlayerTrainScript : MonoBehaviour
             target.position,
             speed * Time.deltaTime
         );
-
+        float distance = Vector3.Distance(transform.position, target.position);
+        //Debug.Log(distance);
         RotateTrain();
 
-        if (Vector3.Distance(transform.position, target.position) < 0.1f)
+        if (distance < 0.1f)
         {
-            transform.position = target.position;
+            //transform.position = target.position;
             trackIndex++;
         }
    
@@ -146,40 +153,44 @@ public class PlayerTrainScript : MonoBehaviour
 
     private void Finish()
     {
-        //    if(TimerScript.instance.timeCounter>1)
-        //    {
-        //         GameController.instance.WinCondition();
-        state = StateMachineType.Waiting;
-        //    }
-        //    else 
-        //    {
-        //         GameController.instance.LoseCondition();
-        //         state = StateMachineType.Waiting;
+            if(TimerScript.instance.timeCounter>1)
+            {
+                 GameController.instance.WinCondition();
+                state = StateMachineType.Waiting;
+            }
+            else 
+            {
+                 GameController.instance.LoseCondition();
+                 state = StateMachineType.Waiting;
 
-        //    } 
+            } 
     }
 
-    void ReadPivotPoints()
+    /*void ReadPivotPoints()
     {
         Debug.Log("pivotPoints size: " + pivotPoints.Count);
-    }
+    }*/
 
     private void RotateTrain()
     {
         if (trackIndex >= gridManager.Track.Count)
             return;
-
+       
         Vector3 currentPoint = transform.position;
-        Vector3 nextPoint = gridManager.Track[trackIndex].transform.position;
+        Vector3 nextPoint = gridManager.Track[trackIndex].transform.position;        
         Vector3 direction = nextPoint - currentPoint;
-        direction = direction.normalized;
+        //direction = direction.normalized;
 
         if (direction.sqrMagnitude < 0.1f)
             return;
-        
+         
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle + spriteAngleOffset);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation,
             rotationSpeed * Time.deltaTime);
+
+        //Debug.Log(angle);    
     }
+
+    
 }
