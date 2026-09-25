@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class DraggableItem : TrainTrack
 {
-    public GridManager gridManager;
+    //public GridManager gridManager;
     public bool isTrainMoving = false;
     private bool isDragging = false;
     private Vector3 offset;
@@ -33,21 +33,21 @@ public class DraggableItem : TrainTrack
             Debug.LogError("Tilemap not found");
         }
 
-        if (gridManagerObject != null)
+        /*if (gridManagerObject != null)
         {
             gridManager = gridManagerObject.GetComponent<GridManager>();
         }
         else
         {
             Debug.LogError("GridManager not found");
-        }
+        }*/
         
 
         itemLastPosition = transform.position;
 
         //adiciona o objeto na lista do gridmanager
-        gridManager.AddToTrack(this);
-        trackIndex = gridManager.Track.Count - 1;
+        GridManager.instance.AddToTrack(this);
+        trackIndex = GridManager.instance.TrackTiles.Count - 1;
     }
 
     void Update()
@@ -120,7 +120,8 @@ public class DraggableItem : TrainTrack
             //Debug.Log(this.transform.position);
             //playerScript.pivotPoints.Add(transform);
             //gridManager.UpdateNavMeshAfterDrop();
-            gridManager.Track[trackIndex].transform.position = itemLastPosition;
+            GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
+            //gridManager.UpdateTrack();
 
             
         }
@@ -134,6 +135,7 @@ public class DraggableItem : TrainTrack
     {
         if (!tilemap.HasTile(cellPosition))
         {
+            
             return false;
         }
 
@@ -148,6 +150,7 @@ public class DraggableItem : TrainTrack
         {
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
+               // Debug.Log("Tile");
                 continue;
             }
             return false;
@@ -155,6 +158,8 @@ public class DraggableItem : TrainTrack
 
         return true;
     }
+
+   
 
 
 

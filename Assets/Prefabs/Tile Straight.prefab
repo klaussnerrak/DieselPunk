@@ -92,7 +92,7 @@ Transform:
   m_GameObject: {fileID: 8959878057398117624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.71, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -172,10 +172,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainTrack
   type: 0
-  north: 0
-  south: 0
-  east: 0
-  west: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  right: {fileID: 8333798846871764192}
+  left: {fileID: 5798509069182026803}
+  upConnected: 0
+  downConnected: 0
+  rightConnected: 0
+  leftConnected: 0
 --- !u!114 &-6845839344593968096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,11 +193,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   type: 0
-  north: 0
-  south: 0
-  east: 0
-  west: 0
-  gridManager: {fileID: 0}
+  up: {fileID: 0}
+  down: {fileID: 0}
+  right: {fileID: 8333798846871764192}
+  left: {fileID: 5798509069182026803}
+  upConnected: 0
+  downConnected: 0
+  rightConnected: 0
+  leftConnected: 0
   isTrainMoving: 0
   playerScript: {fileID: 0}
 --- !u!61 &-1589141666658096773
