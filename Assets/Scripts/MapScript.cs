@@ -23,4 +23,10 @@ public class MapScript : MonoBehaviour
         AudioManager.instance.PlayMusic("PlayMusic");
         
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
+    }
 }

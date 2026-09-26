@@ -35,10 +35,10 @@ public class TrainScript : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-        agent = GetComponent<NavMeshAgent>();
+        /*agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
 		agent.updateUpAxis = false;
-        agent.SetDestination(pivotPoints[pivotIndex].position);
+        agent.SetDestination(pivotPoints[pivotIndex].position);*/
     }
 
     // Update is called once per frame
