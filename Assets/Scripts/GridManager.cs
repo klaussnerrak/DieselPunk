@@ -48,11 +48,7 @@ public class GridManager : MonoBehaviour
     }   
 
     private bool IsConnected(TrainTrack track1, TrainTrack track2)
-    {
-        Debug.Log(track1 + "right " +track1.right +" "+track1.rightConnected);
-        /*Debug.Log(track1 + "left " +track1.leftConnected);
-        Debug.Log(track1 + "up " +track1.upConnected);
-        Debug.Log(track1 + "down " +track1.downConnected);*/
+    {       
         //Up check********************************************************************************************                   
     
         if(track1.up != null && track1.upConnected==false){

@@ -202,7 +202,6 @@ MonoBehaviour:
   rightConnected: 0
   leftConnected: 0
   isTrainMoving: 0
-  playerScript: {fileID: 0}
 --- !u!61 &-1589141666658096773
 BoxCollider2D:
   m_ObjectHideFlags: 0

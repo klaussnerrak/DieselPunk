@@ -13,13 +13,15 @@ public class DraggableItem : TrainTrack
     private Grid targetGrid;
     private Tilemap tilemap;
     private Vector3 itemLastPosition;
-    public PlayerTrainScript playerScript;
+   // public PlayerTrainScript playerScript;
     private int trackIndex;
+
+    private bool trackColider = false;
 
     void Start()
     {
         targetGrid = FindFirstObjectByType<Grid>();
-        playerScript = FindFirstObjectByType<PlayerTrainScript>();
+        //playerScript = FindFirstObjectByType<PlayerTrainScript>();
         
         GameObject tilemapObject = GameObject.Find("Tilemap");
         GameObject gridManagerObject = GameObject.Find("Grid");
@@ -107,6 +109,7 @@ public class DraggableItem : TrainTrack
         Vector3Int cellPosition = targetGrid.WorldToCell(transform.position);
 
         if (IsValidPlace(cellPosition))
+
         {
             Vector3 snappedPosition = targetGrid.CellToWorld(cellPosition);            
 
@@ -116,14 +119,9 @@ public class DraggableItem : TrainTrack
 
             transform.position = snappedPosition;
             itemLastPosition = transform.position;
-
-            //Debug.Log(this.transform.position);
-            //playerScript.pivotPoints.Add(transform);
-            //gridManager.UpdateNavMeshAfterDrop();
+           
             GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
-            //gridManager.UpdateTrack();
-
-            
+           
         }
         else
         {
@@ -148,22 +146,18 @@ public class DraggableItem : TrainTrack
 
         foreach (Collider2D hit in hits)
         {
+            
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
-               // Debug.Log("Tile");
+                
                 continue;
             }
-            return false;
+            if (hit.CompareTag("TrainTrackPiece"))
+            {
+                return false;
+            }        
         }
 
-        return true;
+         return true;
     }
-
-   
-
-
-
-
-
-
 }
