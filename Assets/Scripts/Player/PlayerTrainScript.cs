@@ -21,7 +21,7 @@ public class PlayerTrainScript : MonoBehaviour
 //private Vector3 lastDirection;
     bool playerStart = false;
 
-    public GridManager gridManager;
+    //public GridManager gridManager;
 
     
 
@@ -34,13 +34,7 @@ public class PlayerTrainScript : MonoBehaviour
 
     private StateMachineType state = StateMachineType.Waiting;
 
-    void Awake()
-    {
-        //startButton.onClick.AddListener(() => playerStart = true);
-
-    }
-
-
+    
     public void StartPath()
     {
         Debug.Log("CLICKED");
@@ -54,39 +48,33 @@ public class PlayerTrainScript : MonoBehaviour
 
     void Update()
     {
-        // ReadPivotPoints();
-        // agent.SetDestination(pivotPoints[pivotIndex].position);
+        
     }
 
     void Start()
     {
         GameObject gridManagerObject = GameObject.Find("Grid");
-
-       /* agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-
-        mapEnd = GameObject.Find("MapEnd(Clone)");
-        if (firstTrack && mapEnd)
-        {
-            Debug.Log("Position first track: " + firstTrack.transform.position);
-            Debug.Log("Position last track: " + mapEnd.transform.position);
-            pivotPoints.Add(firstTrack.transform); 
-        }*/
+       
 
         if(gridManagerObject != null)
         {
-            gridManager = gridManagerObject.GetComponent<GridManager>();
-            gridManager.AddToTrack(firstTrack);
-            Quaternion rotation = Quaternion.Euler(0, 0, 0);
-            firstTrack.transform.position = transform.position;
-            Instantiate(firstTrack, transform.position, rotation); 
+            //gridManager = gridManagerObject.GetComponent<GridManager>();
+            //GridManager.instance.AddToTrack(firstTrack);
+            //Quaternion rotation = Quaternion.Euler(0, 0, 0);
+            //firstTrack.transform.position = transform.position;
+            //GridManager.instance.AddToTrack(firstTrack);
+            //Instantiate(firstTrack, transform.position, rotation); 
+            GridManager.instance.UpdateTrackStack();
+                        
+
+            }
+
             //Debug.Log(firstTrack.transform.position);
 
         }
 
 
-    }
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -100,55 +88,56 @@ public class PlayerTrainScript : MonoBehaviour
 
     private void Waiting()
     {
-        // if(playerStart == true || TimerScript.instance.timeCounter<=1)
-        if (playerStart == true)
+         if(playerStart == true || TimerScript.instance.timeCounter<=1)
+       // if (playerStart == true)
         {
             state = StateMachineType.Moving;
             playerStart = false;
-            gridManager.AddToTrack(mapEnd);
-            // TimerScript.instance.StartPlayCounter();   
+            //GridManager.instance.AddToTrack(mapEnd);
+            GridManager.instance.UpdateTrack();                        
+            TimerScript.instance.StartPlayCounter();   
         }
 
     }
 
     private void Moving()
     {
-        //Debug.Log("moving ");        
+        //Debug.Log("moving ");    
+            
         
-        if (trackIndex >= gridManager.Track.Count){
-            state = StateMachineType.Finish;
-            TimerScript.instance.pauseTimer = true;
+        if (trackIndex >= GridManager.instance.Track.Count){
+            if(GridManager.instance.Track[trackIndex-1] == mapEnd){
+                state = StateMachineType.Finish;
+                TimerScript.instance.pauseTimer = true;                
+            }
+            else if(TimerScript.instance.timeCounter<1)
+            {
+                state = StateMachineType.Finish;
+                TimerScript.instance.pauseTimer = true;
+            } 
+
             return;
         }
 
         
 
-        Transform target = gridManager.Track[trackIndex].transform;
+        Transform target = GridManager.instance.Track[trackIndex].transform;
+        //Debug.Log(target.position);
 
         transform.position = Vector3.MoveTowards(
             transform.position,
             target.position,
             speed * Time.deltaTime
         );
+        
         float distance = Vector3.Distance(transform.position, target.position);
-        //Debug.Log(distance);
+        
         RotateTrain();
 
         if (distance < 0.1f)
-        {
-            //transform.position = target.position;
+        {            
             trackIndex++;
-        }
-   
-        
-        //
-        // }
-        // else 
-        // {
-        //     state = StateMachineType.Finish;
-        //     TimerScript.instance.pauseTimer = true;
-        // }
-
+        } 
     }
 
     private void Finish()
@@ -173,11 +162,12 @@ public class PlayerTrainScript : MonoBehaviour
 
     private void RotateTrain()
     {
-        if (trackIndex >= gridManager.Track.Count)
+        if (trackIndex >= GridManager.instance.Track.Count)
             return;
        
         Vector3 currentPoint = transform.position;
-        Vector3 nextPoint = gridManager.Track[trackIndex].transform.position;        
+        Vector3 nextPoint = GridManager.instance.Track[trackIndex].transform.position; 
+
         Vector3 direction = nextPoint - currentPoint;
         //direction = direction.normalized;
 

@@ -9,14 +9,21 @@ public enum TrackType
 
 public class TrainTrack : MonoBehaviour
 {
-    public TrackType type;
-    [SerializeField] private bool north;
-    [SerializeField] private bool south;
-    [SerializeField] private bool east;
-    [SerializeField] private bool west;
+    public TrackType type; 
     public int dieselCost;
+    public GameObject up;
+    public GameObject down;
+    public GameObject right;
+    public GameObject left;
 
-    public void Configure(TrackType pieceType, bool connectsNorth, bool connectsSouth,
+    public bool upConnected = false;
+    public bool downConnected = false;
+    public bool rightConnected = false;
+    public bool leftConnected = false;
+       
+
+
+    /*public void Configure(TrackType pieceType, bool connectsNorth, bool connectsSouth,
         bool connectsEast, bool connectsWest)
     {
         type = pieceType;
@@ -24,6 +31,7 @@ public class TrainTrack : MonoBehaviour
         south = connectsSouth;
         east = connectsEast;
         west = connectsWest;
-    }
+    }*/
+    
 
 }

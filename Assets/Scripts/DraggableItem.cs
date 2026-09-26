@@ -6,20 +6,22 @@ using UnityEngine.Tilemaps;
 
 public class DraggableItem : TrainTrack
 {
-    public GridManager gridManager;
+    //public GridManager gridManager;
     public bool isTrainMoving = false;
     private bool isDragging = false;
     private Vector3 offset;
     private Grid targetGrid;
     private Tilemap tilemap;
     private Vector3 itemLastPosition;
-    public PlayerTrainScript playerScript;
+   // public PlayerTrainScript playerScript;
     private int trackIndex;
+
+    private bool trackColider = false;
 
     void Start()
     {
         targetGrid = FindFirstObjectByType<Grid>();
-        playerScript = FindFirstObjectByType<PlayerTrainScript>();
+        //playerScript = FindFirstObjectByType<PlayerTrainScript>();
         
         GameObject tilemapObject = GameObject.Find("Tilemap");
         GameObject gridManagerObject = GameObject.Find("Grid");
@@ -33,21 +35,21 @@ public class DraggableItem : TrainTrack
             Debug.LogError("Tilemap not found");
         }
 
-        if (gridManagerObject != null)
+        /*if (gridManagerObject != null)
         {
             gridManager = gridManagerObject.GetComponent<GridManager>();
         }
         else
         {
             Debug.LogError("GridManager not found");
-        }
+        }*/
         
 
         itemLastPosition = transform.position;
 
         //adiciona o objeto na lista do gridmanager
-        gridManager.AddToTrack(this);
-        trackIndex = gridManager.Track.Count - 1;
+        GridManager.instance.AddToTrack(this);
+        trackIndex = GridManager.instance.TrackTiles.Count - 1;
     }
 
     void Update()
@@ -107,6 +109,7 @@ public class DraggableItem : TrainTrack
         Vector3Int cellPosition = targetGrid.WorldToCell(transform.position);
 
         if (IsValidPlace(cellPosition))
+
         {
             Vector3 snappedPosition = targetGrid.CellToWorld(cellPosition);            
 
@@ -116,13 +119,9 @@ public class DraggableItem : TrainTrack
 
             transform.position = snappedPosition;
             itemLastPosition = transform.position;
-
-            //Debug.Log(this.transform.position);
-            //playerScript.pivotPoints.Add(transform);
-            //gridManager.UpdateNavMeshAfterDrop();
-            gridManager.Track[trackIndex].transform.position = itemLastPosition;
-
-            
+           
+            GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
+           
         }
         else
         {
@@ -134,6 +133,7 @@ public class DraggableItem : TrainTrack
     {
         if (!tilemap.HasTile(cellPosition))
         {
+            
             return false;
         }
 
@@ -146,19 +146,18 @@ public class DraggableItem : TrainTrack
 
         foreach (Collider2D hit in hits)
         {
+            
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
+                
                 continue;
             }
-            return false;
+            if (hit.CompareTag("TrainTrackPiece"))
+            {
+                return false;
+            }        
         }
 
-        return true;
+         return true;
     }
-
-
-
-
-
-
 }

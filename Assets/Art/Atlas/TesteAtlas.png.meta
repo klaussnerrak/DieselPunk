@@ -116,8 +116,8 @@ TextureImporter:
       name: TesteAtlas_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 920
+        x: 1
+        y: 918
         width: 160
         height: 160
       alignment: 0
