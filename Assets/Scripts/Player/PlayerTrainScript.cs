@@ -88,15 +88,14 @@ public class PlayerTrainScript : MonoBehaviour
 
     private void Waiting()
     {
-        // if(playerStart == true || TimerScript.instance.timeCounter<=1)
-        if (playerStart == true)
+         if(playerStart == true || TimerScript.instance.timeCounter<=1)
+       // if (playerStart == true)
         {
             state = StateMachineType.Moving;
             playerStart = false;
             //GridManager.instance.AddToTrack(mapEnd);
-            GridManager.instance.UpdateTrack(); 
-                       
-            // TimerScript.instance.StartPlayCounter();   
+            GridManager.instance.UpdateTrack();                        
+            TimerScript.instance.StartPlayCounter();   
         }
 
     }
@@ -109,9 +108,14 @@ public class PlayerTrainScript : MonoBehaviour
         if (trackIndex >= GridManager.instance.Track.Count){
             if(GridManager.instance.Track[trackIndex-1] == mapEnd){
                 state = StateMachineType.Finish;
+                TimerScript.instance.pauseTimer = true;                
+            }
+            else if(TimerScript.instance.timeCounter<1)
+            {
+                state = StateMachineType.Finish;
                 TimerScript.instance.pauseTimer = true;
-                
-            }            
+            } 
+
             return;
         }
 
@@ -125,25 +129,15 @@ public class PlayerTrainScript : MonoBehaviour
             target.position,
             speed * Time.deltaTime
         );
+        
         float distance = Vector3.Distance(transform.position, target.position);
-        //Debug.Log(distance);
+        
         RotateTrain();
 
         if (distance < 0.1f)
-        {
-            //transform.position = target.position;
+        {            
             trackIndex++;
-        }
-   
-        
-        //
-        // }
-        // else 
-        // {
-        //     state = StateMachineType.Finish;
-        //     TimerScript.instance.pauseTimer = true;
-        // }
-        
+        } 
     }
 
     private void Finish()
