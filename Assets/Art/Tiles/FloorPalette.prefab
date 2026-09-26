@@ -56,10 +56,10 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 9db6d421d3e5b7c47b45fcade539f40e, type: 2}
+    m_Data: {fileID: 11400000, guid: cf03e76a3eb936642ba21a37ea74e78e, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: -1952547086, guid: e963dea6fe379104e95c632bc2fcbd4d, type: 3}
+    m_Data: {fileID: -616232147, guid: 88705dcc20ddc2544af5c1a2fa8d878f, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -219,6 +219,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapEnd
       objectReference: {fileID: 0}
+    - target: {fileID: 1160567166693149856, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076986938671628874, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076986938671628874, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5
@@ -269,7 +281,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
   m_PrefabInstance: {fileID: 9219105705363331670}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &517869083971328216
+--- !u!114 &2144700484737048284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
