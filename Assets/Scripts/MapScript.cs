@@ -4,19 +4,42 @@ using UnityEngine.UI;
 
 public class MapScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public static MapScript instance;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Awake()
+    {        
+        instance = this;
     }
-
+    
     public void StartLevel1()
+    {
+        //SceneManager.LoadScene("Scenes/StartScene"); 
+        SceneManager.LoadScene("Scenes/Level1");             
+        AudioManager.instance.PlayMusic("PlayMusic");
+        
+    }
+    public void StartLevel2()
+    {
+        //SceneManager.LoadScene("Scenes/StartScene"); 
+        SceneManager.LoadScene("Scenes/HudScene");             
+        AudioManager.instance.PlayMusic("PlayMusic");
+        
+    }
+    public void StartLevel3()
+    {
+        //SceneManager.LoadScene("Scenes/StartScene"); 
+        SceneManager.LoadScene("Scenes/HudScene");             
+        AudioManager.instance.PlayMusic("PlayMusic");
+        
+    }
+    public void StartLevel4()
+    {
+        //SceneManager.LoadScene("Scenes/StartScene"); 
+        SceneManager.LoadScene("Scenes/HudScene");             
+        AudioManager.instance.PlayMusic("PlayMusic");
+        
+    }
+    public void StartLevel5()
     {
         //SceneManager.LoadScene("Scenes/StartScene"); 
         SceneManager.LoadScene("Scenes/HudScene");             

@@ -45,13 +45,13 @@ public class GameController : MonoBehaviour
     }
     public void RestartScene()
     {
-        SceneManager.LoadScene("Scenes/HudScene");
+        SceneManager.LoadScene("Scenes/Level1");
     }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-        Debug.Log("Quit");
-    }
+        public void ExitGame()
+        {
+            Application.Quit();
+            Debug.Log("Quit");
+        }
 }
     
