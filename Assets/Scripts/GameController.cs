@@ -43,5 +43,15 @@ public class GameController : MonoBehaviour
         AudioManager.instance.PlayMusic("MapMusic");
         
     }
+    public void RestartScene()
+    {
+        SceneManager.LoadScene("Scenes/HudScene");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
+    }
 }
     

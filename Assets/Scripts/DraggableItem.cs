@@ -1,5 +1,5 @@
 using NavMeshPlus.Components;
-using UnityEditor.ShaderGraph.Serialization;
+//using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
@@ -16,7 +16,7 @@ public class DraggableItem : TrainTrack
    // public PlayerTrainScript playerScript;
     private int trackIndex;
 
-    private bool trackColider = false;
+   // private bool trackColider = false;
 
     void Start()
     {
