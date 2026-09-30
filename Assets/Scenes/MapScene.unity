@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935094783}
         m_TargetAssemblyTypeName: MapScript, Assembly-CSharp
-        m_MethodName: StartLevel1
+        m_MethodName: StartLevel4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1238,7 +1238,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935094783}
         m_TargetAssemblyTypeName: MapScript, Assembly-CSharp
-        m_MethodName: StartLevel1
+        m_MethodName: StartLevel5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1433,7 +1433,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1872004759}
   - component: {fileID: 1872004758}
-  - component: {fileID: 1872004757}
   - component: {fileID: 1872004760}
   m_Layer: 0
   m_Name: Main Camera
@@ -1442,14 +1441,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1872004757
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872004756}
-  m_Enabled: 1
 --- !u!20 &1872004758
 Camera:
   m_ObjectHideFlags: 0
@@ -1681,6 +1672,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd5be1faba88aa4bbfbacd63b4c5ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  Level2Button: {fileID: 2022811077}
+  Level3Button: {fileID: 1945196075}
+  Level4Button: {fileID: 0}
+  Level5Button: {fileID: 0}
 --- !u!1 &1936970888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,7 +1900,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935094783}
         m_TargetAssemblyTypeName: MapScript, Assembly-CSharp
-        m_MethodName: StartLevel1
+        m_MethodName: StartLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2038,7 +2033,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935094783}
         m_TargetAssemblyTypeName: MapScript, Assembly-CSharp
-        m_MethodName: StartLevel1
+        m_MethodName: StartLevel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

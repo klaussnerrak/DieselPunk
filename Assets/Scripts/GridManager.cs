@@ -45,7 +45,35 @@ public class GridManager : MonoBehaviour
            
         }
          //Debug.Log(Track.Count);
-    }   
+    } 
+
+    public void UpdateMovingTrack(
+        
+    )
+    {
+       //Track.Clear();
+       //Track.Add(TrackTiles[0]);
+        
+        //Debug.Log(TrackTiles.Count);
+        for(int i = 0; i<Track.Count; i++)
+        {
+            TrainTrack currentTrack = Track[i];
+            for(int j = 0; j<TrackTiles.Count; j++)
+            {
+                TrainTrack nextTrack = TrackTiles[j];
+                if(nextTrack!=currentTrack){
+                    if(IsConnected(currentTrack, nextTrack))
+                    {
+                    //Debug.Log(TrackTiles[j].transform.position);
+                        Track.Add(TrackTiles[j]);                   
+                    
+                    }
+                }               
+            }
+           
+        }
+         //Debug.Log(Track.Count);
+    }     
 
     private bool IsConnected(TrainTrack track1, TrainTrack track2)
     {       
@@ -123,7 +151,7 @@ public class GridManager : MonoBehaviour
 
         //Right check********************************************************************************************                   
         }else if(track1.right != null && track1.rightConnected==false){   
-            Debug.Log(track1 + "teste");         
+                  
             if(track2.up != null 
                 && track2.upConnected == false
                 && Vector3.Distance(track1.right.transform.position,track2.up.transform.position)<0.1)

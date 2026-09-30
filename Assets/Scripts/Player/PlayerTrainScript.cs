@@ -55,26 +55,14 @@ public class PlayerTrainScript : MonoBehaviour
     {
         GameObject gridManagerObject = GameObject.Find("Grid");
        
-
         if(gridManagerObject != null)
         {
-            //gridManager = gridManagerObject.GetComponent<GridManager>();
-            //GridManager.instance.AddToTrack(firstTrack);
-            //Quaternion rotation = Quaternion.Euler(0, 0, 0);
-            //firstTrack.transform.position = transform.position;
-            //GridManager.instance.AddToTrack(firstTrack);
-            //Instantiate(firstTrack, transform.position, rotation); 
             GridManager.instance.UpdateTrackStack();
-                        
-
-            }
-
-            //Debug.Log(firstTrack.transform.position);
-
         }
 
+    }
 
-    
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -89,7 +77,7 @@ public class PlayerTrainScript : MonoBehaviour
     private void Waiting()
     {
          if(playerStart == true || TimerScript.instance.timeCounter<=1)
-       // if (playerStart == true)
+     
         {
             state = StateMachineType.Moving;
             playerStart = false;
@@ -106,14 +94,13 @@ public class PlayerTrainScript : MonoBehaviour
             
         
         if (trackIndex >= GridManager.instance.Track.Count){
-            if(GridManager.instance.Track[trackIndex-1] == mapEnd){
+            if(GridManager.instance.Track[trackIndex-1] == mapEnd || TimerScript.instance.timeCounter<1){
                 state = StateMachineType.Finish;
                 TimerScript.instance.pauseTimer = true;                
             }
-            else if(TimerScript.instance.timeCounter<1)
+            else if(GridManager.instance.Track[trackIndex-1] != mapEnd)
             {
-                state = StateMachineType.Finish;
-                TimerScript.instance.pauseTimer = true;
+                GridManager.instance.UpdateMovingTrack();
             } 
 
             return;
@@ -144,7 +131,7 @@ public class PlayerTrainScript : MonoBehaviour
     {
             if(TimerScript.instance.timeCounter>1)
             {
-                 GameController.instance.WinCondition();
+                GameController.instance.WinCondition();
                 state = StateMachineType.Waiting;
             }
             else 

@@ -16,7 +16,7 @@ public class DraggableItem : TrainTrack
    // public PlayerTrainScript playerScript;
     private int trackIndex;
 
-   // private bool trackColider = false;
+    
 
     void Start()
     {
@@ -92,7 +92,8 @@ public class DraggableItem : TrainTrack
         {
             collider.enabled = false;
             collider.enabled = true;
-        }
+        }        
+ 
     }
 
     private Vector3 GetMouseWorldPosition()
@@ -152,7 +153,7 @@ public class DraggableItem : TrainTrack
                 
                 continue;
             }
-            if (hit.CompareTag("TrainTrackPiece"))
+            if (hit.CompareTag("TrainTrackPiece") || hit.CompareTag("Obstacle"))
             {
                 return false;
             }        
@@ -160,4 +161,6 @@ public class DraggableItem : TrainTrack
 
          return true;
     }
+
+    
 }

@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private  GameObject winPanel;
     [SerializeField] private  GameObject losePanel;
     [SerializeField] private  GameObject gamePanel;
+    public static int levelIndex = 1;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -26,7 +27,7 @@ public class GameController : MonoBehaviour
     {        
         gamePanel.SetActive(false);
         winPanel.SetActive(true);
-        AudioManager.instance.PlaySFX("Supla");
+        AudioManager.instance.PlaySFX("Supla");        
     }
 
     public void LoseCondition()
@@ -38,20 +39,21 @@ public class GameController : MonoBehaviour
 
     public void BackToMapScene()
     {
-        Debug.Log("Go");
+        levelIndex++;            
         SceneManager.LoadScene("Scenes/MapScene");        
         AudioManager.instance.PlayMusic("MapMusic");
-        
+         
+               
     }
     public void RestartScene()
     {
         SceneManager.LoadScene("Scenes/Level1");
     }
 
-        public void ExitGame()
-        {
-            Application.Quit();
-            Debug.Log("Quit");
-        }
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
+    }
 }
     
