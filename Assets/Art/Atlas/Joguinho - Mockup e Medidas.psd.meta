@@ -667,9 +667,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 60
-        y: 220
-        width: 160
-        height: 160
+        y: 60
+        width: 320
+        height: 320
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -680,28 +680,6 @@ TextureImporter:
       bones: []
       spriteID: 3b180274427194a49b87c8a601c26d3f
       internalID: 8732998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Joguinho - Mockup e Medidas_45
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 220
-        width: 160
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 890c437619343c940adab9fb461a6349
-      internalID: -1312860843
       vertices: []
       indices: 
       edges: []
@@ -768,50 +746,6 @@ TextureImporter:
       bones: []
       spriteID: 449ebf585d2838147b5442df7f9a5887
       internalID: 1132315045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Joguinho - Mockup e Medidas_55
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 60
-        width: 160
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3019bd2aa15883c4885c8d6ea20a12c5
-      internalID: -544535305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Joguinho - Mockup e Medidas_56
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 60
-        width: 160
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e8955e5563262b44903cfaf04604d6c
-      internalID: 1646815259
       vertices: []
       indices: 
       edges: []
