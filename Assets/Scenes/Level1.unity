@@ -3759,6 +3759,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1978900142624530392, guid: 07a0f48549e1ebd428bc77932c822c1a, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978900142624530392, guid: 07a0f48549e1ebd428bc77932c822c1a, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978900142624530392, guid: 07a0f48549e1ebd428bc77932c822c1a, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978900142624530392, guid: 07a0f48549e1ebd428bc77932c822c1a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 4783782241372137230, guid: c612a5de3e788ca4f97621fda7a677d4, type: 3}
@@ -4176,8 +4188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55874ddaa818d344484ee4b4c194d508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  timeCounter: 25
-  playCounter: 15
+  timeCounter: 60
+  playCounter: 60
   timerText: {fileID: 2043305962}
   pauseTimer: 0
 --- !u!1 &2123598530

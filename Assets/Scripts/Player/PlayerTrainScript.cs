@@ -122,7 +122,8 @@ public class PlayerTrainScript : MonoBehaviour
         RotateTrain();
 
         if (distance < 0.1f)
-        {            
+        {     
+            GridManager.instance.Track[trackIndex].TrackLocked = true;     
             trackIndex++;
         } 
     }
@@ -141,12 +142,7 @@ public class PlayerTrainScript : MonoBehaviour
 
             } 
     }
-
-    /*void ReadPivotPoints()
-    {
-        Debug.Log("pivotPoints size: " + pivotPoints.Count);
-    }*/
-
+    
     private void RotateTrain()
     {
         if (trackIndex >= GridManager.instance.Track.Count)
@@ -165,8 +161,7 @@ public class PlayerTrainScript : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle + spriteAngleOffset);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation,
             rotationSpeed * Time.deltaTime);
-
-        //Debug.Log(angle);    
+        
     }
 
     

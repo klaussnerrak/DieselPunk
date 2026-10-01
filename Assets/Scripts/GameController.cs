@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour
     public void RestartScene()
     {
         SceneManager.LoadScene("Scenes/Level1");
+        levelIndex = 1;
     }
 
     public void ExitGame()

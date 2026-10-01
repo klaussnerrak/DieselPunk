@@ -19,6 +19,8 @@ public class TrainTrack : MonoBehaviour
     public bool downConnected = false;
     public bool rightConnected = false;
     public bool leftConnected = false;
+
+    public bool TrackLocked = false;
        
 
 
