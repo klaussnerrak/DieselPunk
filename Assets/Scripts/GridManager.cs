@@ -45,9 +45,70 @@ public class GridManager : MonoBehaviour
            
         }
          //Debug.Log(Track.Count);
-    }   
+    } 
 
-    private bool IsConnected(TrainTrack track1, TrainTrack track2)
+    public void UpdateMovingTrack(
+        
+    )
+    {
+       //Track.Clear();
+       //Track.Add(TrackTiles[0]);
+        
+        //Debug.Log(TrackTiles.Count);
+        for(int i = 0; i<Track.Count; i++)
+        {
+            TrainTrack currentTrack = Track[i];
+            for(int j = 0; j<TrackTiles.Count; j++)
+            {
+                TrainTrack nextTrack = TrackTiles[j];
+                if(nextTrack!=currentTrack){
+                    if(IsConnected(currentTrack, nextTrack))
+                    {                    
+                        Track.Add(TrackTiles[j]);                
+                    
+                    }
+                }               
+            }           
+        }         
+    }
+
+    public void updateRotation(TrainTrack track)
+    {        
+        if(Track !=null)
+        {
+            if(track == Track[Track.Count-1])
+            {
+                if(track.leftConnected)
+                {
+                    track.leftConnected = false;
+                    Track[Track.Count-2].rightConnected = false;               
+
+                }else if(track.upConnected)
+                {
+                    track.upConnected = false;
+                    Track[Track.Count-2].downConnected = false;
+
+                }else if(track.downConnected)
+                {
+                    track.downConnected = false;
+                    Track[Track.Count-2].upConnected = false;
+
+                }else if(track.rightConnected)
+                {
+                    track.rightConnected = false;
+                    Track[Track.Count-2].leftConnected = false;
+                }
+
+                IsConnected(Track[Track.Count-2], track);
+
+            }
+
+
+        }
+        
+    }     
+
+    public bool IsConnected(TrainTrack track1, TrainTrack track2)
     {       
         //Up check********************************************************************************************                   
     
@@ -123,7 +184,7 @@ public class GridManager : MonoBehaviour
 
         //Right check********************************************************************************************                   
         }else if(track1.right != null && track1.rightConnected==false){   
-            Debug.Log(track1 + "teste");         
+                  
             if(track2.up != null 
                 && track2.upConnected == false
                 && Vector3.Distance(track1.right.transform.position,track2.up.transform.position)<0.1)
