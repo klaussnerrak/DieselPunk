@@ -54,7 +54,7 @@ public class DraggableItem : TrainTrack
 
     void Update()
     {
-        if (isDragging)
+        if (isDragging && TrackLocked == false)
         {
             Vector3 mousePosition = GetMouseWorldPosition();
             transform.position = mousePosition + offset;
@@ -86,14 +86,19 @@ public class DraggableItem : TrainTrack
 
     private void RotateTrack()
     {
-        transform.Rotate(0f, 0f, 90f);
-
-        if (TryGetComponent<BoxCollider2D>(out var collider))
+        if(!TrackLocked)
         {
-            collider.enabled = false;
-            collider.enabled = true;
-        }        
- 
+            transform.Rotate(0f, 0f, 90f);
+
+            if (TryGetComponent<BoxCollider2D>(out var collider))
+            {
+                collider.enabled = false;
+                collider.enabled = true;
+            }        
+            GridManager.instance.updateRotation(this);
+
+        }
+        
     }
 
     private Vector3 GetMouseWorldPosition()
@@ -109,7 +114,7 @@ public class DraggableItem : TrainTrack
 
         Vector3Int cellPosition = targetGrid.WorldToCell(transform.position);
 
-        if (IsValidPlace(cellPosition))
+        if (IsValidPlace(cellPosition)&& TrackLocked == false)
 
         {
             Vector3 snappedPosition = targetGrid.CellToWorld(cellPosition);            
@@ -132,7 +137,7 @@ public class DraggableItem : TrainTrack
 
     private bool IsValidPlace(Vector3Int cellPosition)
     {
-        if (!tilemap.HasTile(cellPosition))
+        if (!tilemap.HasTile(cellPosition) )
         {
             
             return false;
@@ -162,5 +167,12 @@ public class DraggableItem : TrainTrack
          return true;
     }
 
+   /* private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.name == "Train")
+        {
+          TrackLocked = true;
+        }
+    }*/
     
 }

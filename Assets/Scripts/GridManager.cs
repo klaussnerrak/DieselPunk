@@ -63,19 +63,52 @@ public class GridManager : MonoBehaviour
                 TrainTrack nextTrack = TrackTiles[j];
                 if(nextTrack!=currentTrack){
                     if(IsConnected(currentTrack, nextTrack))
-                    {
-                    //Debug.Log(TrackTiles[j].transform.position);
-                        Track.Add(TrackTiles[j]);                   
+                    {                    
+                        Track.Add(TrackTiles[j]);                
                     
                     }
                 }               
+            }           
+        }         
+    }
+
+    public void updateRotation(TrainTrack track)
+    {        
+        if(Track !=null)
+        {
+            if(track == Track[Track.Count-1])
+            {
+                if(track.leftConnected)
+                {
+                    track.leftConnected = false;
+                    Track[Track.Count-2].rightConnected = false;               
+
+                }else if(track.upConnected)
+                {
+                    track.upConnected = false;
+                    Track[Track.Count-2].downConnected = false;
+
+                }else if(track.downConnected)
+                {
+                    track.downConnected = false;
+                    Track[Track.Count-2].upConnected = false;
+
+                }else if(track.rightConnected)
+                {
+                    track.rightConnected = false;
+                    Track[Track.Count-2].leftConnected = false;
+                }
+
+                IsConnected(Track[Track.Count-2], track);
+
             }
-           
+
+
         }
-         //Debug.Log(Track.Count);
+        
     }     
 
-    private bool IsConnected(TrainTrack track1, TrainTrack track2)
+    public bool IsConnected(TrainTrack track1, TrainTrack track2)
     {       
         //Up check********************************************************************************************                   
     

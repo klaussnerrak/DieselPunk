@@ -27,5 +27,12 @@ public class TrainTrackShop : MonoBehaviour
         );
     }
 
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Teste");
+        }
+    }
 
 }
