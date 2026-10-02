@@ -48,7 +48,7 @@ public class TrainTrackShop : MonoBehaviour
     private void UpdateTrackShop()
     {
         ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel - selectedTrack.dieselCost;
-        ShopManager.instance.setShopAmount();
+        ShopManager.instance.SetShopAmount();
     }
 
 }

@@ -33,8 +33,14 @@ public class ShopManager : MonoBehaviour
 
     }
 
-    public void setShopAmount()
+    public void SetShopAmount()
     {
+        playerDieselText.SetText($"Diesel \n{playerDiesel}");
+    }
+
+      public void SellTrack(TrainTrack selectedTrainTrack)
+    {
+        playerDiesel += selectedTrainTrack.dieselCost;  
         playerDieselText.SetText($"Diesel \n{playerDiesel}");
     }
 }

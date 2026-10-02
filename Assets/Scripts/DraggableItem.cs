@@ -117,7 +117,6 @@ public class DraggableItem : TrainTrack
         Vector3Int cellPosition = targetGrid.WorldToCell(transform.position);
 
         if (IsValidPlace(cellPosition) && TrackLocked == false)
-
         {
             Vector3 snappedPosition = targetGrid.CellToWorld(cellPosition);
 
@@ -145,6 +144,10 @@ public class DraggableItem : TrainTrack
             if (hit.CompareTag("DeleteTrackArea"))
             {
                 Debug.Log("Delete track area detected");
+                GridManager.instance.TrackTiles.Remove(this);
+                GridManager.instance.Track.Remove(this);
+                ShopManager.instance.SellTrack(this);
+                Destroy(gameObject);
                 break;
             }
         }
