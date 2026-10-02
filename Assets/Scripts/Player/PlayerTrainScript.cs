@@ -123,7 +123,7 @@ public class PlayerTrainScript : MonoBehaviour
 
         if (distance < 0.1f)
         {     
-            GridManager.instance.Track[trackIndex].TrackLocked = true;     
+            if(trackIndex>0) GridManager.instance.Track[trackIndex-1].TrackLocked = true;     
             trackIndex++;
         } 
     }
