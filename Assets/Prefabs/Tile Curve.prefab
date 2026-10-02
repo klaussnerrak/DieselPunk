@@ -141,11 +141,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainTrack
   type: 1
-  north: 0
-  south: 0
-  east: 0
-  west: 0
-  dieselCost: 0
+  dieselCost: 15
+  up: {fileID: 0}
+  down: {fileID: 0}
+  right: {fileID: 0}
+  left: {fileID: 0}
+  upConnected: 0
+  downConnected: 0
+  rightConnected: 0
+  leftConnected: 0
+  TrackLocked: 0
 --- !u!114 &6018977009089834554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,14 +164,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   type: 1
-  north: 0
-  south: 0
-  east: 0
-  west: 0
   dieselCost: 15
-  gridManager: {fileID: 0}
+  up: {fileID: 0}
+  down: {fileID: 0}
+  right: {fileID: 0}
+  left: {fileID: 0}
+  upConnected: 0
+  downConnected: 0
+  rightConnected: 0
+  leftConnected: 0
+  TrackLocked: 0
   isTrainMoving: 0
-  playerScript: {fileID: 0}
 --- !u!61 &-3040097143995528368
 BoxCollider2D:
   m_ObjectHideFlags: 0

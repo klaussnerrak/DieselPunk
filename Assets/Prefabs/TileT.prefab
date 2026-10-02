@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: -7976010913371025201}
   - component: {fileID: 2913382758349264448}
   m_Layer: 0
-  m_Name: Tile T
+  m_Name: TileT
   m_TagString: TrainTrackPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,11 +174,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainTrack
   type: 2
-  north: 0
-  south: 0
-  east: 0
-  west: 0
-  dieselCost: 0
+  dieselCost: 20
+  up: {fileID: 0}
+  down: {fileID: 0}
+  right: {fileID: 0}
+  left: {fileID: 0}
+  upConnected: 0
+  downConnected: 0
+  rightConnected: 0
+  leftConnected: 0
 --- !u!114 &-93929215073774756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,14 +196,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   type: 2
-  north: 0
-  south: 0
-  east: 0
-  west: 0
   dieselCost: 20
-  gridManager: {fileID: 0}
+  up: {fileID: 0}
+  down: {fileID: 0}
+  right: {fileID: 0}
+  left: {fileID: 0}
+  upConnected: 0
+  downConnected: 0
+  rightConnected: 0
+  leftConnected: 0
   isTrainMoving: 0
-  playerScript: {fileID: 0}
 --- !u!61 &-7976010913371025201
 BoxCollider2D:
   m_ObjectHideFlags: 0

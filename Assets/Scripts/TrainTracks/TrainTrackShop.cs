@@ -5,7 +5,6 @@ public class TrainTrackShop : MonoBehaviour
 {
     private TrainTrack selectedTrack;
     [SerializeField] private Transform shopButton;
-    [SerializeField] private int playerDiesel = 100;
 
     private Camera mainCamera;
     void Start()
@@ -20,25 +19,29 @@ public class TrainTrackShop : MonoBehaviour
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
 
-        selectedTrack = GameObject.FindObjectOfType<TrainTrack>();
+        if (selectedTile != null)
+        {
+            selectedTrack = selectedTile.GetComponent<TrainTrack>();
+        }
 
-        playerDiesel -= selectedTrack.dieselCost;
-        Debug.Log("selected tile cost: " + selectedTrack.dieselCost);
-        // if(selectedTile.tileCost)
+        if (selectedTrack != null)
+        {
+            // Agora o UpdateTrackShop vai ler o preço correto do Prefab!
+            UpdateTrackShop();
 
-        Instantiate(
-                    selectedTile,
-                    shopButton.position,
-                    Quaternion.identity
-                );
+            Instantiate(
+                selectedTile,
+                shopButton.position,
+                Quaternion.identity
+            );
+        } 
+
     }
 
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Debug.Log("Teste");
-        }
+    private void UpdateTrackShop()
+    { 
+        ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel - selectedTrack.dieselCost;
+        ShopManager.instance.setShopAmount();  
     }
 
 }
