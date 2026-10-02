@@ -73,8 +73,10 @@ public class DraggableItem : TrainTrack
     private void OnMouseUp()
     {
         isDragging = false;
-        CheckTrackDeleteArea();
-        SnapTileToGrid();
+        if (!CheckTrackDeleteArea())
+        {
+            SnapTileToGrid();
+        }
 
     }
 
@@ -136,7 +138,7 @@ public class DraggableItem : TrainTrack
         }
     }
 
-    private void CheckTrackDeleteArea()
+    private bool CheckTrackDeleteArea()
     {
         Vector3 mousePosition = GetMouseWorldPosition();
         foreach (Collider2D hit in Physics2D.OverlapPointAll(new Vector2(mousePosition.x, mousePosition.y)))
@@ -148,9 +150,10 @@ public class DraggableItem : TrainTrack
                 GridManager.instance.Track.Remove(this);
                 ShopManager.instance.SellTrack(this);
                 Destroy(gameObject);
-                break;
+                return true; 
             }
         }
+        return false;
     }
 
     private bool IsValidPlace(Vector3Int cellPosition)
