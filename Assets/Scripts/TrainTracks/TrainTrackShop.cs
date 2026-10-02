@@ -24,24 +24,31 @@ public class TrainTrackShop : MonoBehaviour
             selectedTrack = selectedTile.GetComponent<TrainTrack>();
         }
 
-        if (selectedTrack != null)
+        if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
         {
-            // Agora o UpdateTrackShop vai ler o preço correto do Prefab!
-            UpdateTrackShop();
+            if (selectedTrack != null)
+            {
+                // Agora o UpdateTrackShop vai ler o preço correto do Prefab!
+                UpdateTrackShop();
 
-            Instantiate(
-                selectedTile,
-                shopButton.position,
-                Quaternion.identity
-            );
-        } 
+                Instantiate(
+                    selectedTile,
+                    shopButton.position,
+                    Quaternion.identity
+                );
+            }
+        }
+        else
+        {
+            Debug.Log("num vai criar prefab coisa nenhuma");
+        }
 
     }
 
     private void UpdateTrackShop()
-    { 
+    {
         ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel - selectedTrack.dieselCost;
-        ShopManager.instance.setShopAmount();  
+        ShopManager.instance.setShopAmount();
     }
 
 }

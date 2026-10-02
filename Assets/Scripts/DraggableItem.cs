@@ -13,16 +13,16 @@ public class DraggableItem : TrainTrack
     private Grid targetGrid;
     private Tilemap tilemap;
     private Vector3 itemLastPosition;
-   // public PlayerTrainScript playerScript;
+    // public PlayerTrainScript playerScript;
     private int trackIndex;
 
-    
+
 
     void Start()
     {
         targetGrid = FindFirstObjectByType<Grid>();
         //playerScript = FindFirstObjectByType<PlayerTrainScript>();
-        
+
         GameObject tilemapObject = GameObject.Find("Tilemap");
         GameObject gridManagerObject = GameObject.Find("Grid");
 
@@ -43,7 +43,7 @@ public class DraggableItem : TrainTrack
         {
             Debug.LogError("GridManager not found");
         }*/
-        
+
 
         itemLastPosition = transform.position;
 
@@ -58,7 +58,7 @@ public class DraggableItem : TrainTrack
         {
             Vector3 mousePosition = GetMouseWorldPosition();
             transform.position = mousePosition + offset;
-           
+
         }
     }
 
@@ -73,7 +73,9 @@ public class DraggableItem : TrainTrack
     private void OnMouseUp()
     {
         isDragging = false;
+        CheckTrackDeleteArea();
         SnapTileToGrid();
+
     }
 
     private void OnMouseOver()
@@ -86,7 +88,7 @@ public class DraggableItem : TrainTrack
 
     private void RotateTrack()
     {
-        if(!TrackLocked)
+        if (!TrackLocked)
         {
             transform.Rotate(0f, 0f, 90f);
 
@@ -94,11 +96,11 @@ public class DraggableItem : TrainTrack
             {
                 collider.enabled = false;
                 collider.enabled = true;
-            }        
+            }
             GridManager.instance.updateRotation(this);
 
         }
-        
+
     }
 
     private Vector3 GetMouseWorldPosition()
@@ -114,10 +116,10 @@ public class DraggableItem : TrainTrack
 
         Vector3Int cellPosition = targetGrid.WorldToCell(transform.position);
 
-        if (IsValidPlace(cellPosition)&& TrackLocked == false)
+        if (IsValidPlace(cellPosition) && TrackLocked == false)
 
         {
-            Vector3 snappedPosition = targetGrid.CellToWorld(cellPosition);            
+            Vector3 snappedPosition = targetGrid.CellToWorld(cellPosition);
 
             snappedPosition.x += targetGrid.cellSize.x / 2;
             snappedPosition.y += targetGrid.cellSize.y / 2;
@@ -125,9 +127,9 @@ public class DraggableItem : TrainTrack
 
             transform.position = snappedPosition;
             itemLastPosition = transform.position;
-           
+
             GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
-           
+
         }
         else
         {
@@ -135,11 +137,24 @@ public class DraggableItem : TrainTrack
         }
     }
 
+    private void CheckTrackDeleteArea()
+    {
+        Vector3 mousePosition = GetMouseWorldPosition();
+        foreach (Collider2D hit in Physics2D.OverlapPointAll(new Vector2(mousePosition.x, mousePosition.y)))
+        {
+            if (hit.CompareTag("DeleteTrackArea"))
+            {
+                Debug.Log("Delete track area detected");
+                break;
+            }
+        }
+    }
+
     private bool IsValidPlace(Vector3Int cellPosition)
     {
-        if (!tilemap.HasTile(cellPosition) )
+        if (!tilemap.HasTile(cellPosition))
         {
-            
+
             return false;
         }
 
@@ -152,27 +167,27 @@ public class DraggableItem : TrainTrack
 
         foreach (Collider2D hit in hits)
         {
-            
+
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
-                
+
                 continue;
             }
             if (hit.CompareTag("TrainTrackPiece") || hit.CompareTag("Obstacle"))
             {
                 return false;
-            }        
+            }
         }
 
-         return true;
+        return true;
     }
 
-   /* private void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.gameObject.name == "Train")
-        {
-          TrackLocked = true;
-        }
-    }*/
-    
+    /* private void OnCollisionEnter2D(Collision2D col)
+     {
+         if(col.gameObject.name == "Train")
+         {
+           TrackLocked = true;
+         }
+     }*/
+
 }
