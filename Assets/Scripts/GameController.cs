@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private  GameObject winPanel;
     [SerializeField] private  GameObject losePanel;
     [SerializeField] private  GameObject gamePanel;
+    [SerializeField] private TMP_Text playerDieselText;
+
     public static int levelIndex = 1;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,10 +21,17 @@ public class GameController : MonoBehaviour
         instance = this;
     }
 
-    void Start()
+    void OnEnable()
     {
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    
+   
     
     public void WinCondition()
     {        
@@ -56,6 +66,14 @@ public class GameController : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit");
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Loaded scene: " + scene.name);
+        //playerDieselText.SetText($"Diesel \n{ShopManager.instance.playerDiesel}");
+        ShopManager.instance.playerDieselText = playerDieselText;
+        ShopManager.instance.SetShopAmount();
     }
 }
     

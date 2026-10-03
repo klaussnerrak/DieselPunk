@@ -3,6 +3,7 @@ using UnityEngine.AI;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
+
 public class PlayerTrainScript : MonoBehaviour
 {
     public TrainTrack mapEnd;
@@ -40,12 +41,7 @@ public class PlayerTrainScript : MonoBehaviour
         Debug.Log("CLICKED");
         playerStart = true;
         //Moving();
-    }
-
-    void Update()
-    {
-        
-    }
+    }   
 
     void Start()
     {
@@ -159,6 +155,7 @@ public class PlayerTrainScript : MonoBehaviour
             rotationSpeed * Time.deltaTime);
         
     }
+    
 
     
 }
