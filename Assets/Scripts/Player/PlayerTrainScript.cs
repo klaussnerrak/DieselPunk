@@ -38,10 +38,6 @@ public class PlayerTrainScript : MonoBehaviour
     public void StartPath()
     {
         Debug.Log("CLICKED");
-        //pivotPoints.Add(mapEnd.transform);
-
-       // Debug.Log(pivotPoints);
-        // agent.SetDestination(pivotPoints[pivotIndex].position);
         playerStart = true;
         //Moving();
     }

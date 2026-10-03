@@ -30,6 +30,7 @@ public class MapScript : MonoBehaviour
         //SceneManager.LoadScene("Scenes/StartScene"); 
         SceneManager.LoadScene("Scenes/Level2");             
         AudioManager.instance.PlayMusic("PlayMusic");
+        //ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + 150;     
         
     }
     public void StartLevel3()

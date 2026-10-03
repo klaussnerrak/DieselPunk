@@ -149,7 +149,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1156648359, guid: 88705dcc20ddc2544af5c1a2fa8d878f, type: 3}
+  m_Sprite: {fileID: -977363581, guid: e963dea6fe379104e95c632bc2fcbd4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -198,8 +198,8 @@ MonoBehaviour:
   dieselCost: 10
   up: {fileID: 0}
   down: {fileID: 0}
-  right: {fileID: 0}
-  left: {fileID: 0}
+  right: {fileID: 8333798846871764192}
+  left: {fileID: 5798509069182026803}
   upConnected: 0
   downConnected: 0
   rightConnected: 0

@@ -143,13 +143,14 @@ public class DraggableItem : TrainTrack
         Vector3 mousePosition = GetMouseWorldPosition();
         foreach (Collider2D hit in Physics2D.OverlapPointAll(new Vector2(mousePosition.x, mousePosition.y)))
         {
-            if (hit.CompareTag("DeleteTrackArea"))
+            if (hit.CompareTag("DeleteTrackArea") && TrackLocked==false)
             {
                 Debug.Log("Delete track area detected");
                 GridManager.instance.TrackTiles.Remove(this);
                 GridManager.instance.Track.Remove(this);
                 ShopManager.instance.SellTrack(this);
                 Destroy(gameObject);
+                
                 return true; 
             }
         }

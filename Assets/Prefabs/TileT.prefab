@@ -151,7 +151,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 97757510, guid: 88705dcc20ddc2544af5c1a2fa8d878f, type: 3}
+  m_Sprite: {fileID: -9189023498879117399, guid: b4cb6f0111580004691451934875c9a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,6 +183,7 @@ MonoBehaviour:
   downConnected: 0
   rightConnected: 0
   leftConnected: 0
+  TrackLocked: 0
 --- !u!114 &-93929215073774756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,14 +198,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   type: 2
   dieselCost: 20
-  up: {fileID: 0}
-  down: {fileID: 0}
-  right: {fileID: 0}
-  left: {fileID: 0}
+  up: {fileID: 5264246288039226443}
+  down: {fileID: 671806085087790393}
+  right: {fileID: 2983844055895759873}
+  left: {fileID: 2714442133320104218}
   upConnected: 0
   downConnected: 0
   rightConnected: 0
   leftConnected: 0
+  TrackLocked: 0
   isTrainMoving: 0
 --- !u!61 &-7976010913371025201
 BoxCollider2D:
@@ -242,7 +244,7 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.0125, y: 0.0125, z: 0.0125, w: 0.0125}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}

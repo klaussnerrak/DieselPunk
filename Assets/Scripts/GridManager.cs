@@ -74,7 +74,7 @@ public class GridManager : MonoBehaviour
 
     public void updateRotation(TrainTrack track)
     {        
-        if(Track !=null)
+        if(Track !=null && Track.Count >=1)
         {
             if(track == Track[Track.Count-1])
             {

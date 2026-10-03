@@ -13,7 +13,7 @@ public class ShopManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            playerDiesel = 100;
+            //playerDiesel = 100;
             playerDieselText.SetText($"Diesel \n{playerDiesel}");
         }
     }
@@ -40,7 +40,7 @@ public class ShopManager : MonoBehaviour
 
       public void SellTrack(TrainTrack selectedTrainTrack)
     {
-        playerDiesel += selectedTrainTrack.dieselCost;  
+        playerDiesel += (selectedTrainTrack.dieselCost / 2);  
         playerDieselText.SetText($"Diesel \n{playerDiesel}");
     }
 }
