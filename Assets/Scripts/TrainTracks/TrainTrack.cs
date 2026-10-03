@@ -9,7 +9,8 @@ public enum TrackType
 
 public class TrainTrack : MonoBehaviour
 {
-    public TrackType type;
+    public TrackType type; 
+    public int dieselCost;
     public GameObject up;
     public GameObject down;
     public GameObject right;
