@@ -37,7 +37,7 @@ public class TimerScript : MonoBehaviour
         timeCounter = playCounter;
         if(pauseTimer==false)
         {          
-            AudioManager.instance.PlaySFX("TrainHorn");
+            // AudioManager.instance.PlaySFX("TrainHorn");
         }  
     }
 

@@ -30,6 +30,7 @@ public class MapScript : MonoBehaviour
         //SceneManager.LoadScene("Scenes/StartScene"); 
         SceneManager.LoadScene("Scenes/Level2");             
         AudioManager.instance.PlayMusic("PlayMusic");
+        //ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + 150;     
         
     }
     public void StartLevel3()
@@ -66,6 +67,8 @@ public class MapScript : MonoBehaviour
             {
                 case  2:
                     Level2Button.gameObject.SetActive(true);
+                    ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + 200;
+                    ShopManager.instance.SetShopAmount();
                     break;
 
                 case  3:

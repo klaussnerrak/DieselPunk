@@ -3,6 +3,7 @@ using UnityEngine.AI;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
+
 public class PlayerTrainScript : MonoBehaviour
 {
     public TrainTrack mapEnd;
@@ -38,18 +39,9 @@ public class PlayerTrainScript : MonoBehaviour
     public void StartPath()
     {
         Debug.Log("CLICKED");
-        //pivotPoints.Add(mapEnd.transform);
-
-       // Debug.Log(pivotPoints);
-        // agent.SetDestination(pivotPoints[pivotIndex].position);
         playerStart = true;
         //Moving();
-    }
-
-    void Update()
-    {
-        
-    }
+    }   
 
     void Start()
     {
@@ -163,6 +155,7 @@ public class PlayerTrainScript : MonoBehaviour
             rotationSpeed * Time.deltaTime);
         
     }
+    
 
     
 }

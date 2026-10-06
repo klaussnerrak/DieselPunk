@@ -10,7 +10,7 @@ public class ResourceScript : MonoBehaviour
         {
            /* SpriteRenderer myResource = GetComponent<SpriteRenderer>();
             myResource.sprite = backGroundSprite;*/
-            Debug.Log("Hit");
+            
             Destroy(gameObject);
         }
     }
