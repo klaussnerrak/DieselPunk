@@ -890,7 +890,7 @@ PrefabInstance:
     - target: {fileID: 1978900142624530392, guid: 07a0f48549e1ebd428bc77932c822c1a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 8959878057398117624, guid: cf230067fa1c9614c87c64b1196b6f2d, type: 3}
+      objectReference: {fileID: 2843544127461654216, guid: cf230067fa1c9614c87c64b1196b6f2d, type: 3}
     - target: {fileID: 2197725468813822610, guid: 07a0f48549e1ebd428bc77932c822c1a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -997,7 +997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189049599052568429, guid: 07a0f48549e1ebd428bc77932c822c1a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5210427997816019558, guid: 07a0f48549e1ebd428bc77932c822c1a, type: 3}
       propertyPath: shopButton
@@ -1281,6 +1281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f80b3e5f954b1499c0b775c95e6cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  dieselPoints: 15
 --- !u!4 &630620570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2298658204131616658, guid: 488cd5f05fc3a794fb12577212ef933c, type: 3}
@@ -2192,7 +2193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 569, y: -341}
+  m_AnchoredPosition: {x: 569, y: -380}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &938216022
@@ -2632,6 +2633,7 @@ MonoBehaviour:
   losePanel: {fileID: 1069377177}
   gamePanel: {fileID: 14038364}
   playerDieselText: {fileID: 2093259570}
+  levelReward: 200
 --- !u!1 &1069377177
 GameObject:
   m_ObjectHideFlags: 0

@@ -66,9 +66,7 @@ public class MapScript : MonoBehaviour
         switch (level)
             {
                 case  2:
-                    Level2Button.gameObject.SetActive(true);
-                    ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + 200;
-                    ShopManager.instance.SetShopAmount();
+                    Level2Button.gameObject.SetActive(true);                    
                     break;
 
                 case  3:

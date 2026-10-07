@@ -184,7 +184,7 @@ public class GridManager : MonoBehaviour
 
         //Right check********************************************************************************************                   
         }else if(track1.right != null && track1.rightConnected==false){   
-                  
+                Debug.Log(track1);  
             if(track2.up != null 
                 && track2.upConnected == false
                 && Vector3.Distance(track1.right.transform.position,track2.up.transform.position)<0.1)
@@ -222,6 +222,7 @@ public class GridManager : MonoBehaviour
         //Left check********************************************************************************************                   
                    
         }else if(track1.left != null && track1.leftConnected==false){
+            Debug.Log(track1);  
             if(track2.up != null 
                 && track2.upConnected == false
                 && Vector3.Distance(track1.left.transform.position,track2.up.transform.position)<0.1)
