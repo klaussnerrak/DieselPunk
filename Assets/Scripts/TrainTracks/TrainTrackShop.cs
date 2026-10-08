@@ -22,26 +22,37 @@ public class TrainTrackShop : MonoBehaviour
         if (selectedTile != null)
         {
             selectedTrack = selectedTile.GetComponent<TrainTrack>();
-        }
+        } 
 
-        if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
-        {
-            if (selectedTrack != null)
-            {
-                // Agora o UpdateTrackShop vai ler o preço correto do Prefab!
-                UpdateTrackShop();
+        //#TODO: Check if selectedTrack is null before accessing its properties and verify if it's a special resource or not
 
-                Instantiate(
-                    selectedTile,
-                    shopButton.position,
-                    Quaternion.identity
-                );
-            }
-        }
-        else
+        if (selectedTrack == null)
         {
-            Debug.Log("num vai criar prefab coisa nenhuma");
+            Debug.Log("selectedTrack: " + selectedTrack.name + " dieselCost: " + selectedTrack.dieselCost);
+            // return;
         }
+        if (ShopManager.instance == null)
+        {
+            Debug.Log("Player Diesel: " + ShopManager.instance.playerDiesel);
+        }
+        // if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
+        // {
+        //     if (selectedTrack != null)
+        //     {
+        //         // Agora o UpdateTrackShop vai ler o preço correto do Prefab!
+        //         UpdateTrackShop();
+
+        //         Instantiate(
+        //             selectedTile,
+        //             shopButton.position,
+        //             Quaternion.identity
+        //         );
+        //     }
+        // }
+        // else
+        // {
+        //     Debug.Log("num vai criar prefab coisa nenhuma");
+        // }
 
     }
 
