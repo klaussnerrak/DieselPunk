@@ -4796,6 +4796,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resource - Speed
       objectReference: {fileID: 0}
+    - target: {fileID: 8753217556510772803, guid: b9d7374ab8e9f0a43a57296ce0ecfbf8, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753217556510772803, guid: b9d7374ab8e9f0a43a57296ce0ecfbf8, type: 3}
+      propertyPath: m_TagString
+      value: SpecialResource
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

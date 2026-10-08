@@ -7,6 +7,7 @@ TagManager:
   - TrainTrackPiece
   - Obstacle
   - DeleteTrackArea
+  - SpecialResource
   layers:
   - Default
   - TransparentFX

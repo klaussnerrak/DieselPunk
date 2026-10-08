@@ -2,8 +2,9 @@
 using UnityEngine;
 
 public class TrainTrackShop : MonoBehaviour
-{
+{ 
     private TrainTrack selectedTrack;
+    private SpecialTrack specialTrack;
     [SerializeField] private Transform shopButton;
 
     private Camera mainCamera;
@@ -19,22 +20,21 @@ public class TrainTrackShop : MonoBehaviour
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
 
+
         if (selectedTile != null)
         {
-            selectedTrack = selectedTile.GetComponent<TrainTrack>();
-        } 
-
-        //#TODO: Check if selectedTrack is null before accessing its properties and verify if it's a special resource or not
-
-        if (selectedTrack == null)
-        {
-            Debug.Log("selectedTrack: " + selectedTrack.name + " dieselCost: " + selectedTrack.dieselCost);
-            // return;
+            if (selectedTile.CompareTag("SpecialResource"))
+            {
+                specialTrack = selectedTile.GetComponent<SpecialTrack>();
+                Debug.Log("Selected track is a special resource.");
+            }
+            else
+            {
+                selectedTrack = selectedTile.GetComponent<TrainTrack>();
+                Debug.Log("Selected track is a regular track.");
+            } 
         }
-        if (ShopManager.instance == null)
-        {
-            Debug.Log("Player Diesel: " + ShopManager.instance.playerDiesel);
-        }
+ 
         // if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
         // {
         //     if (selectedTrack != null)
@@ -55,6 +55,7 @@ public class TrainTrackShop : MonoBehaviour
         // }
 
     }
+
 
     private void UpdateTrackShop()
     {
