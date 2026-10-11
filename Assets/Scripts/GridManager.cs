@@ -16,6 +16,7 @@ public class GridManager : MonoBehaviour
         //UpdateTrackStack();
     }
 
+
     public void AddToTrack(TrainTrack tile)
     {        
         TrackTiles.Add(tile);
@@ -30,15 +31,27 @@ public class GridManager : MonoBehaviour
         for(int i = 0; i<Track.Count; i++)
         {
             TrainTrack currentTrack = Track[i];
+            
             for(int j = 0; j<TrackTiles.Count; j++)
             {
                 TrainTrack nextTrack = TrackTiles[j];
                 if(nextTrack!=currentTrack){
-                    if(IsConnected(currentTrack, nextTrack))
+                    if(currentTrack.type == TrackType.Cross)
                     {
-                    //Debug.Log(TrackTiles[j].transform.position);
-                        Track.Add(TrackTiles[j]);                   
-                    
+                        if(IsCrossConnected(currentTrack, nextTrack))
+                        {
+                            Debug.Log(j);
+                            Track.Add(TrackTiles[j]);
+                            i++;
+                            currentTrack = Track[i];
+                        }                        
+                        
+                    }else if(IsConnected(currentTrack, nextTrack))
+                    {
+                        Track.Add(TrackTiles[j]);
+                        i++;
+                        currentTrack = Track[i];
+                                           
                     }
                 }               
             }
@@ -62,13 +75,25 @@ public class GridManager : MonoBehaviour
             {
                 TrainTrack nextTrack = TrackTiles[j];
                 if(nextTrack!=currentTrack){
-                    if(IsConnected(currentTrack, nextTrack))
-                    {                    
-                        Track.Add(TrackTiles[j]);                
-                    
+                    if(currentTrack.type == TrackType.Cross)
+                    {
+                        if(IsCrossConnected(currentTrack, nextTrack))
+                        {
+                            Debug.Log(j);
+                            Track.Add(TrackTiles[j]);
+                            i++;
+                            currentTrack = Track[i];
+                        }                        
+                        
+                    }else if(IsConnected(currentTrack, nextTrack))
+                    {
+                        Track.Add(TrackTiles[j]);
+                        i++;
+                        currentTrack = Track[i];
+                                           
                     }
                 }               
-            }           
+            }
         }         
     }
 
@@ -111,7 +136,8 @@ public class GridManager : MonoBehaviour
     public bool IsConnected(TrainTrack track1, TrainTrack track2)
     {       
         //Up check********************************************************************************************                   
-    
+        
+        
         if(track1.up != null && track1.upConnected==false){
             if(track2.up != null 
                 && track2.upConnected == false
@@ -148,7 +174,8 @@ public class GridManager : MonoBehaviour
             
         //Down check********************************************************************************************                   
     
-        }else if(track1.down != null && track1.downConnected==false){
+        }
+         if(track1.down != null && track1.downConnected==false){
             if(track2.up != null 
                 && track2.upConnected == false
                 && Vector3.Distance(track1.down.transform.position,track2.up.transform.position)<0.1)
@@ -183,8 +210,9 @@ public class GridManager : MonoBehaviour
             } 
 
         //Right check********************************************************************************************                   
-        }else if(track1.right != null && track1.rightConnected==false){   
-                  
+        }
+         if(track1.right != null && track1.rightConnected==false){   
+               
             if(track2.up != null 
                 && track2.upConnected == false
                 && Vector3.Distance(track1.right.transform.position,track2.up.transform.position)<0.1)
@@ -221,7 +249,8 @@ public class GridManager : MonoBehaviour
 
         //Left check********************************************************************************************                   
                    
-        }else if(track1.left != null && track1.leftConnected==false){
+        }
+         if(track1.left != null && track1.leftConnected==false){
             if(track2.up != null 
                 && track2.upConnected == false
                 && Vector3.Distance(track1.left.transform.position,track2.up.transform.position)<0.1)
@@ -274,5 +303,251 @@ public class GridManager : MonoBehaviour
 
         }                
     }
+
+    public bool IsCrossConnected(TrainTrack track1, TrainTrack track2)
+    {
+        
+        if(track2.type == TrackType.Cross){        
+            if(track1.leftConnected && !track1.rightConnected)
+            {
+                if(track2.left.transform.position == track1.right.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.rightConnected = true;
+                    return true;
+                }else if(track2.right.transform.position == track1.right.transform.position)
+                {
+                    track2.rightConnected = true;
+                    track1.rightConnected = true;
+                    return true;
+                
+                }else if(track2.up.transform.position == track1.right.transform.position)
+                {
+                    track2.upConnected = true;
+                    track1.rightConnected = true;
+                    return true;
+                }else if(track2.down.transform.position == track1.right.transform.position)
+                {
+                    track2.downConnected = true;
+                    track1.rightConnected = true;
+                    return true;
+                }
+            }else if(track1.rightConnected && !track1.leftConnected)
+            {
+                if(track2.left.transform.position == track1.left.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.leftConnected = true;
+                    return true;
+
+                }else if(track2.right.transform.position == track1.left.transform.position)
+                {
+                    track2.rightConnected = true;
+                    track1.leftConnected = true;
+                    return true;
+                
+                }else if(track2.up.transform.position == track1.left.transform.position)
+                {
+                    track2.upConnected = true;
+                    track1.leftConnected = true;
+                    return true;
+
+                }else if(track2.down.transform.position == track1.left.transform.position)
+                {
+                    track2.downConnected = true;
+                    track1.leftConnected = true;
+                    return true;
+                }
+
+            }else if(track1.upConnected && !track1.downConnected)
+            {
+                if(track2.left.transform.position == track1.down.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.downConnected = true;
+                    return true;
+
+                }else if(track2.right.transform.position == track1.down.transform.position)
+                {
+                    track2.rightConnected = true;
+                    track1.downConnected = true;
+                    return true;
+                
+                }else if(track2.up.transform.position == track1.down.transform.position)
+                {
+                    track2.upConnected = true;
+                    track1.downConnected = true;
+                    return true;
+
+                }else if(track2.down.transform.position == track1.down.transform.position)
+                {
+                    track2.downConnected = true;
+                    track1.downConnected = true;
+                    return true;
+                }
+
+            }else if(track1.downConnected && !track1.upConnected)
+            {
+                if(track2.left.transform.position == track1.up.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.upConnected = true;
+                    return true;
+
+                }else if(track2.right.transform.position == track1.up.transform.position)
+                {
+                    track2.rightConnected = true;
+                    track1.upConnected = true;
+                    return true;
+                
+                }else if(track2.up.transform.position == track1.up.transform.position)
+                {
+                    track2.upConnected = true;
+                    track1.upConnected = true;
+                    return true;
+
+                }else if(track2.down.transform.position == track1.up.transform.position)
+                {
+                    track2.downConnected = true;
+                    track1.upConnected = true;
+                    return true;
+                }
+            }
+        }else if(track2.type == TrackType.Straight)
+        {
+            if(track1.leftConnected && !track1.rightConnected)
+            {
+                if(track2.left.transform.position == track1.right.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.rightConnected = true;
+                    return true;
+                }else if(track2.right.transform.position == track1.right.transform.position)
+                {
+                    track2.rightConnected = true;
+                    track1.rightConnected = true;
+                    return true;                
+                }
+            }else if(track1.rightConnected && !track1.leftConnected)
+            {
+                if(track2.left.transform.position == track1.left.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.leftConnected = true;
+                    return true;
+
+                }else if(track2.right.transform.position == track1.left.transform.position)
+                {
+                    track2.rightConnected = true;
+                    track1.leftConnected = true;
+                    return true;              
+                }
+            }else if(track1.upConnected && !track1.downConnected)
+            {
+                if(track2.left.transform.position == track1.down.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.downConnected = true;
+                    return true;
+
+                }else if(track2.right.transform.position == track1.down.transform.position)
+                {
+                    track2.rightConnected = true;
+                    track1.downConnected = true;
+                    return true;
+                }
+                
+
+            }else if(track1.downConnected && !track1.upConnected)
+            {
+                if(track2.left.transform.position == track1.up.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.upConnected = true;
+                    return true;
+
+                }else if(track2.right.transform.position == track1.up.transform.position)
+                {
+                    track2.rightConnected = true;
+                    track1.upConnected = true;
+                    return true;
+                                
+                }
+            }
+        }else if(track2.type == TrackType.Curve)
+        {
+            if(track1.leftConnected && !track1.rightConnected)
+            {
+                if(track2.left.transform.position == track1.right.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.rightConnected = true;
+                    return true;
+                
+                }else if(track2.down.transform.position == track1.right.transform.position)
+                {
+                    track2.downConnected = true;
+                    track1.rightConnected = true;
+                    return true;
+                }
+            }else if(track1.rightConnected && !track1.leftConnected)
+            {
+                if(track2.left.transform.position == track1.left.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.leftConnected = true;
+                    return true;
+
+                
+
+                }else if(track2.down.transform.position == track1.left.transform.position)
+                {
+                    track2.downConnected = true;
+                    track1.leftConnected = true;
+                    return true;
+                }
+
+            }else if(track1.upConnected && !track1.downConnected)
+            {
+                if(track2.left.transform.position == track1.down.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.downConnected = true;
+                    return true;
+
+                
+
+                }else if(track2.down.transform.position == track1.down.transform.position)
+                {
+                    track2.downConnected = true;
+                    track1.downConnected = true;
+                    return true;
+                }
+
+            }else if(track1.downConnected && !track1.upConnected)
+            {
+                if(track2.left.transform.position == track1.up.transform.position)
+                {
+                    track2.leftConnected = true;
+                    track1.upConnected = true;
+                    return true;
+
+                
+
+                }else if(track2.down.transform.position == track1.up.transform.position)
+                {
+                    track2.downConnected = true;
+                    track1.upConnected = true;
+                    return true;
+                }
+            
+
+             }
+        }        
+        return false;
+    }
+
+
+    
 }    
     

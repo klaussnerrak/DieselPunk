@@ -14,7 +14,7 @@ public class ShopManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            playerDiesel = 100;
+            playerDiesel = 200;
             //playerDieselText.SetText($"Diesel \n{playerDiesel}");
         }
     }
@@ -31,7 +31,7 @@ public class ShopManager : MonoBehaviour
 
     public void SetShopAmount()
     {
-        Debug.Log(playerDiesel);
+        //Debug.Log(playerDiesel);
         playerDieselText.SetText($"Diesel \n{playerDiesel}");
     }
 
