@@ -73,7 +73,7 @@ public class GameController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Loaded scene: " + scene.name);
+        //Debug.Log("Loaded scene: " + scene.name);
         //playerDieselText.SetText($"Diesel \n{ShopManager.instance.playerDiesel}");
         ShopManager.instance.playerDieselText = playerDieselText;
         ShopManager.instance.SetShopAmount();
