@@ -25,13 +25,11 @@ public class TrainTrackShop : MonoBehaviour
         {
             if (selectedTile.CompareTag("SpecialResource"))
             {
-                specialTrack = selectedTile.GetComponent<SpecialTrack>();
-                Debug.Log("Selected track is a special resource.");
+                specialTrack = selectedTile.GetComponent<SpecialTrack>(); 
             }
             else
             {
-                selectedTrack = selectedTile.GetComponent<TrainTrack>();
-                Debug.Log("Selected track is a regular track.");
+                selectedTrack = selectedTile.GetComponent<TrainTrack>(); 
             }
         }
 
