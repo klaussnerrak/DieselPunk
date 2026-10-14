@@ -103,7 +103,8 @@ public class PlayerTrainScript : MonoBehaviour
         Transform target = GridManager.instance.Track[trackIndex].transform;
         //Debug.Log(target.position);
 
-        transform.position = Vector3.MoveTowards(
+        transform.position = Vector3.MoveTowards
+        (
             transform.position,
             target.position,
             speed * Time.deltaTime
