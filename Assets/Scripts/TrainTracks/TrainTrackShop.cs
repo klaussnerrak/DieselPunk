@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class TrainTrackShop : MonoBehaviour
-{ 
+{
     private TrainTrack selectedTrack;
     private SpecialTrack specialTrack;
     [SerializeField] private Transform shopButton;
@@ -32,34 +32,59 @@ public class TrainTrackShop : MonoBehaviour
             {
                 selectedTrack = selectedTile.GetComponent<TrainTrack>();
                 Debug.Log("Selected track is a regular track.");
-            } 
+            }
         }
- 
-        // if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
-        // {
-        //     if (selectedTrack != null)
-        //     {
-        //         // Agora o UpdateTrackShop vai ler o preço correto do Prefab!
-        //         UpdateTrackShop();
 
-        //         Instantiate(
-        //             selectedTile,
-        //             shopButton.position,
-        //             Quaternion.identity
-        //         );
-        //     }
-        // }
-        // else
-        // {
-        //     Debug.Log("num vai criar prefab coisa nenhuma");
-        // }
+
+        if (selectedTrack != null)
+        {
+            if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
+            {
+                UpdateTrackShop(selectedTrack.dieselCost);
+
+                Instantiate(
+                    selectedTile,
+                    shopButton.position,
+                    Quaternion.identity
+                );
+            }
+            else
+            {
+                Debug.Log("can't generate train track");
+            }
+        }
+        else if (specialTrack != null)
+        {
+            if (ShopManager.instance.playerDiesel >= specialTrack.dieselCost)
+            {
+                UpdateTrackShop(specialTrack.dieselCost);
+
+                switch (specialTrack.type)
+                {
+                    case SpecialTrackType.TIME:
+                        {
+                            specialTrack.IncreaseTime();
+                        }
+                        break;
+                    case SpecialTrackType.SPEED:
+                        {
+                            specialTrack.IncreasePlayerSpeed();
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                Debug.Log("Can't use special resource");
+            }
+        }
 
     }
 
 
-    private void UpdateTrackShop()
+    private void UpdateTrackShop(int dieselCost)
     {
-        ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel - selectedTrack.dieselCost;
+        ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel - dieselCost;
         ShopManager.instance.SetShopAmount();
     }
 

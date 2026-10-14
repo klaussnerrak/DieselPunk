@@ -33,7 +33,7 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Scenes/MapScene");        
+        SceneManager.LoadScene("Scenes/SpecialTracks");        
         AudioManager.instance.PlayMusic("MapMusic");
         
     }

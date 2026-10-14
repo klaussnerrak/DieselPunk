@@ -1,14 +1,14 @@
 using UnityEngine;
 public enum SpecialTrackType
 {
-    Time,
-    Speed 
+    TIME,
+    SPEED
 }
 public class SpecialTrack : MonoBehaviour
 {
 
-    [SerializeField] private SpecialTrackType type;
-    [SerializeField] private int dieselCost;
+    public SpecialTrackType type;
+    public int dieselCost;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,5 +19,16 @@ public class SpecialTrack : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void IncreasePlayerSpeed()
+    { 
+    }
+
+
+    public void IncreaseTime()
+    {
+        Debug.Log("called increase time being called by special track click");
+        TimerScript.instance.AddBonusSeconds(15f); 
     }
 }
