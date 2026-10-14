@@ -8,6 +8,7 @@ public class SpecialTrack : MonoBehaviour
 {
 
     public SpecialTrackType type;
+    public PlayerTrainScript player;
     public int dieselCost;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,13 +23,19 @@ public class SpecialTrack : MonoBehaviour
     }
 
     public void IncreasePlayerSpeed()
-    { 
+    {
+        player = FindFirstObjectByType<PlayerTrainScript>();
+        if (player != null)
+        { 
+            player.AddPlayerSpeed(5f);
+        }
+
     }
 
 
     public void IncreaseTime()
     {
         Debug.Log("called increase time being called by special track click");
-        TimerScript.instance.AddBonusSeconds(15f); 
+        TimerScript.instance.AddBonusSeconds(15f);
     }
 }
