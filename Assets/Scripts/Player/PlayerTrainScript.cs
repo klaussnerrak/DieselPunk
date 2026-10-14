@@ -9,7 +9,7 @@ public class PlayerTrainScript : MonoBehaviour
     public TrainTrack mapEnd;
     public TrainTrack firstTrack;
     private NavMeshAgent agent;
-    
+
 
     public List<Transform> pivotPoints = new List<Transform>();
     [SerializeField] private Button startButton;
@@ -17,14 +17,14 @@ public class PlayerTrainScript : MonoBehaviour
     [SerializeField] private float spriteAngleOffset = 0f;
     [SerializeField] private float speed = 1f;
 
-   // private int pivotIndex = 0;
+    // private int pivotIndex = 0;
     private int trackIndex = 0;
-//private Vector3 lastDirection;
+    //private Vector3 lastDirection;
     bool playerStart = false;
 
     //public GridManager gridManager;
 
-    
+
 
     enum StateMachineType
     {
@@ -35,19 +35,19 @@ public class PlayerTrainScript : MonoBehaviour
 
     private StateMachineType state = StateMachineType.Waiting;
 
-    
+
     public void StartPath()
     {
         Debug.Log("CLICKED");
         playerStart = true;
         //Moving();
-    }   
+    }
 
     void Start()
     {
         GameObject gridManagerObject = GameObject.Find("Grid");
-       
-        if(gridManagerObject != null)
+
+        if (gridManagerObject != null)
         {
             GridManager.instance.UpdateTrackStack();
         }
@@ -68,14 +68,14 @@ public class PlayerTrainScript : MonoBehaviour
 
     private void Waiting()
     {
-         if(playerStart == true || TimerScript.instance.timeCounter<=1)
-     
+        if (playerStart == true || TimerScript.instance.timeCounter <= 1)
+
         {
             state = StateMachineType.Moving;
             playerStart = false;
             //GridManager.instance.AddToTrack(mapEnd);
-            GridManager.instance.UpdateTrack();                        
-            TimerScript.instance.StartPlayCounter();   
+            GridManager.instance.UpdateTrack();
+            TimerScript.instance.StartPlayCounter();
         }
 
     }
@@ -83,22 +83,24 @@ public class PlayerTrainScript : MonoBehaviour
     private void Moving()
     {
         //Debug.Log("moving ");    
-            
-        
-        if (trackIndex >= GridManager.instance.Track.Count){
-            if(GridManager.instance.Track[trackIndex-1] == mapEnd || TimerScript.instance.timeCounter<1){
+
+
+        if (trackIndex >= GridManager.instance.Track.Count)
+        {
+            if (GridManager.instance.Track[trackIndex - 1] == mapEnd || TimerScript.instance.timeCounter < 1)
+            {
                 state = StateMachineType.Finish;
-                TimerScript.instance.pauseTimer = true;                
+                TimerScript.instance.pauseTimer = true;
             }
-            else if(GridManager.instance.Track[trackIndex-1] != mapEnd)
+            else if (GridManager.instance.Track[trackIndex - 1] != mapEnd)
             {
                 GridManager.instance.UpdateMovingTrack();
-            } 
+            }
 
             return;
         }
 
-        
+
 
         Transform target = GridManager.instance.Track[trackIndex].transform;
         //Debug.Log(target.position);
@@ -109,54 +111,60 @@ public class PlayerTrainScript : MonoBehaviour
             target.position,
             speed * Time.deltaTime
         );
-        
+
         float distance = Vector3.Distance(transform.position, target.position);
-        
+
         RotateTrain();
 
         if (distance < 0.1f)
-        {     
-            if(trackIndex>0) GridManager.instance.Track[trackIndex-1].TrackLocked = true;     
+        {
+            if (trackIndex > 0) GridManager.instance.Track[trackIndex - 1].TrackLocked = true;
             trackIndex++;
-        } 
+        }
     }
 
     private void Finish()
     {
-            if(TimerScript.instance.timeCounter>1)
-            {
-                GameController.instance.WinCondition();
-                state = StateMachineType.Waiting;
-            }
-            else 
-            {
-                 GameController.instance.LoseCondition();
-                 state = StateMachineType.Waiting;
+        if (TimerScript.instance.timeCounter > 1)
+        {
+            GameController.instance.WinCondition();
+            state = StateMachineType.Waiting;
+        }
+        else
+        {
+            GameController.instance.LoseCondition();
+            state = StateMachineType.Waiting;
 
-            } 
+        }
     }
-    
+
     private void RotateTrain()
     {
         if (trackIndex >= GridManager.instance.Track.Count)
             return;
-       
+
         Vector3 currentPoint = transform.position;
-        Vector3 nextPoint = GridManager.instance.Track[trackIndex].transform.position; 
+        Vector3 nextPoint = GridManager.instance.Track[trackIndex].transform.position;
 
         Vector3 direction = nextPoint - currentPoint;
         //direction = direction.normalized;
 
         if (direction.sqrMagnitude < 0.1f)
             return;
-         
+
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle + spriteAngleOffset);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation,
             rotationSpeed * Time.deltaTime);
-        
-    }
-    
 
-    
+    }
+
+    public void AddPlayerSpeed(float speedAmount)
+    {
+        speed += speedAmount;
+        rotationSpeed += speedAmount; 
+    }
+
+
+
 }

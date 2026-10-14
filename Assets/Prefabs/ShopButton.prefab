@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3134623016177206052}
   - component: {fileID: 1802096485740241436}
   - component: {fileID: 1978900142624530392}
-  - component: {fileID: 7258286348638360691}
   - component: {fileID: 5210427997816019558}
   m_Layer: 5
   m_Name: ShopButton
@@ -134,23 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7258286348638360691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189049599052568429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478ccd79f9601a44082bbf8513963873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrainTrack
-  type: 2
-  north: 0
-  south: 0
-  east: 0
-  west: 0
 --- !u!114 &5210427997816019558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,5 +145,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd96201ca038d3f428ec2e3d0d83e26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainTrackShop
-  piecesContainer: {fileID: 0}
-  coins: 10
+  shopButton: {fileID: 0}

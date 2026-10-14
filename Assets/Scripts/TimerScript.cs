@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 public class TimerScript : MonoBehaviour
 {
     public float timeCounter = 10f;
@@ -7,7 +8,7 @@ public class TimerScript : MonoBehaviour
     [SerializeField] private TMP_Text timerText;
     public static TimerScript instance;
     public bool pauseTimer = false;
-    
+
     void Awake()
     {
         if (instance == null)
@@ -19,31 +20,39 @@ public class TimerScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        
+
     }
 
     void Update()
     {
-        if(timeCounter>1 && pauseTimer==false)
+        if (timeCounter > 1 && pauseTimer == false)
         {
             timeCounter -= Time.deltaTime;
-            updateText(timeCounter);
+            UpdateText(timeCounter);
         }
-        
+
     }
 
     public void StartPlayCounter()
-    {    
+    {
         timeCounter = playCounter;
-        if(pauseTimer==false)
-        {          
+        if (pauseTimer == false)
+        {
             // AudioManager.instance.PlaySFX("TrainHorn");
-        }  
+        }
     }
 
-    void updateText(float currentTime)
+    void UpdateText(float currentTime)
     {
-        float seconds = Mathf.FloorToInt(currentTime % 60);
-        timerText.text = string.Format("00:{0:00}",seconds);
+        float displayTime = Mathf.Max(0, currentTime);
+        TimeSpan time = TimeSpan.FromSeconds(displayTime);
+
+        timerText.text = string.Format("{0}:{1:D2}", (int)time.TotalMinutes, time.Seconds);
+    }
+
+    public void AddBonusSeconds(float secondsToAdd)
+    {
+        timeCounter += secondsToAdd;
+        UpdateText(timeCounter);
     }
 }
