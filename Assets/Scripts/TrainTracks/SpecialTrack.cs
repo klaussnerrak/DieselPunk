@@ -27,7 +27,7 @@ public class SpecialTrack : MonoBehaviour
         player = FindFirstObjectByType<PlayerTrainScript>();
         if (player != null)
         { 
-            player.AddPlayerSpeed(5f);
+            player.AddPlayerSpeed(1f);
         }
 
     }
@@ -35,7 +35,7 @@ public class SpecialTrack : MonoBehaviour
 
     public void IncreaseTime()
     {
-        Debug.Log("called increase time being called by special track click");
+        //Debug.Log("called increase time being called by special track click");
         TimerScript.instance.AddBonusSeconds(15f);
     }
 }

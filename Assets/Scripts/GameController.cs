@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
     {        
         gamePanel.SetActive(false);
         winPanel.SetActive(true);
+        levelIndex++;
         AudioManager.instance.PlaySFX("Supla"); 
         ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + levelReward;
         ShopManager.instance.SetShopAmount();
@@ -53,7 +54,7 @@ public class GameController : MonoBehaviour
 
     public void BackToMapScene()
     {
-        levelIndex++;            
+                    
         SceneManager.LoadScene("Scenes/MapScene");        
         AudioManager.instance.PlayMusic("MapMusic");
          

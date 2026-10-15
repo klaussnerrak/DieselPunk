@@ -175,10 +175,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrainTrack
   type: 2
   dieselCost: 20
-  up: {fileID: 0}
-  down: {fileID: 0}
-  right: {fileID: 0}
-  left: {fileID: 0}
+  up: {fileID: 5264246288039226443}
+  down: {fileID: 671806085087790393}
+  right: {fileID: 2983844055895759873}
+  left: {fileID: 2714442133320104218}
   upConnected: 0
   downConnected: 0
   rightConnected: 0
