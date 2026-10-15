@@ -143,9 +143,9 @@ MonoBehaviour:
   type: 1
   dieselCost: 15
   up: {fileID: 0}
-  down: {fileID: 0}
+  down: {fileID: 4503370811297048950}
   right: {fileID: 0}
-  left: {fileID: 0}
+  left: {fileID: 5419870828798684847}
   upConnected: 0
   downConnected: 0
   rightConnected: 0
