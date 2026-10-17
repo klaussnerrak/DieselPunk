@@ -40,7 +40,7 @@ public class GridManager : MonoBehaviour
                     {
                         if(IsCrossConnected(currentTrack, nextTrack))
                         {
-                            Debug.Log(j);
+                            //Debug.Log(j);
                             Track.Add(TrackTiles[j]);
                             i++;
                             currentTrack = Track[i];
@@ -79,7 +79,7 @@ public class GridManager : MonoBehaviour
                     {
                         if(IsCrossConnected(currentTrack, nextTrack))
                         {
-                            Debug.Log(j);
+                            //Debug.Log(j);
                             Track.Add(TrackTiles[j]);
                             i++;
                             currentTrack = Track[i];
@@ -478,6 +478,7 @@ public class GridManager : MonoBehaviour
         {
             if(track1.leftConnected && !track1.rightConnected)
             {
+                if(track2.left == null) Debug.Log(track2);
                 if(track2.left.transform.position == track1.right.transform.position)
                 {
                     track2.leftConnected = true;
