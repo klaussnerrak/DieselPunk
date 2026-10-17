@@ -5,7 +5,8 @@ public enum TrackType
     Straight,
     Curve,
     Cross,
-    Bridge
+    Bridge,
+    End
 }
 
 public class TrainTrack : MonoBehaviour
