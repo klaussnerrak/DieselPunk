@@ -21,7 +21,7 @@ public class MapScript : MonoBehaviour
     public void StartLevel1()
     {
         //SceneManager.LoadScene("Scenes/StartScene"); 
-        SceneManager.LoadScene("Scenes/Level1");             
+        SceneManager.LoadScene("Scenes/DragAndDrop");             
         AudioManager.instance.PlayMusic("PlayMusic");
         
     }

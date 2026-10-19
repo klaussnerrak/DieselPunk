@@ -31,21 +31,23 @@ public class TrainTrackShop : MonoBehaviour
 
         if (selectedTrack != null)
         {
+               
+               Debug.Log("selectedTrack.dieselCost: "+selectedTrack.dieselCost);
             if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
             {
                 UpdateTrackShop(selectedTrack.dieselCost);
-
-                // Instantiate(
-                //     selectedTile,
-                //     trackStorePosition,
-                //     Quaternion.identity
-                // );
+                
                 GameObject purchasedTrack = Instantiate(
                     selectedTile,
-                    shopButton.position,
+                    trackStorePosition,
                     Quaternion.identity
-                );
+                ); 
+
                 purchasedTrack.transform.localScale = Vector3.one;
+ 
+                
+                selectedTrack.isBought = true;
+                Debug.Log("new train track generated after purchase");
             }
             else
             {

@@ -13,8 +13,8 @@ public class DraggableItem : TrainTrack
     private Vector3 offset;
     private Grid targetGrid;
     private Tilemap tilemap;
+    private Vector3 initialPosition;
     private Vector3 itemLastPosition;
-    private Vector3 storePosition;
     private int trackIndex;
     private TrainTrackShop trainTrackShop;
 
@@ -37,7 +37,7 @@ public class DraggableItem : TrainTrack
             Debug.LogError("Tilemap not found");
         }
 
-        storePosition = selectedTrack.transform.position;
+        initialPosition = this.transform.position;
         itemLastPosition = transform.position;
     }
 
@@ -66,8 +66,7 @@ public class DraggableItem : TrainTrack
         isDragging = false;
         GridManager.instance.AddToTrack(this);
         trackIndex = GridManager.instance.TrackTiles.Count - 1;
-        
-        Debug.Log("Initial position on store: " + storePosition);
+
         if (!CheckTrackDeleteArea())
         {
             SnapTileToGrid();
@@ -126,8 +125,11 @@ public class DraggableItem : TrainTrack
             itemLastPosition = transform.position;
 
             GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
-            
-            trainTrackShop.BuyTrack(selectedTrack, storePosition);
+
+            if (!this.isBought)
+            { 
+                trainTrackShop.BuyTrack(selectedTrack, initialPosition);
+            }
         }
         else
         {
@@ -179,15 +181,15 @@ public class DraggableItem : TrainTrack
             }
             if (hit.CompareTag("TrainTrackPiece") || hit.CompareTag("Obstacle"))
             {
-                if(type == TrackType.Bridge)
+                if (type == TrackType.Bridge)
                 {
                     return true;
                 }
                 else
                 {
-                    return false;    
+                    return false;
                 }
-                
+
             }
         }
 
