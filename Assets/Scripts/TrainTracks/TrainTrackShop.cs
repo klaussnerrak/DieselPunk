@@ -14,41 +14,44 @@ public class TrainTrackShop : MonoBehaviour
 
         GameObject gridManagerObject = GameObject.Find("Grid");
     }
-    public void BuyTrack(GameObject selectedTile)
+    public void BuyTrack(GameObject selectedTile, Vector3 trackStorePosition)
     {
-
-        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f;
-
-
         if (selectedTile != null)
         {
             if (selectedTile.CompareTag("SpecialResource"))
             {
-                specialTrack = selectedTile.GetComponent<SpecialTrack>(); 
+                specialTrack = selectedTile.GetComponent<SpecialTrack>();
             }
             else
             {
-                selectedTrack = selectedTile.GetComponent<TrainTrack>(); 
+                selectedTrack = selectedTile.GetComponent<TrainTrack>();
             }
         }
 
 
         if (selectedTrack != null)
         {
+               
+               Debug.Log("selectedTrack.dieselCost: "+selectedTrack.dieselCost);
             if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
             {
                 UpdateTrackShop(selectedTrack.dieselCost);
-
-                Instantiate(
+                
+                GameObject purchasedTrack = Instantiate(
                     selectedTile,
-                    shopButton.position,
+                    trackStorePosition,
                     Quaternion.identity
-                );
+                ); 
+
+                purchasedTrack.transform.localScale = Vector3.one;
+  
+                selectedTrack.isBought = true;
+                Debug.Log("new train track generated after purchase");
             }
             else
             {
-                Debug.Log("can't generate train track");
+                Debug.Log("can't generate train track - not enough diesel");
+                selectedTrack.transform.position = trackStorePosition;
             }
         }
         else if (specialTrack != null)
@@ -73,7 +76,7 @@ public class TrainTrackShop : MonoBehaviour
             }
             else
             {
-                Debug.Log("Can't use special resource");
+                Debug.Log("Can't use special resource - not enough diesel");
             }
         }
 

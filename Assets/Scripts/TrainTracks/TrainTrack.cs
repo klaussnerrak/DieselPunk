@@ -18,6 +18,7 @@ public class TrainTrack : MonoBehaviour
     public GameObject right;
     public GameObject left;
 
+    public bool isBought = false;
     public bool upConnected = false;
     public bool downConnected = false;
     public bool rightConnected = false;

@@ -14,36 +14,25 @@ public class ShopManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            playerDiesel = 200;
-            //playerDieselText.SetText($"Diesel \n{playerDiesel}");
+            playerDiesel = 200; 
         }
     }
-
     
-
-    /*void Start()
-    {
-        if (playerDieselText != null)
-        {
-            playerDieselText.SetText($"Diesel \n{playerDiesel}");
-        }
-    }  */  
-
     public void SetShopAmount()
     {
         //Debug.Log(playerDiesel);
         playerDieselText.SetText($"Diesel \n{playerDiesel}");
     }
 
-      public void SellTrack(TrainTrack selectedTrainTrack)
+    public void SellTrack(TrainTrack selectedTrainTrack)
     {
-        playerDiesel += (selectedTrainTrack.dieselCost / 2);  
-        playerDieselText.SetText($"Diesel \n{playerDiesel}");
+        playerDiesel += (selectedTrainTrack.dieselCost / 2);
+        playerDieselText.SetText($"Diesel \n{playerDiesel}"); 
     }
 
-    
 
 
 
-   
+
+
 }
