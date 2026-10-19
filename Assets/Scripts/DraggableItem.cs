@@ -91,6 +91,7 @@ public class DraggableItem : TrainTrack
 
             if (TryGetComponent<BoxCollider2D>(out var collider))
             {
+                Debug.Log(type);
                 collider.enabled = false;
                 collider.enabled = true;
             }
@@ -178,7 +179,15 @@ public class DraggableItem : TrainTrack
             }
             if (hit.CompareTag("TrainTrackPiece") || hit.CompareTag("Obstacle"))
             {
-                return false;
+                if(type == TrackType.Bridge)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;    
+                }
+                
             }
         }
 

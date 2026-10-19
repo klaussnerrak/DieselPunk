@@ -72,7 +72,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3707297501466831961}
   - component: {fileID: 7970935658520529178}
-  - component: {fileID: 5519576615791590220}
   - component: {fileID: -93929215073774756}
   - component: {fileID: -7976010913371025201}
   - component: {fileID: 2913382758349264448}
@@ -165,29 +164,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5519576615791590220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2843544127461654216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478ccd79f9601a44082bbf8513963873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrainTrack
-  type: 2
-  dieselCost: 20
-  up: {fileID: 0}
-  down: {fileID: 0}
-  right: {fileID: 0}
-  left: {fileID: 0}
-  upConnected: 0
-  downConnected: 0
-  rightConnected: 0
-  leftConnected: 0
-  TrackLocked: 0
 --- !u!114 &-93929215073774756
 MonoBehaviour:
   m_ObjectHideFlags: 0
