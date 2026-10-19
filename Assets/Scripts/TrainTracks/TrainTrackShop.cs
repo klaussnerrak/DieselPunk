@@ -44,14 +44,14 @@ public class TrainTrackShop : MonoBehaviour
                 ); 
 
                 purchasedTrack.transform.localScale = Vector3.one;
- 
-                
+  
                 selectedTrack.isBought = true;
                 Debug.Log("new train track generated after purchase");
             }
             else
             {
-                Debug.Log("can't generate train track");
+                Debug.Log("can't generate train track - not enough diesel");
+                selectedTrack.transform.position = trackStorePosition;
             }
         }
         else if (specialTrack != null)
@@ -76,7 +76,7 @@ public class TrainTrackShop : MonoBehaviour
             }
             else
             {
-                Debug.Log("Can't use special resource");
+                Debug.Log("Can't use special resource - not enough diesel");
             }
         }
 

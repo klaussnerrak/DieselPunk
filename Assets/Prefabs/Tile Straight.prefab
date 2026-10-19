@@ -180,6 +180,7 @@ MonoBehaviour:
   down: {fileID: 0}
   right: {fileID: 8333798846871764192}
   left: {fileID: 5798509069182026803}
+  isBought: 0
   upConnected: 0
   downConnected: 0
   rightConnected: 0

@@ -127,7 +127,7 @@ public class DraggableItem : TrainTrack
             GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
 
             if (!this.isBought)
-            { 
+            {
                 trainTrackShop.BuyTrack(selectedTrack, initialPosition);
             }
         }
@@ -145,12 +145,15 @@ public class DraggableItem : TrainTrack
             if (hit.CompareTag("DeleteTrackArea") && TrackLocked == false)
             {
                 Debug.Log("Delete track area detected");
-                GridManager.instance.TrackTiles.Remove(this);
-                GridManager.instance.Track.Remove(this);
-                ShopManager.instance.SellTrack(this);
-                Destroy(gameObject);
 
-                return true;
+                if (this.isBought == true)
+                {
+                    GridManager.instance.TrackTiles.Remove(this);
+                    GridManager.instance.Track.Remove(this);
+                    ShopManager.instance.SellTrack(this);
+                    Destroy(gameObject);
+                    return true;
+                }
             }
         }
         return false;
