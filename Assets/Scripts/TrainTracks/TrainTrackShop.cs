@@ -14,22 +14,17 @@ public class TrainTrackShop : MonoBehaviour
 
         GameObject gridManagerObject = GameObject.Find("Grid");
     }
-    public void BuyTrack(GameObject selectedTile)
+    public void BuyTrack(GameObject selectedTile, Vector3 trackStorePosition)
     {
-
-        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f;
-
-
         if (selectedTile != null)
         {
             if (selectedTile.CompareTag("SpecialResource"))
             {
-                specialTrack = selectedTile.GetComponent<SpecialTrack>(); 
+                specialTrack = selectedTile.GetComponent<SpecialTrack>();
             }
             else
             {
-                selectedTrack = selectedTile.GetComponent<TrainTrack>(); 
+                selectedTrack = selectedTile.GetComponent<TrainTrack>();
             }
         }
 
@@ -40,11 +35,17 @@ public class TrainTrackShop : MonoBehaviour
             {
                 UpdateTrackShop(selectedTrack.dieselCost);
 
-                Instantiate(
+                // Instantiate(
+                //     selectedTile,
+                //     trackStorePosition,
+                //     Quaternion.identity
+                // );
+                GameObject purchasedTrack = Instantiate(
                     selectedTile,
                     shopButton.position,
                     Quaternion.identity
                 );
+                purchasedTrack.transform.localScale = Vector3.one;
             }
             else
             {

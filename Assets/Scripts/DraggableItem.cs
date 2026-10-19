@@ -7,24 +7,26 @@ using UnityEngine.Tilemaps;
 public class DraggableItem : TrainTrack
 {
     //public GridManager gridManager;
+    [SerializeField] private GameObject selectedTrack;
     public bool isTrainMoving = false;
     private bool isDragging = false;
     private Vector3 offset;
     private Grid targetGrid;
     private Tilemap tilemap;
     private Vector3 itemLastPosition;
-    // public PlayerTrainScript playerScript;
+    private Vector3 storePosition;
     private int trackIndex;
+    private TrainTrackShop trainTrackShop;
 
 
 
     void Start()
     {
+        trainTrackShop = FindFirstObjectByType<TrainTrackShop>();
         targetGrid = FindFirstObjectByType<Grid>();
-        //playerScript = FindFirstObjectByType<PlayerTrainScript>();
-
         GameObject tilemapObject = GameObject.Find("Tilemap");
         GameObject gridManagerObject = GameObject.Find("Grid");
+
 
         if (tilemapObject != null)
         {
@@ -35,21 +37,8 @@ public class DraggableItem : TrainTrack
             Debug.LogError("Tilemap not found");
         }
 
-        /*if (gridManagerObject != null)
-        {
-            gridManager = gridManagerObject.GetComponent<GridManager>();
-        }
-        else
-        {
-            Debug.LogError("GridManager not found");
-        }*/
-
-
+        storePosition = selectedTrack.transform.position;
         itemLastPosition = transform.position;
-
-        //adiciona o objeto na lista do gridmanager
-        GridManager.instance.AddToTrack(this);
-        trackIndex = GridManager.instance.TrackTiles.Count - 1;
     }
 
     void Update()
@@ -72,7 +61,13 @@ public class DraggableItem : TrainTrack
 
     private void OnMouseUp()
     {
+
+        //adiciona o objeto na lista do gridmanager
         isDragging = false;
+        GridManager.instance.AddToTrack(this);
+        trackIndex = GridManager.instance.TrackTiles.Count - 1;
+        
+        Debug.Log("Initial position on store: " + storePosition);
         if (!CheckTrackDeleteArea())
         {
             SnapTileToGrid();
@@ -130,7 +125,8 @@ public class DraggableItem : TrainTrack
             itemLastPosition = transform.position;
 
             GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
-
+            
+            trainTrackShop.BuyTrack(selectedTrack, storePosition);
         }
         else
         {
@@ -143,15 +139,15 @@ public class DraggableItem : TrainTrack
         Vector3 mousePosition = GetMouseWorldPosition();
         foreach (Collider2D hit in Physics2D.OverlapPointAll(new Vector2(mousePosition.x, mousePosition.y)))
         {
-            if (hit.CompareTag("DeleteTrackArea") && TrackLocked==false)
+            if (hit.CompareTag("DeleteTrackArea") && TrackLocked == false)
             {
                 Debug.Log("Delete track area detected");
                 GridManager.instance.TrackTiles.Remove(this);
                 GridManager.instance.Track.Remove(this);
                 ShopManager.instance.SellTrack(this);
                 Destroy(gameObject);
-                
-                return true; 
+
+                return true;
             }
         }
         return false;
@@ -188,13 +184,5 @@ public class DraggableItem : TrainTrack
 
         return true;
     }
-
-    /* private void OnCollisionEnter2D(Collision2D col)
-     {
-         if(col.gameObject.name == "Train")
-         {
-           TrackLocked = true;
-         }
-     }*/
 
 }

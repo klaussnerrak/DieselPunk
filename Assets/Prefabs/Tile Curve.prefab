@@ -52,16 +52,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4982825334446421398
-Transform:
+--- !u!224 &4982825334446421398
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4783782241372137230}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.69, y: 1.71, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69,6 +68,11 @@ Transform:
   - {fileID: 1554119927096419243}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 7.69, y: 1.71}
+  m_SizeDelta: {x: 160, y: 16}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &900843187283300370
 SpriteRenderer:
   serializedVersion: 2
@@ -174,6 +178,7 @@ MonoBehaviour:
   rightConnected: 0
   leftConnected: 0
   TrackLocked: 0
+  selectedTrack: {fileID: 4783782241372137230}
   isTrainMoving: 0
 --- !u!61 &-3040097143995528368
 BoxCollider2D:
