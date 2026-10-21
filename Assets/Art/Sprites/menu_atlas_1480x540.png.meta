@@ -1,0 +1,738 @@
+fileFormatVersion: 2
+guid: 8d4f8da7c1cec104dbc4d33ac920a1e8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7206305814755665446
+    second: menu_atlas_1480x540_0
+  - first:
+      213: 8693839899124236220
+    second: menu_atlas_1480x540_1
+  - first:
+      213: -8198892062286315527
+    second: menu_atlas_1480x540_2
+  - first:
+      213: 4945990105773211134
+    second: menu_atlas_1480x540_3
+  - first:
+      213: 5766890082535258516
+    second: menu_atlas_1480x540_4
+  - first:
+      213: 6131430932045489731
+    second: menu_atlas_1480x540_5
+  - first:
+      213: -5881112270090276198
+    second: menu_atlas_1480x540_6
+  - first:
+      213: 3479152351655820792
+    second: menu_atlas_1480x540_7
+  - first:
+      213: -8857296159654777694
+    second: menu_atlas_1480x540_8
+  - first:
+      213: 1434038721172982332
+    second: menu_atlas_1480x540_9
+  - first:
+      213: 7198444030651962616
+    second: menu_atlas_1480x540_10
+  - first:
+      213: 3344304591735698647
+    second: menu_atlas_1480x540_11
+  - first:
+      213: -6610139755135780723
+    second: menu_atlas_1480x540_12
+  - first:
+      213: -2976217143943754916
+    second: menu_atlas_1480x540_13
+  - first:
+      213: 3428638437887740980
+    second: menu_atlas_1480x540_14
+  - first:
+      213: 919066994017086964
+    second: menu_atlas_1480x540_15
+  - first:
+      213: 5422988048583057729
+    second: menu_atlas_1480x540_16
+  - first:
+      213: 2527741179723715615
+    second: menu_atlas_1480x540_17
+  - first:
+      213: -3081430911973304418
+    second: menu_atlas_1480x540_18
+  - first:
+      213: -175439761240562604
+    second: menu_atlas_1480x540_19
+  - first:
+      213: 6564634493484507698
+    second: menu_atlas_1480x540_20
+  - first:
+      213: 7997265100601155572
+    second: menu_atlas_1480x540_21
+  - first:
+      213: -6554617701590013870
+    second: menu_atlas_1480x540_22
+  - first:
+      213: 1615176525021553227
+    second: menu_atlas_1480x540_23
+  - first:
+      213: -7562050661378345414
+    second: menu_atlas_1480x540_24
+  - first:
+      213: -6789998196837741113
+    second: menu_atlas_1480x540_25
+  - first:
+      213: 92322745867691076
+    second: menu_atlas_1480x540_26
+  - first:
+      213: -2917635610254024961
+    second: menu_atlas_1480x540_27
+  - first:
+      213: -6733658355676198763
+    second: menu_atlas_1480x540_28
+  - first:
+      213: -3305817894558109024
+    second: menu_atlas_1480x540_29
+  - first:
+      213: 3318479181003993761
+    second: menu_atlas_1480x540_30
+  - first:
+      213: -1480235823796997597
+    second: menu_atlas_1480x540_31
+  - first:
+      213: 188936632960824663
+    second: menu_atlas_1480x540_32
+  - first:
+      213: 850980910868897645
+    second: menu_atlas_1480x540_33
+  - first:
+      213: -1362653859186539619
+    second: menu_atlas_1480x540_34
+  - first:
+      213: -593528108783103322
+    second: menu_atlas_1480x540_35
+  - first:
+      213: 8627056740284956739
+    second: menu_atlas_1480x540_36
+  - first:
+      213: 2140493300884930244
+    second: menu_atlas_1480x540_37
+  - first:
+      213: 153005563451463808
+    second: menu_atlas_1480x540_38
+  - first:
+      213: -163202060689666847
+    second: menu_atlas_1480x540_39
+  - first:
+      213: -915353543367181230
+    second: menu_atlas_1480x540_40
+  - first:
+      213: -7432588555295381134
+    second: menu_atlas_1480x540_41
+  - first:
+      213: 6754764118900097082
+    second: menu_atlas_1480x540_42
+  - first:
+      213: -3714432816997293360
+    second: menu_atlas_1480x540_43
+  - first:
+      213: 4719677269455238986
+    second: menu_atlas_1480x540_44
+  - first:
+      213: -8247180810671618622
+    second: menu_atlas_1480x540_45
+  - first:
+      213: -7721114527144122948
+    second: menu_atlas_1480x540_46
+  - first:
+      213: -7224368135720725312
+    second: menu_atlas_1480x540_47
+  - first:
+      213: 6110677062778994551
+    second: menu_atlas_1480x540_48
+  - first:
+      213: 6058990612091318877
+    second: menu_atlas_1480x540_49
+  - first:
+      213: 6321944882434795244
+    second: menu_atlas_1480x540_50
+  - first:
+      213: -3396405658315536176
+    second: menu_atlas_1480x540_51
+  - first:
+      213: 7970017532988387325
+    second: menu_atlas_1480x540_52
+  - first:
+      213: 6258335500514852544
+    second: menu_atlas_1480x540_53
+  - first:
+      213: -5333648165757125733
+    second: menu_atlas_1480x540_54
+  - first:
+      213: -561313539366761432
+    second: menu_atlas_1480x540_55
+  - first:
+      213: 2287934987675250810
+    second: menu_atlas_1480x540_56
+  - first:
+      213: 5139105484971473977
+    second: menu_atlas_1480x540_57
+  - first:
+      213: 2782003922915748336
+    second: menu_atlas_1480x540_58
+  - first:
+      213: -1133772386747426590
+    second: menu_atlas_1480x540_59
+  - first:
+      213: 6204995433486998175
+    second: menu_atlas_1480x540_60
+  - first:
+      213: 8995504730326709254
+    second: menu_atlas_1480x540_61
+  - first:
+      213: 388776606580926849
+    second: menu_atlas_1480x540_62
+  - first:
+      213: -6740276392738698755
+    second: menu_atlas_1480x540_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 160
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_0
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 294
+        width: 212
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad918a8ca0f0efb90800000000000000
+      internalID: -7206305814755665446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_1
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 294
+        width: 212
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbffa698359b6a870800000000000000
+      internalID: 8693839899124236220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_2
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 294
+        width: 212
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff77a3eb1fa73e80800000000000000
+      internalID: -8198892062286315527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_3
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 294
+        width: 212
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efd7535dbcfa3a440800000000000000
+      internalID: 4945990105773211134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_4
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 294
+        width: 212
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499bc3cc9fb180050800000000000000
+      internalID: 5766890082535258516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_5
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 294
+        width: 212
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 346e96d62f7371550800000000000000
+      internalID: 6131430932045489731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_6
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 195
+        width: 908
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92f311cc87126ea0800000000000000
+      internalID: -5881112270090276198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_13
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 182
+        width: 284
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5b0ec8b64a52b6d0800000000000000
+      internalID: -2976217143943754916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_33
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 96
+        width: 192
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f9af631aa4fcb00800000000000000
+      internalID: 850980910868897645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 93
+        width: 182
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34003dda56679b770800000000000000
+      internalID: 8627056740284956739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_38
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 145
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088de22dfb59f1200800000000000000
+      internalID: 153005563451463808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_40
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 103
+        width: 213
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c34b35dc20c43f0800000000000000
+      internalID: -915353543367181230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_55
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 100
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c4d665f40d538f0800000000000000
+      internalID: -561313539366761432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_56
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 100
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a703291dfb060cf10800000000000000
+      internalID: 2287934987675250810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_57
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 107
+        width: 99
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c7cfed535c15740800000000000000
+      internalID: 5139105484971473977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_atlas_1480x540_63
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 46
+        width: 615
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9cbd2155ab572a0800000000000000
+      internalID: -6740276392738698755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 36dd830b6e3234b46a40ed7774b2db71
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      menu_atlas_1480x540_0: -7206305814755665446
+      menu_atlas_1480x540_1: 8693839899124236220
+      menu_atlas_1480x540_10: 7198444030651962616
+      menu_atlas_1480x540_11: 3344304591735698647
+      menu_atlas_1480x540_12: -6610139755135780723
+      menu_atlas_1480x540_13: -2976217143943754916
+      menu_atlas_1480x540_14: 3428638437887740980
+      menu_atlas_1480x540_15: 919066994017086964
+      menu_atlas_1480x540_16: 5422988048583057729
+      menu_atlas_1480x540_17: 2527741179723715615
+      menu_atlas_1480x540_18: -3081430911973304418
+      menu_atlas_1480x540_19: -175439761240562604
+      menu_atlas_1480x540_2: -8198892062286315527
+      menu_atlas_1480x540_20: 6564634493484507698
+      menu_atlas_1480x540_21: 7997265100601155572
+      menu_atlas_1480x540_22: -6554617701590013870
+      menu_atlas_1480x540_23: 1615176525021553227
+      menu_atlas_1480x540_24: -7562050661378345414
+      menu_atlas_1480x540_25: -6789998196837741113
+      menu_atlas_1480x540_26: 92322745867691076
+      menu_atlas_1480x540_27: -2917635610254024961
+      menu_atlas_1480x540_28: -6733658355676198763
+      menu_atlas_1480x540_29: -3305817894558109024
+      menu_atlas_1480x540_3: 4945990105773211134
+      menu_atlas_1480x540_30: 3318479181003993761
+      menu_atlas_1480x540_31: -1480235823796997597
+      menu_atlas_1480x540_32: 188936632960824663
+      menu_atlas_1480x540_33: 850980910868897645
+      menu_atlas_1480x540_34: -1362653859186539619
+      menu_atlas_1480x540_35: -593528108783103322
+      menu_atlas_1480x540_36: 8627056740284956739
+      menu_atlas_1480x540_37: 2140493300884930244
+      menu_atlas_1480x540_38: 153005563451463808
+      menu_atlas_1480x540_39: -163202060689666847
+      menu_atlas_1480x540_4: 5766890082535258516
+      menu_atlas_1480x540_40: -915353543367181230
+      menu_atlas_1480x540_41: -7432588555295381134
+      menu_atlas_1480x540_42: 6754764118900097082
+      menu_atlas_1480x540_43: -3714432816997293360
+      menu_atlas_1480x540_44: 4719677269455238986
+      menu_atlas_1480x540_45: -8247180810671618622
+      menu_atlas_1480x540_46: -7721114527144122948
+      menu_atlas_1480x540_47: -7224368135720725312
+      menu_atlas_1480x540_48: 6110677062778994551
+      menu_atlas_1480x540_49: 6058990612091318877
+      menu_atlas_1480x540_5: 6131430932045489731
+      menu_atlas_1480x540_50: 6321944882434795244
+      menu_atlas_1480x540_51: -3396405658315536176
+      menu_atlas_1480x540_52: 7970017532988387325
+      menu_atlas_1480x540_53: 6258335500514852544
+      menu_atlas_1480x540_54: -5333648165757125733
+      menu_atlas_1480x540_55: -561313539366761432
+      menu_atlas_1480x540_56: 2287934987675250810
+      menu_atlas_1480x540_57: 5139105484971473977
+      menu_atlas_1480x540_58: 2782003922915748336
+      menu_atlas_1480x540_59: -1133772386747426590
+      menu_atlas_1480x540_6: -5881112270090276198
+      menu_atlas_1480x540_60: 6204995433486998175
+      menu_atlas_1480x540_61: 8995504730326709254
+      menu_atlas_1480x540_62: 388776606580926849
+      menu_atlas_1480x540_63: -6740276392738698755
+      menu_atlas_1480x540_7: 3479152351655820792
+      menu_atlas_1480x540_8: -8857296159654777694
+      menu_atlas_1480x540_9: 1434038721172982332
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -182,7 +182,11 @@ public class DraggableItem : TrainTrack
 
                 continue;
             }
-            if (hit.CompareTag("TrainTrackPiece") || hit.CompareTag("Obstacle"))
+            if (hit.CompareTag("TrainTrackPiece"))
+            {
+                return false;
+            }
+            else if(hit.CompareTag("Obstacle"))
             {
                 if (type == TrackType.Bridge)
                 {
@@ -192,7 +196,6 @@ public class DraggableItem : TrainTrack
                 {
                     return false;
                 }
-
             }
         }
 

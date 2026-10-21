@@ -70,7 +70,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 7.69, y: 1.71}
-  m_SizeDelta: {x: 160, y: 16}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &900843187283300370
 SpriteRenderer:
@@ -149,6 +149,7 @@ MonoBehaviour:
   down: {fileID: 4503370811297048950}
   right: {fileID: 0}
   left: {fileID: 5419870828798684847}
+  isBought: 0
   upConnected: 0
   downConnected: 0
   rightConnected: 0

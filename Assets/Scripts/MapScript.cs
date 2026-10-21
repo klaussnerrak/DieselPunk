@@ -57,8 +57,10 @@ public class MapScript : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
-        Debug.Log("Quit");
+        SceneManager.LoadScene("Scenes/Menu"); 
+        AudioManager.instance.PlayMusic("MenuTrainSound");
+        // Application.Quit();
+        // Debug.Log("Quit");
     }
 
     private void AddLevel(int level)
