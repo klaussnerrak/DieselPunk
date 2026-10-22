@@ -30,7 +30,7 @@ public class GridManager : MonoBehaviour
         //Debug.Log(TrackTiles.Count);
         for(int i = 0; i<Track.Count; i++)
         {
-            TrainTrack currentTrack = Track[i];
+            TrainTrack currentTrack = Track[i];            
             
             for(int j = 0; j<TrackTiles.Count; j++)
             {

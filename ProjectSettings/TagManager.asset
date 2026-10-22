@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - DeleteTrackArea
   - SpecialResource
+  - Bomb
   layers:
   - Default
   - TransparentFX

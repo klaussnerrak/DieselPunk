@@ -1632,6 +1632,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!1 &499624457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4783782241372137230, guid: c612a5de3e788ca4f97621fda7a677d4, type: 3}
+  m_PrefabInstance: {fileID: 1319699269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &539058227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4460,7 +4465,7 @@ PrefabInstance:
     - target: {fileID: 6018977009089834554, guid: c612a5de3e788ca4f97621fda7a677d4, type: 3}
       propertyPath: selectedTrack
       value: 
-      objectReference: {fileID: 4783782241372137230, guid: c612a5de3e788ca4f97621fda7a677d4, type: 3}
+      objectReference: {fileID: 499624457}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

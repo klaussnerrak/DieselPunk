@@ -57,6 +57,12 @@ public class DraggableItem : TrainTrack
 
         isDragging = true;
         offset = transform.position - GetMouseWorldPosition();
+        GridManager.instance.Track.Remove(this);
+        upConnected = false;
+        downConnected = false;
+        leftConnected = false;
+        rightConnected = false;
+        // Debug.Log("Dragging");
     }
 
     private void OnMouseUp()
@@ -129,6 +135,10 @@ public class DraggableItem : TrainTrack
             if (!this.isBought)
             {
                 trainTrackShop.BuyTrack(selectedTrack, initialPosition);
+                if(type == TrackType.Bomb)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
         else
@@ -182,21 +192,29 @@ public class DraggableItem : TrainTrack
 
                 continue;
             }
-            if (hit.CompareTag("TrainTrackPiece"))
+            if(type != TrackType.Bomb)
             {
-                return false;
-            }
-            else if(hit.CompareTag("Obstacle"))
-            {
-                if (type == TrackType.Bridge)
-                {
-                    return true;
-                }
-                else
+                if (hit.CompareTag("TrainTrackPiece"))
                 {
                     return false;
                 }
+                else if(hit.CompareTag("Obstacle"))
+                {
+                    if (type == TrackType.Bridge)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
             }
+            else
+            {
+                Destroy(hit.gameObject);
+            }
+            
         }
 
         return true;
