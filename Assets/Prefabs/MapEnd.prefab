@@ -13,21 +13,20 @@ GameObject:
   - component: {fileID: 7608205122168780822}
   - component: {fileID: 3192047955483751198}
   - component: {fileID: 2121269189717376838}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: MapEnd
   m_TagString: TrainTrackPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6123394765570058204
-Transform:
+--- !u!224 &6123394765570058204
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160567166693149856}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -37,6 +36,11 @@ Transform:
   - {fileID: 6835413243869717508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 160}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &6076986938671628874
 SpriteRenderer:
   serializedVersion: 2
@@ -84,7 +88,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -481243929, guid: 86e01b406e095de4a980c0adee8109c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -176,9 +180,10 @@ MonoBehaviour:
   down: {fileID: 2525691182670585646}
   right: {fileID: 0}
   left: {fileID: 0}
+  isBought: 0
   upConnected: 0
   downConnected: 0
-  rightConnected: 1
+  rightConnected: 0
   leftConnected: 0
   TrackLocked: 0
 --- !u!1 &2228183907974431718
@@ -190,7 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6835413243869717508}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: UpPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7841069623426465032}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: DownPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

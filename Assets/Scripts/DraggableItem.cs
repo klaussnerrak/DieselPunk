@@ -57,11 +57,7 @@ public class DraggableItem : TrainTrack
 
         isDragging = true;
         offset = transform.position - GetMouseWorldPosition();
-        GridManager.instance.Track.Remove(this);
-        upConnected = false;
-        downConnected = false;
-        leftConnected = false;
-        rightConnected = false;
+        
         // Debug.Log("Dragging");
     }
 
@@ -96,7 +92,7 @@ public class DraggableItem : TrainTrack
 
             if (TryGetComponent<BoxCollider2D>(out var collider))
             {
-                Debug.Log(type);
+                //Debug.Log(type);
                 collider.enabled = false;
                 collider.enabled = true;
             }

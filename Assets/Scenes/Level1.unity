@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 35482148}
   - component: {fileID: 35482150}
   - component: {fileID: 35482149}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,11 +951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.86
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -976,6 +976,14 @@ PrefabInstance:
     - target: {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6123394765570058204, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1428,7 +1436,7 @@ GameObject:
   - component: {fileID: 539058231}
   - component: {fileID: 539058230}
   - component: {fileID: 539058229}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: GoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1639,7 +1647,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5037237556673466204, guid: b1dd3d3657415cc44974dbec36460211, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5626,7 +5634,11 @@ MonoBehaviour:
   spawnInterval: 1.5
   minX: -5.5
   maxX: 2.5
-  spawnY: 10
+  spawnY: 4
+  trackIndex: 0
+  customGravityScale: 0.03
+  flightTime: 4
+  isRunning: 0
 --- !u!4 &2049859352
 Transform:
   m_ObjectHideFlags: 0
@@ -5969,7 +5981,7 @@ GameObject:
   - component: {fileID: 2123598531}
   - component: {fileID: 2123598533}
   - component: {fileID: 2123598532}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: WinPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

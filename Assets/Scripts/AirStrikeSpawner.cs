@@ -7,43 +7,96 @@ public class AirStrikeSpawner : MonoBehaviour
     public Transform target;
 
     public float spawnInterval = 1.5f; 
-    public float minX = -8f; // Limite esquerdo no ar
-    public float maxX = 8f;  // Limite direito no ar
-    public float spawnY = 10f; // Altura de onde elas caem
+    public float minX = -5.5f; // Limite esquerdo no ar
+    public float maxX = 2.5f;  // Limite direito no ar
+    public float spawnY = 7f; // Altura de onde elas caem
 
-   
-    void Start()
+    public static AirStrikeSpawner instance;
+    public int trackIndex = 0;
+    public float customGravityScale = 0.03f;
+    public float flightTime = 3f;
+
+    public bool isRunning = false;
+    private Coroutine airstrikeCoroutine;
+    
+
+   void Awake()
     {
-        // Se você esqueceu de arrastar o target no Inspector, tenta achar pela Tag "Player"
-        if (target == null)
+        if (instance == null)
         {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("TrainTrackPiece");
-            if (playerObj != null)
-            {
-                target = playerObj.transform;
-            }
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    
+    
+    public void StartAirstrike()    
+    {
+        if (!isRunning)
+        {
+            isRunning = true;
+            airstrikeCoroutine = StartCoroutine(SpawnTargetedBombs());
+        }
+    }
 
-        StartCoroutine(SpawnTargetedBombs());
+    public void StopAirstrike()    
+    {
+        UnityEngine.Debug.Log(">>> StopAirstrike foi chamado!");
+            isRunning = false;
+            StopAllCoroutines();
+        
     }
 
     IEnumerator SpawnTargetedBombs()
     {
-        while (true)
+        while (isRunning)
         {
-            // Só spawna se o alvo existir na cena
-            if (target != null && target.position.x < maxX && target.position.x > minX)
+            
+            if(trackIndex < GridManager.instance.Track.Count)
             {
-                // Pega a posição X atual do alvo e adiciona uma leve predição se ele estiver correndo
-                float targetX = target.position.x;
-                Vector3 spawnPosition = new Vector3(targetX, spawnY, 0f);
+                TrainTrack track = GridManager.instance.Track[trackIndex];
+                
+                if (track != null && track.transform.position.x <= maxX && track.transform.position.x >= minX)            {
+                    
+                    float targetX = track.transform.position.x;
+                    Vector3 spawnPosition = new Vector3(targetX+3, spawnY, 0f);
 
-                // Cria a bomba exatamente acima do alvo
-                Instantiate(bombPrefab, spawnPosition, Quaternion.identity);
+                    if (isRunning)
+                    {
+                        GameObject newBomb = Instantiate(bombPrefab, spawnPosition, Quaternion.identity);
+
+                        Bomb bomb = newBomb.GetComponent<Bomb>();
+                        bomb.targetPosition = track;                    
+                        
+                        Rigidbody2D rb = newBomb.GetComponent<Rigidbody2D>();           
+                        rb.gravityScale = customGravityScale;
+
+                        Vector2 initialVelocity = CalculateProjectileVelocity(spawnPosition, track.transform.position, flightTime, rb.gravityScale);
+                        rb.linearVelocity = initialVelocity;
+                    }
+
+                }
+                
+                trackIndex++;
+                yield return new WaitForSeconds(spawnInterval);
             }
+            else
+            {
+                yield return false;
+            }
+        }        
+    }
 
-            // Aguarda o tempo do intervalo para a próxima bomba
-            yield return new WaitForSeconds(spawnInterval);
-        }
+    Vector2 CalculateProjectileVelocity(Vector2 origin, Vector2 target, float time, float gravityScale)
+    {
+        Vector2 distance = target - origin;
+        float velocityX = distance.x / time;
+        float gravity = Physics2D.gravity.y * gravityScale;        
+        float velocityY = (distance.y - (0.5f * gravity * time * time)) / time;
+        return new Vector2(velocityX, velocityY);
     }
 }
