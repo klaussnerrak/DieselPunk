@@ -76,6 +76,7 @@ public class PlayerTrainScript : MonoBehaviour
             //GridManager.instance.AddToTrack(mapEnd);
             GridManager.instance.UpdateTrack();
             TimerScript.instance.StartPlayCounter();
+            AirStrikeSpawner.instance.StartAirstrike();
         }
 
     }
@@ -127,12 +128,14 @@ public class PlayerTrainScript : MonoBehaviour
     {
         if (TimerScript.instance.timeCounter > 1)
         {
-            GameController.instance.WinCondition();
+            AirStrikeSpawner.instance.StopAirstrike();
+            GameController.instance.WinCondition();            
             state = StateMachineType.Waiting;
         }
         else
         {
-            GameController.instance.LoseCondition();
+            AirStrikeSpawner.instance.StopAirstrike();
+            GameController.instance.LoseCondition();            
             state = StateMachineType.Waiting;
 
         }

@@ -8,12 +8,12 @@ public class Menu : MonoBehaviour
     [SerializeField] private Button exitButton;
     [SerializeField] private Button optionsButton;
     [SerializeField] private Button creditsButton;
-    [SerializeField] private Button tutorialButton;
+    //[SerializeField] private Button tutorialButton;
     
     [SerializeField] private  GameObject CreditsPanel;
     [SerializeField] private  GameObject OptionsPanel;
     [SerializeField] private  GameObject MenuPanel;
-    [SerializeField] private  GameObject TutorialPanel;
+    //[SerializeField] private  GameObject TutorialPanel;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,11 +21,11 @@ public class Menu : MonoBehaviour
         exitButton.onClick.AddListener(ExitGame);
         optionsButton.onClick.AddListener(OptionsScreen);
         creditsButton.onClick.AddListener(CreditsScreen);
-        tutorialButton.onClick.AddListener(TutorialScreen);
+       // tutorialButton.onClick.AddListener(TutorialScreen);
         CreditsPanel.SetActive(false);
         OptionsPanel.SetActive(false);
         MenuPanel.SetActive(true);
-        TutorialPanel.SetActive(false);
+        //TutorialPanel.SetActive(false);
         AudioManager.instance.PlayMusic("MenuTrainSound");
         
 
@@ -41,7 +41,7 @@ public class Menu : MonoBehaviour
     {
         OptionsPanel.SetActive(true);
         CreditsPanel.SetActive(false);
-        TutorialPanel.SetActive(false);
+        //TutorialPanel.SetActive(false);
     }
 
     public void CreditsScreen()
@@ -50,11 +50,11 @@ public class Menu : MonoBehaviour
         OptionsPanel.SetActive(false);
     }
 
-    public void TutorialScreen()
+    /*public void TutorialScreen()
     {
-        TutorialPanel.SetActive(true);
+        //TutorialPanel.SetActive(true);
         OptionsPanel.SetActive(false);
-    }
+    }*/
 
     public void ExitGame()
     {

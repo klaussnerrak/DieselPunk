@@ -57,6 +57,8 @@ public class DraggableItem : TrainTrack
 
         isDragging = true;
         offset = transform.position - GetMouseWorldPosition();
+        
+        // Debug.Log("Dragging");
     }
 
     private void OnMouseUp()
@@ -90,7 +92,7 @@ public class DraggableItem : TrainTrack
 
             if (TryGetComponent<BoxCollider2D>(out var collider))
             {
-                Debug.Log(type);
+                //Debug.Log(type);
                 collider.enabled = false;
                 collider.enabled = true;
             }
@@ -129,6 +131,10 @@ public class DraggableItem : TrainTrack
             if (!this.isBought)
             {
                 trainTrackShop.BuyTrack(selectedTrack, initialPosition);
+                if(type == TrackType.Bomb)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
         else
@@ -182,18 +188,29 @@ public class DraggableItem : TrainTrack
 
                 continue;
             }
-            if (hit.CompareTag("TrainTrackPiece") || hit.CompareTag("Obstacle"))
+            if(type != TrackType.Bomb)
             {
-                if (type == TrackType.Bridge)
-                {
-                    return true;
-                }
-                else
+                if (hit.CompareTag("TrainTrackPiece"))
                 {
                     return false;
                 }
-
+                else if(hit.CompareTag("Obstacle"))
+                {
+                    if (type == TrackType.Bridge)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
             }
+            else
+            {
+                Destroy(hit.gameObject);
+            }
+            
         }
 
         return true;

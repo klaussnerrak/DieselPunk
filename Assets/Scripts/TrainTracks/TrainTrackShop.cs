@@ -32,7 +32,7 @@ public class TrainTrackShop : MonoBehaviour
         if (selectedTrack != null)
         {
                
-               Debug.Log("selectedTrack.dieselCost: "+selectedTrack.dieselCost);
+               //Debug.Log("selectedTrack.dieselCost: "+selectedTrack.dieselCost);
             if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
             {
                 UpdateTrackShop(selectedTrack.dieselCost);
@@ -46,11 +46,11 @@ public class TrainTrackShop : MonoBehaviour
                 purchasedTrack.transform.localScale = Vector3.one;
   
                 selectedTrack.isBought = true;
-                Debug.Log("new train track generated after purchase");
+                //Debug.Log("new train track generated after purchase");
             }
             else
             {
-                Debug.Log("can't generate train track - not enough diesel");
+                //Debug.Log("can't generate train track - not enough diesel");
                 selectedTrack.transform.position = trackStorePosition;
             }
         }

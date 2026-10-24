@@ -72,7 +72,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1016806618822143782}
   - component: {fileID: 5418037771274317535}
-  - component: {fileID: -4868978574599484079}
   - component: {fileID: -6845839344593968096}
   - component: {fileID: -1589141666658096773}
   - component: {fileID: -5881669924715734809}
@@ -83,16 +82,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1016806618822143782
-Transform:
+--- !u!224 &1016806618822143782
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8959878057398117624}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.71, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -100,6 +98,11 @@ Transform:
   - {fileID: 8095282055339899816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4.8, y: -0.056250002}
+  m_SizeDelta: {x: 160, y: 160}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &5418037771274317535
 SpriteRenderer:
   serializedVersion: 2
@@ -159,29 +162,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &-4868978574599484079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8959878057398117624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478ccd79f9601a44082bbf8513963873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrainTrack
-  type: 3
-  dieselCost: 50
-  up: {fileID: 0}
-  down: {fileID: 0}
-  right: {fileID: 0}
-  left: {fileID: 0}
-  upConnected: 0
-  downConnected: 0
-  rightConnected: 0
-  leftConnected: 0
-  TrackLocked: 0
 --- !u!114 &-6845839344593968096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,11 +180,13 @@ MonoBehaviour:
   down: {fileID: 0}
   right: {fileID: 8333798846871764192}
   left: {fileID: 5798509069182026803}
+  isBought: 1
   upConnected: 0
   downConnected: 0
   rightConnected: 0
   leftConnected: 0
   TrackLocked: 0
+  selectedTrack: {fileID: 8959878057398117624}
   isTrainMoving: 0
 --- !u!61 &-1589141666658096773
 BoxCollider2D:

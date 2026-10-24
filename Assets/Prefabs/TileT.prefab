@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3145920943455712386}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DownPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7004319909785216113}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LeftPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: -93929215073774756}
   - component: {fileID: -7976010913371025201}
   - component: {fileID: 2913382758349264448}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TileT
   m_TagString: TrainTrackPiece
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.74, y: 1.7}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &7970935658520529178
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9189023498879117399, guid: b4cb6f0111580004691451934875c9a8, type: 3}
+  m_Sprite: {fileID: -3476077894306799690, guid: 110932b2032c56144a74db3af1c55f18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
   down: {fileID: 671806085087790393}
   right: {fileID: 2983844055895759873}
   left: {fileID: 2714442133320104218}
+  isBought: 0
   upConnected: 0
   downConnected: 0
   rightConnected: 0
@@ -225,7 +226,7 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.0125, y: 0.0125, z: 0.0125, w: 0.0125}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
@@ -260,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1964527396316348833}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RightPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5822490159972980398}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UpPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

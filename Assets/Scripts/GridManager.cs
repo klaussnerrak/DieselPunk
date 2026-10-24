@@ -1,6 +1,7 @@
 using UnityEngine;
 using NavMeshPlus.Components;  
 using System.Collections.Generic;
+using System.Diagnostics;
 
 
 public class GridManager : MonoBehaviour
@@ -30,7 +31,7 @@ public class GridManager : MonoBehaviour
         //Debug.Log(TrackTiles.Count);
         for(int i = 0; i<Track.Count; i++)
         {
-            TrainTrack currentTrack = Track[i];
+            TrainTrack currentTrack = Track[i];            
             
             for(int j = 0; j<TrackTiles.Count; j++)
             {
@@ -306,7 +307,9 @@ public class GridManager : MonoBehaviour
 
     public bool IsCrossConnected(TrainTrack track1, TrainTrack track2)
     {
-        
+
+        // CROSS TILE ############################################################################################
+       
         if(track2.type == TrackType.Cross){        
             if(track1.leftConnected && !track1.rightConnected)
             {
@@ -413,6 +416,9 @@ public class GridManager : MonoBehaviour
                     return true;
                 }
             }
+
+        // STRAIGHT TILE ############################################################################################
+
         }else if(track2.type == TrackType.Straight)
         {
             if(track1.leftConnected && !track1.rightConnected)
@@ -474,11 +480,14 @@ public class GridManager : MonoBehaviour
                                 
                 }
             }
+        
+        // CURVE TILE ############################################################################################
+
         }else if(track2.type == TrackType.Curve)
         {
             if(track1.leftConnected && !track1.rightConnected)
             {
-                if(track2.left == null) Debug.Log(track2);
+                
                 if(track2.left.transform.position == track1.right.transform.position)
                 {
                     track2.leftConnected = true;
@@ -544,11 +553,52 @@ public class GridManager : MonoBehaviour
             
 
              }
-        }        
+
+        // END TILE ############################################################################################
+
+        }else if(track2.type == TrackType.End)
+        {
+            
+            if(track1.leftConnected && !track1.rightConnected)
+            {                
+               if(Vector3.Distance(track1.right.transform.position,track2.down.transform.position)<0.01)
+                {
+                    
+                    track2.downConnected = true;
+                    track1.rightConnected = true;
+                    return true;
+                }                
+
+            }else if(track1.rightConnected && !track1.leftConnected)
+            {
+                if(Vector3.Distance(track1.left.transform.position,track2.down.transform.position)<0.01)
+                {
+                    track2.downConnected = true;
+                    track1.leftConnected = true;
+                    return true;
+                }
+
+            }else if(track1.upConnected && !track1.downConnected)
+            {
+                if(Vector3.Distance(track1.down.transform.position,track2.down.transform.position)<0.01)
+                {
+                    track2.downConnected = true;
+                    track1.downConnected = true;
+                    return true;
+                }
+
+            }else if(track1.downConnected && !track1.upConnected)
+            {
+                if(Vector3.Distance(track1.up.transform.position,track2.down.transform.position)<0.01)
+                {
+                    track2.downConnected = true;
+                    track1.upConnected = true;
+                    return true;
+                }
+            }
+        }                
         return false;
     }
 
-
-    
 }    
     
