@@ -26,6 +26,9 @@ public class TrainTrack : MonoBehaviour
     public bool leftConnected = false;
 
     public bool TrackLocked = false;
+
+    public bool isDragging = false;
+
        
 
 

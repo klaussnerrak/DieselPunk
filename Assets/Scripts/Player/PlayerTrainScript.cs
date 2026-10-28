@@ -49,7 +49,8 @@ public class PlayerTrainScript : MonoBehaviour
 
         if (gridManagerObject != null)
         {
-            GridManager.instance.UpdateTrackStack();
+            GridManager.instance.AddToTrackTiles(firstTrack);
+            GridManager.instance.AddToTrackTiles(mapEnd);
         }
 
     }
@@ -72,9 +73,8 @@ public class PlayerTrainScript : MonoBehaviour
 
         {
             state = StateMachineType.Moving;
-            playerStart = false;
-            //GridManager.instance.AddToTrack(mapEnd);
-            GridManager.instance.UpdateTrack();
+            playerStart = false;            
+            GridManager.instance.Track.Add(firstTrack);  
             TimerScript.instance.StartPlayCounter();
             AirStrikeSpawner.instance.StartAirstrike();
         }
@@ -83,8 +83,7 @@ public class PlayerTrainScript : MonoBehaviour
 
     private void Moving()
     {
-        //Debug.Log("moving ");    
-
+        //Debug.Log(trackIndex);       
 
         if (trackIndex >= GridManager.instance.Track.Count)
         {
@@ -94,9 +93,11 @@ public class PlayerTrainScript : MonoBehaviour
                 TimerScript.instance.pauseTimer = true;
             }
             else if (GridManager.instance.Track[trackIndex - 1] != mapEnd)
+                                  
             {
-                GridManager.instance.UpdateMovingTrack();
-            }
+                GridManager.instance.UpdateMovingTrack(GridManager.instance.Track[trackIndex-1]);                
+            }       
+                    
 
             return;
         }
@@ -119,7 +120,8 @@ public class PlayerTrainScript : MonoBehaviour
 
         if (distance < 0.1f)
         {
-            if (trackIndex > 0) GridManager.instance.Track[trackIndex - 1].TrackLocked = true;
+            if (trackIndex > 0) GridManager.instance.Track[trackIndex].TrackLocked = true;
+            GridManager.instance.UpdateMovingTrack(GridManager.instance.Track[trackIndex]);
             trackIndex++;
         }
     }

@@ -1,7 +1,6 @@
-using NavMeshPlus.Components;
-//using UnityEditor.ShaderGraph.Serialization;
+
+using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class DraggableItem : TrainTrack
@@ -9,7 +8,6 @@ public class DraggableItem : TrainTrack
     //public GridManager gridManager;
     [SerializeField] private GameObject selectedTrack;
     public bool isTrainMoving = false;
-    private bool isDragging = false;
     private Vector3 offset;
     private Grid targetGrid;
     private Tilemap tilemap;
@@ -43,7 +41,7 @@ public class DraggableItem : TrainTrack
 
     void Update()
     {
-        if (isDragging && TrackLocked == false)
+        if (this.isDragging && TrackLocked == false)
         {
             Vector3 mousePosition = GetMouseWorldPosition();
             transform.position = mousePosition + offset;
@@ -53,32 +51,37 @@ public class DraggableItem : TrainTrack
 
     private void OnMouseDown()
     {
-        if (isTrainMoving) return;
-
-        isDragging = true;
-        offset = transform.position - GetMouseWorldPosition();
+        //if (isTrainMoving) return;
+        if (TrackLocked == false)        {
+            
+            this.isDragging = true;
+            offset = transform.position - GetMouseWorldPosition();
+            
+        }       
         
-        // Debug.Log("Dragging");
     }
 
     private void OnMouseUp()
     {
-
-        //adiciona o objeto na lista do gridmanager
-        isDragging = false;
-        GridManager.instance.AddToTrack(this);
-        trackIndex = GridManager.instance.TrackTiles.Count - 1;
-
+         this.isDragging = false;
         if (!CheckTrackDeleteArea())
         {
-            SnapTileToGrid();
-        }
+            
 
+        //adiciona o objeto na lista do gridmanager
+            if(GridManager.instance.IsNewTrack(this)) 
+            {            
+                GridManager.instance.AddToTrackTiles(this);
+                trackIndex = GridManager.instance.TrackTiles.Count - 1;
+                SnapTileToGrid();
+            }  
+            SnapTileToGrid();              
+        }        
     }
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(1) && !isDragging && !isTrainMoving)
+        if (Input.GetMouseButtonDown(1) && !this.isDragging && !isTrainMoving)
         {
             RotateTrack();
         }
@@ -109,7 +112,7 @@ public class DraggableItem : TrainTrack
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 
-    private void SnapTileToGrid()
+    public void SnapTileToGrid()
     {
         if (targetGrid == null) return;
 
@@ -216,4 +219,5 @@ public class DraggableItem : TrainTrack
         return true;
     }
 
+    
 }
