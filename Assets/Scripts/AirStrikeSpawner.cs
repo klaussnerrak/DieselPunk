@@ -22,15 +22,7 @@ public class AirStrikeSpawner : MonoBehaviour
 
    void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        instance  = this;
     }
     
     
@@ -45,7 +37,7 @@ public class AirStrikeSpawner : MonoBehaviour
 
     public void StopAirstrike()    
     {
-        UnityEngine.Debug.Log(">>> StopAirstrike foi chamado!");
+        
             isRunning = false;
             StopAllCoroutines();
         

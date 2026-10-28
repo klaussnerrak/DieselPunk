@@ -2,6 +2,7 @@ using UnityEngine;
 using NavMeshPlus.Components;  
 using System.Collections.Generic;
 using System.Diagnostics;
+using UnityEngine.Rendering;
 
 
 public class GridManager : MonoBehaviour
@@ -18,12 +19,13 @@ public class GridManager : MonoBehaviour
     }
 
 
-    public void AddToTrack(TrainTrack tile)
+    public void AddToTrackTiles
+    (TrainTrack tile)
     {        
         TrackTiles.Add(tile);
     }
 
-    public void UpdateTrack()
+    /*public void UpdateTrack()
     {
        Track.Clear();
        Track.Add(TrackTiles[0]);
@@ -59,19 +61,17 @@ public class GridManager : MonoBehaviour
            
         }
          //Debug.Log(Track.Count);
-    } 
+    } */
 
-    public void UpdateMovingTrack(
-        
-    )
+    public void UpdateMovingTrack(TrainTrack track)
     {
        //Track.Clear();
        //Track.Add(TrackTiles[0]);
         
         //Debug.Log(TrackTiles.Count);
-        for(int i = 0; i<Track.Count; i++)
+        //for(int i = 0; i<Track.Count; i++)
         {
-            TrainTrack currentTrack = Track[i];
+            TrainTrack currentTrack = track;
             for(int j = 0; j<TrackTiles.Count; j++)
             {
                 TrainTrack nextTrack = TrackTiles[j];
@@ -82,15 +82,17 @@ public class GridManager : MonoBehaviour
                         {
                             //Debug.Log(j);
                             Track.Add(TrackTiles[j]);
-                            i++;
-                            currentTrack = Track[i];
+                            TrackTiles[j].TrackLocked = true;
+                            //i++;
+                            //currentTrack = Track[i];
                         }                        
                         
                     }else if(IsConnected(currentTrack, nextTrack))
                     {
                         Track.Add(TrackTiles[j]);
-                        i++;
-                        currentTrack = Track[i];
+                        TrackTiles[j].TrackLocked = true;
+                        //i++;
+                        //currentTrack = Track[i];
                                            
                     }
                 }               
@@ -125,7 +127,7 @@ public class GridManager : MonoBehaviour
                     Track[Track.Count-2].leftConnected = false;
                 }
 
-                IsConnected(Track[Track.Count-2], track);
+                //IsConnected(Track[Track.Count-2], track);
 
             }
 
@@ -135,7 +137,9 @@ public class GridManager : MonoBehaviour
     }     
 
     public bool IsConnected(TrainTrack track1, TrainTrack track2)
-    {       
+    {    
+        if(track2.isDragging==false)
+        {   
         //Up check********************************************************************************************                   
         
         
@@ -285,11 +289,13 @@ public class GridManager : MonoBehaviour
                 return true;
             }                
         } 
+        }
+        
         //Debug.Log(track1.name);
         return false;
     }
 
-    public void UpdateTrackStack()
+   /* public void UpdateTrackStack()
     {
         TrainTrack[] UpdateTrack = FindObjectsByType<TrainTrack>(FindObjectsSortMode.None);        
         TrackTiles.AddRange(UpdateTrack); 
@@ -303,11 +309,14 @@ public class GridManager : MonoBehaviour
             }
 
         }                
-    }
+    }*/
 
     public bool IsCrossConnected(TrainTrack track1, TrainTrack track2)
     {
-
+        if(track2.isDragging == false)
+        {
+            
+       
         // CROSS TILE ############################################################################################
        
         if(track2.type == TrackType.Cross){        
@@ -596,9 +605,25 @@ public class GridManager : MonoBehaviour
                     return true;
                 }
             }
-        }                
+        }   
+
+        }
         return false;
     }
 
+      
+
+    public bool IsNewTrack(TrainTrack track)
+    {
+        for(int i = 0; i<TrackTiles.Count; i++)
+        {
+            if(TrackTiles[i]==track)
+                {
+                    return false;
+                }
+        }
+
+        return true;
+    }
 }    
     

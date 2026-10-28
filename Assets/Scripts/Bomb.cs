@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
@@ -12,8 +10,7 @@ public class Bomb : MonoBehaviour
     {
         if(Vector3.Distance(targetPosition.transform.position, transform.position)<0.5)
         {
-            ParticleSystem explosion = Instantiate(particles, transform.position, Quaternion.identity);
-            UnityEngine.Debug.Log("Hit");
+            ParticleSystem explosion = Instantiate(particles, transform.position, Quaternion.identity);            
 
             Destroy(targetPosition.gameObject);
             Destroy(gameObject);
