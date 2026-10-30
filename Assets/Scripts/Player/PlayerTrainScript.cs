@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerTrainScript : MonoBehaviour
 {
+    public static PlayerTrainScript instance;
+
     public TrainTrack mapEnd;
     public TrainTrack firstTrack;
     private NavMeshAgent agent;
@@ -41,6 +43,18 @@ public class PlayerTrainScript : MonoBehaviour
         Debug.Log("CLICKED");
         playerStart = true;
         //Moving();
+    }
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
@@ -169,7 +183,10 @@ public class PlayerTrainScript : MonoBehaviour
         speed += speedAmount;
         rotationSpeed += speedAmount; 
     }
-
-
-
+ 
+    public bool IsAtMapEnd()
+    {
+        return state == StateMachineType.Finish;
+    }
 }
+

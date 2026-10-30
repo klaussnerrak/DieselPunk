@@ -133,7 +133,7 @@ public class DraggableItem : TrainTrack
 
             if (!this.isBought)
             {
-                trainTrackShop.BuyTrack(selectedTrack, initialPosition);
+                trainTrackShop.BuyItem(selectedTrack, initialPosition);
                 if(type == TrackType.Bomb)
                 {
                     Destroy(gameObject);

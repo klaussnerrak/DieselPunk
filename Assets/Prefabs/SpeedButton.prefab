@@ -111,7 +111,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1691097272774409050}
         m_TargetAssemblyTypeName: TrainTrackShop, Assembly-CSharp
-        m_MethodName: BuyTrack
+        m_MethodName: BuyItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8753217556510772803}

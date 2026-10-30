@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class TrainTrackShop : MonoBehaviour
 {
-    private TrainTrack selectedTrack;
-    private SpecialTrack specialTrack;
     [SerializeField] private Transform shopButton;
+    [SerializeField] private Vector3 trackStorePosition;
 
     private Camera mainCamera;
     void Start()
@@ -14,63 +13,44 @@ public class TrainTrackShop : MonoBehaviour
 
         GameObject gridManagerObject = GameObject.Find("Grid");
     }
-    public void BuyTrack(GameObject selectedTile, Vector3 trackStorePosition)
+ 
+    public void BuyItem(GameObject selectedItem)
     {
-        if (selectedTile != null)
+        BuyItem(selectedItem, trackStorePosition);
+    }
+ 
+    public void BuyItem(GameObject selectedItem, Vector3 trackStorePosition)
+    {
+        if (selectedItem == null) return;
+
+        TrainTrack track = selectedItem.GetComponent<TrainTrack>();
+        SpecialTrack specialTrack = selectedItem.GetComponent<SpecialTrack>();
+
+        if (track != null)
         {
-            if (selectedTile.CompareTag("SpecialResource"))
+            if (CheckDieselAmount(track.dieselCost))
             {
-                specialTrack = selectedTile.GetComponent<SpecialTrack>();
-            }
-            else
-            {
-                selectedTrack = selectedTile.GetComponent<TrainTrack>();
-            }
-        }
-
-
-        if (selectedTrack != null)
-        {
-               
-               //Debug.Log("selectedTrack.dieselCost: "+selectedTrack.dieselCost);
-            if (ShopManager.instance.playerDiesel >= selectedTrack.dieselCost)
-            {
-                UpdateTrackShop(selectedTrack.dieselCost);
-                
-                GameObject purchasedTrack = Instantiate(
-                    selectedTile,
-                    trackStorePosition,
-                    Quaternion.identity
-                ); 
-
+                GameObject purchasedTrack = Instantiate(selectedItem, trackStorePosition, Quaternion.identity);
                 purchasedTrack.transform.localScale = Vector3.one;
-  
-                selectedTrack.isBought = true;
-                //Debug.Log("new train track generated after purchase");
+                track.isBought = true;
             }
             else
-            {
-                //Debug.Log("can't generate train track - not enough diesel");
-                selectedTrack.transform.position = trackStorePosition;
+            { 
+                track.transform.position = trackStorePosition;
+                Debug.Log("Not enough diesel");
             }
         }
         else if (specialTrack != null)
         {
-            if (ShopManager.instance.playerDiesel >= specialTrack.dieselCost)
+            if (CheckDieselAmount(specialTrack.dieselCost))
             {
-                UpdateTrackShop(specialTrack.dieselCost);
-
                 switch (specialTrack.type)
                 {
                     case SpecialTrackType.TIME:
-                        {
-                            specialTrack.IncreaseTime();
-                        }
+                        specialTrack.IncreaseTime();
                         break;
                     case SpecialTrackType.SPEED:
-                        {
-                            specialTrack.IncreasePlayerSpeed();
-                        }
+                        specialTrack.IncreasePlayerSpeed();
                         break;
                 }
             }
@@ -79,9 +59,21 @@ public class TrainTrackShop : MonoBehaviour
                 Debug.Log("Can't use special resource - not enough diesel");
             }
         }
-
+        else
+        {
+            Debug.Log("Selected item has no Track or SpecialTrack component");
+        }
     }
-
+ 
+    private bool CheckDieselAmount(int dieselCost)
+    {
+        if (ShopManager.instance.playerDiesel >= dieselCost)
+        {
+            UpdateTrackShop(dieselCost);
+            return true;
+        }
+        return false;
+    }
 
     private void UpdateTrackShop(int dieselCost)
     {
