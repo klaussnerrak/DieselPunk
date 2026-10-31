@@ -9,6 +9,7 @@ TagManager:
   - DeleteTrackArea
   - SpecialResource
   - Bomb
+  - TrainWagon
   layers:
   - Default
   - TransparentFX
