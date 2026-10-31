@@ -5,6 +5,7 @@ public class TrainTrackShop : MonoBehaviour
 {
     [SerializeField] private Transform shopButton;
     [SerializeField] private Vector3 trackStorePosition;
+    private GameObject tileBombPrefab;
 
     private Camera mainCamera;
     void Start()
@@ -13,12 +14,12 @@ public class TrainTrackShop : MonoBehaviour
 
         GameObject gridManagerObject = GameObject.Find("Grid");
     }
- 
+
     public void BuyItem(GameObject selectedItem)
     {
         BuyItem(selectedItem, trackStorePosition);
     }
- 
+
     public void BuyItem(GameObject selectedItem, Vector3 trackStorePosition)
     {
         if (selectedItem == null) return;
@@ -28,15 +29,21 @@ public class TrainTrackShop : MonoBehaviour
 
         if (track != null)
         {
+
             bool playerHasCredits = CheckDieselAmount(track.dieselCost);
             if (playerHasCredits)
             {
                 GameObject purchasedTrack = Instantiate(selectedItem, trackStorePosition, Quaternion.identity);
                 purchasedTrack.transform.localScale = Vector3.one;
                 track.isBought = true;
+
+                if (track.type == TrackType.Bomb)
+                {
+                    Destroy(selectedItem);
+                }
             }
             else
-            { 
+            {
                 track.transform.position = trackStorePosition;
                 Debug.Log("Not enough diesel");
             }
@@ -66,7 +73,7 @@ public class TrainTrackShop : MonoBehaviour
             Debug.Log("Selected item has no Track or SpecialTrack component");
         }
     }
- 
+
     private bool CheckDieselAmount(int dieselCost)
     {
         if (ShopManager.instance.playerDiesel >= dieselCost)
