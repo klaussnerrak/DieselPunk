@@ -28,7 +28,8 @@ public class TrainTrackShop : MonoBehaviour
 
         if (track != null)
         {
-            if (CheckDieselAmount(track.dieselCost))
+            bool playerHasCredits = CheckDieselAmount(track.dieselCost);
+            if (playerHasCredits)
             {
                 GameObject purchasedTrack = Instantiate(selectedItem, trackStorePosition, Quaternion.identity);
                 purchasedTrack.transform.localScale = Vector3.one;
@@ -42,7 +43,8 @@ public class TrainTrackShop : MonoBehaviour
         }
         else if (specialTrack != null)
         {
-            if (CheckDieselAmount(specialTrack.dieselCost))
+            bool playerHasCredits = CheckDieselAmount(specialTrack.dieselCost);
+            if (playerHasCredits)
             {
                 switch (specialTrack.type)
                 {
