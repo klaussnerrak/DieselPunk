@@ -14,8 +14,7 @@ public class GridManager : MonoBehaviour
     
     public void Start()
     { 
-        instance = this;
-        //UpdateTrackStack();
+        instance = this; 
     }
 
 
@@ -24,45 +23,7 @@ public class GridManager : MonoBehaviour
     {        
         TrackTiles.Add(tile);
     }
-
-    /*public void UpdateTrack()
-    {
-       Track.Clear();
-       Track.Add(TrackTiles[0]);
-        
-        //Debug.Log(TrackTiles.Count);
-        for(int i = 0; i<Track.Count; i++)
-        {
-            TrainTrack currentTrack = Track[i];            
-            
-            for(int j = 0; j<TrackTiles.Count; j++)
-            {
-                TrainTrack nextTrack = TrackTiles[j];
-                if(nextTrack!=currentTrack){
-                    if(currentTrack.type == TrackType.Cross)
-                    {
-                        if(IsCrossConnected(currentTrack, nextTrack))
-                        {
-                            //Debug.Log(j);
-                            Track.Add(TrackTiles[j]);
-                            i++;
-                            currentTrack = Track[i];
-                        }                        
-                        
-                    }else if(IsConnected(currentTrack, nextTrack))
-                    {
-                        Track.Add(TrackTiles[j]);
-                        i++;
-                        currentTrack = Track[i];
-                                           
-                    }
-                }               
-            }
-           
-        }
-         //Debug.Log(Track.Count);
-    } */
-
+ 
     public void UpdateMovingTrack(TrainTrack track)
     {
        //Track.Clear();
@@ -294,22 +255,7 @@ public class GridManager : MonoBehaviour
         //Debug.Log(track1.name);
         return false;
     }
-
-   /* public void UpdateTrackStack()
-    {
-        TrainTrack[] UpdateTrack = FindObjectsByType<TrainTrack>(FindObjectsSortMode.None);        
-        TrackTiles.AddRange(UpdateTrack); 
-        for(int i = 0; i<TrackTiles.Count; i++)
-        {
-            if(TrackTiles[i].name == "(Fixed) Tile Straight")
-            {
-                TrainTrack auxTile = TrackTiles[0];
-                TrackTiles[0] = TrackTiles[i];
-                TrackTiles[i] = auxTile;
-            }
-
-        }                
-    }*/
+ 
 
     public bool IsCrossConnected(TrainTrack track1, TrainTrack track2)
     {
