@@ -182,12 +182,13 @@ MonoBehaviour:
   down: {fileID: 0}
   right: {fileID: 0}
   left: {fileID: 0}
-  isBought: 0
+  isBought: 1
   upConnected: 0
   downConnected: 0
   rightConnected: 0
   leftConnected: 0
   TrackLocked: 0
+  isDragging: 0
   selectedTrack: {fileID: 2843544127461654216}
   isTrainMoving: 0
 --- !u!61 &-7976010913371025201
