@@ -52,31 +52,30 @@ public class DraggableItem : TrainTrack
     private void OnMouseDown()
     {
         //if (isTrainMoving) return;
-        if (TrackLocked == false)        {
-            
+        if (TrackLocked == false)
+        {
             this.isDragging = true;
             offset = transform.position - GetMouseWorldPosition();
-            
-        }       
-        
+
+        }
+
     }
 
     private void OnMouseUp()
     {
-         this.isDragging = false;
+        this.isDragging = false;
         if (!CheckTrackDeleteArea())
         {
-            
 
-        //adiciona o objeto na lista do gridmanager
-            if(GridManager.instance.IsNewTrack(this)) 
-            {            
+            //adiciona o objeto na lista do gridmanager
+            if (GridManager.instance.IsNewTrack(this))
+            {
                 GridManager.instance.AddToTrackTiles(this);
                 trackIndex = GridManager.instance.TrackTiles.Count - 1;
                 SnapTileToGrid();
-            }  
-            SnapTileToGrid();              
-        }        
+            }
+            SnapTileToGrid();
+        }
     }
 
     private void OnMouseOver()
@@ -133,11 +132,7 @@ public class DraggableItem : TrainTrack
 
             if (!this.isBought)
             {
-                trainTrackShop.BuyTrack(selectedTrack, initialPosition);
-                if(type == TrackType.Bomb)
-                {
-                    Destroy(gameObject);
-                }
+                trainTrackShop.BuyItem(selectedTrack, initialPosition);
             }
         }
         else
@@ -191,33 +186,37 @@ public class DraggableItem : TrainTrack
 
                 continue;
             }
-            if(type != TrackType.Bomb)
+            // if (type != TrackType.Bomb)
+            // {
+            if (hit.CompareTag("TrainTrackPiece"))
             {
-                if (hit.CompareTag("TrainTrackPiece"))
+                return false;
+            }
+            else if (hit.CompareTag("Obstacle"))
+            { 
+                if (type == TrackType.Bridge)
+                { 
+                    return true;
+                }
+                else if (type == TrackType.Bomb)
+                {
+                    Destroy(hit.gameObject);
+                }
+                else
                 {
                     return false;
                 }
-                else if(hit.CompareTag("Obstacle"))
-                {
-                    if (type == TrackType.Bridge)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
             }
-            else
-            {
-                Destroy(hit.gameObject);
-            }
-            
+            // }
+            // else
+            // {
+            //     Destroy(hit.gameObject);
+            // }
+
         }
 
         return true;
     }
 
-    
+
 }
