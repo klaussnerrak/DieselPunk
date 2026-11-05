@@ -15,7 +15,23 @@ public class GridManager : MonoBehaviour
     public void Start()
     { 
         instance = this;
-        //UpdateTrackStack();
+        UpdateTrackStack();
+
+    }
+
+     public void UpdateTrackStack()
+    {
+        TrainTrack[] UpdateTrack = FindObjectsByType<TrainTrack>(FindObjectsSortMode.None);        
+        //TrackTiles.AddRange(UpdateTrack); 
+        for(int i = 0; i<UpdateTrack.Length; i++)
+        {
+            if(UpdateTrack[i].type == TrackType.End
+                ||UpdateTrack[i].type == TrackType.Tunnel)
+            {
+                TrackTiles.Add(UpdateTrack[i]);
+            }
+
+        }             
     }
 
 
@@ -294,22 +310,7 @@ public class GridManager : MonoBehaviour
         //Debug.Log(track1.name);
         return false;
     }
-
-   /* public void UpdateTrackStack()
-    {
-        TrainTrack[] UpdateTrack = FindObjectsByType<TrainTrack>(FindObjectsSortMode.None);        
-        TrackTiles.AddRange(UpdateTrack); 
-        for(int i = 0; i<TrackTiles.Count; i++)
-        {
-            if(TrackTiles[i].name == "(Fixed) Tile Straight")
-            {
-                TrainTrack auxTile = TrackTiles[0];
-                TrackTiles[0] = TrackTiles[i];
-                TrackTiles[i] = auxTile;
-            }
-
-        }                
-    }*/
+   
 
     public bool IsCrossConnected(TrainTrack track1, TrainTrack track2)
     {

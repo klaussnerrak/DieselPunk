@@ -64,7 +64,7 @@ public class PlayerTrainScript : MonoBehaviour
         if (gridManagerObject != null)
         {
             GridManager.instance.AddToTrackTiles(firstTrack);
-            GridManager.instance.AddToTrackTiles(mapEnd);
+            //GridManager.instance.AddToTrackTiles(mapEnd);
         }
 
     }
