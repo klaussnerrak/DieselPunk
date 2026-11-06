@@ -8,7 +8,8 @@ public enum TrackType
     Bridge,
     End,
     Bomb,
-    Tunnel
+    TunnelIn,
+    TunnelOut
 }
 
 public class TrainTrack : MonoBehaviour

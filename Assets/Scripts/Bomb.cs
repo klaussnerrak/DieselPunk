@@ -12,7 +12,7 @@ public class Bomb : MonoBehaviour
         {
             ParticleSystem explosion = Instantiate(particles, transform.position, Quaternion.identity);            
 
-            Destroy(targetPosition.gameObject);
+            //Destroy(targetPosition.gameObject);
             Destroy(gameObject);
             Destroy(explosion, 2f);
             //ParticleSystem explosion = Instantiate(particles, transform.position, Quaternion.identity);
