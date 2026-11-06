@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   type: 3
-  dieselCost: 50
+  dieselCost: 5
   up: {fileID: 0}
   down: {fileID: 0}
   right: {fileID: 8333798846871764192}
@@ -186,6 +186,7 @@ MonoBehaviour:
   rightConnected: 0
   leftConnected: 0
   TrackLocked: 0
+  isDragging: 0
   selectedTrack: {fileID: 8959878057398117624}
   isTrainMoving: 0
 --- !u!61 &-1589141666658096773
