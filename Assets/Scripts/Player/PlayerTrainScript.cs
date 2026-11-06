@@ -136,6 +136,24 @@ public class PlayerTrainScript : MonoBehaviour
         {
             if (trackIndex > 0) GridManager.instance.Track[trackIndex].TrackLocked = true;
             GridManager.instance.UpdateMovingTrack(GridManager.instance.Track[trackIndex]);
+            
+            //transport to Tunnel Out
+            if(GridManager.instance.Track[trackIndex].type == TrackType.TunnelIn)
+            {
+                
+                for(int index = 0; index<GridManager.instance.TrackTiles.Count; index++)
+                {
+                    if(GridManager.instance.TrackTiles[index].type == TrackType.TunnelOut)
+                    
+                    {
+                        trackIndex++;
+                        GridManager.instance.Track.Add(GridManager.instance.TrackTiles[index]);
+                        transform.position = GridManager.instance.Track[trackIndex].transform.position;                   
+                        
+                    }                    
+                }
+            }
+
             trackIndex++;
         }
     }

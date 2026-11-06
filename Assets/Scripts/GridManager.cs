@@ -26,7 +26,8 @@ public class GridManager : MonoBehaviour
         for(int i = 0; i<UpdateTrack.Length; i++)
         {
             if(UpdateTrack[i].type == TrackType.End
-                ||UpdateTrack[i].type == TrackType.Tunnel)
+                || UpdateTrack[i].type == TrackType.TunnelIn
+                || UpdateTrack[i].type == TrackType.TunnelOut)
             {
                 TrackTiles.Add(UpdateTrack[i]);
             }
@@ -564,9 +565,9 @@ public class GridManager : MonoBehaviour
 
              }
 
-        // END TILE ############################################################################################
+        // END OR TUNNEL IN TILES ############################################################################################
 
-        }else if(track2.type == TrackType.End)
+        }else if(track2.type == TrackType.End || track2.type == TrackType.TunnelIn)
         {
             
             if(track1.leftConnected && !track1.rightConnected)
