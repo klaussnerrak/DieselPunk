@@ -148,7 +148,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -977363581, guid: e963dea6fe379104e95c632bc2fcbd4d, type: 3}
+  m_Sprite: {fileID: -982322692281099945, guid: 2e420826bb7488445b6a4d6caf901f58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -176,11 +176,13 @@ MonoBehaviour:
   down: {fileID: 0}
   right: {fileID: 1629214532255225974}
   left: {fileID: 8736312937565599907}
+  isBought: 0
   upConnected: 0
   downConnected: 0
   rightConnected: 0
   leftConnected: 0
   TrackLocked: 0
+  isDragging: 0
 --- !u!61 &-1589141666658096773
 BoxCollider2D:
   m_ObjectHideFlags: 0

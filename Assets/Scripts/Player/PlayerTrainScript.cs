@@ -42,7 +42,7 @@ public class PlayerTrainScript : MonoBehaviour
     {
         Debug.Log("CLICKED");
         playerStart = true;
-        //Moving();
+        AudioManager.instance.PlaySFX("TrainHorn");
     }
 
     void Awake()

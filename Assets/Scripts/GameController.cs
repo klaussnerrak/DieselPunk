@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
 
     public void BackToMapScene()
     {
-                    
+        Debug.Log("Quit");        
         SceneManager.LoadScene("Scenes/MapScene");        
         AudioManager.instance.PlayMusic("MapMusic");
          

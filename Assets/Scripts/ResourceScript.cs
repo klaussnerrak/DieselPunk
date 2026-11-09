@@ -8,6 +8,7 @@ public class ResourceScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+        Debug.Log("colision");
         if (col.gameObject.name == "Train")
         {
             ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + dieselPoints;

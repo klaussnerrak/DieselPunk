@@ -430,7 +430,7 @@ public class GridManager : MonoBehaviour
 
         // STRAIGHT TILE ############################################################################################
 
-        }else if(track2.type == TrackType.Straight)
+        }else if(track2.type == TrackType.Straight || track2.type == TrackType.Bridge)
         {
             if(track1.leftConnected && !track1.rightConnected)
             {

@@ -20,36 +20,35 @@ public class MapScript : MonoBehaviour
     
     public void StartLevel1()
     {
-        //SceneManager.LoadScene("Scenes/StartScene"); 
+        
         SceneManager.LoadScene("Scenes/Level1");             
         AudioManager.instance.PlayMusic("PlayMusic");
         
     }
     public void StartLevel2()
     {
-        //SceneManager.LoadScene("Scenes/StartScene"); 
+        
         SceneManager.LoadScene("Scenes/Level2");             
         AudioManager.instance.PlayMusic("PlayMusic");
-        //ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + 150;     
-        
+       
     }
     public void StartLevel3()
     {
-        //SceneManager.LoadScene("Scenes/StartScene"); 
+        
         SceneManager.LoadScene("Scenes/Level3");             
         AudioManager.instance.PlayMusic("PlayMusic");
         
     }
     public void StartLevel4()
     {
-        //SceneManager.LoadScene("Scenes/StartScene"); 
+        
         SceneManager.LoadScene("Scenes/Level4");             
         AudioManager.instance.PlayMusic("PlayMusic");
         
     }
     public void StartLevel5()
     {
-        //SceneManager.LoadScene("Scenes/StartScene"); 
+        
         SceneManager.LoadScene("Scenes/Level5");             
         AudioManager.instance.PlayMusic("PlayMusic");
         

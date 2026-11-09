@@ -21,13 +21,13 @@ public class ShopManager : MonoBehaviour
     public void SetShopAmount()
     {
         //Debug.Log(playerDiesel);
-        playerDieselText.SetText($"Diesel \n{playerDiesel}");
+        playerDieselText.SetText($"{playerDiesel}");
     }
 
     public void SellTrack(TrainTrack selectedTrainTrack)
     {
         playerDiesel += (selectedTrainTrack.dieselCost / 2);
-        playerDieselText.SetText($"Diesel \n{playerDiesel}"); 
+        playerDieselText.SetText($"{playerDiesel}"); 
     }
 
 

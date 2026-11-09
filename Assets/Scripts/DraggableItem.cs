@@ -167,7 +167,6 @@ public class DraggableItem : TrainTrack
     {
         if (!tilemap.HasTile(cellPosition))
         {
-
             return false;
         }
 
@@ -201,13 +200,24 @@ public class DraggableItem : TrainTrack
                 else if (type == TrackType.Bomb)
                 {
                     Destroy(hit.gameObject);
+                    Debug.Log("teste");
+                    
                 }
                 else
                 {
                     return false;
                 }
+            }else if (hit.CompareTag("FixObstacle"))
+            { 
+                if (type == TrackType.Bridge)
+                { 
+                    return true;
+                }                
+                else
+                {
+                    return false;
+                }
             }
-            // }
             // else
             // {
             //     Destroy(hit.gameObject);

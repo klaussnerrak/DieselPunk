@@ -23,6 +23,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DragAndDrop.unity
     guid: c714c85e0de327c44a85dbaef911a927
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 52e61758568d977428cf5a8da60301c6
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 86ca67fa6b46950418b0b305f022c9ff
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 10543d2b63b05e74fb02343990bdc3b3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
