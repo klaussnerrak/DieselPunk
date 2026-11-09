@@ -152,7 +152,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6841674672596373852, guid: e29c6ca063d5d974c9a455d3041829e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -182,7 +182,7 @@ MonoBehaviour:
   down: {fileID: 0}
   right: {fileID: 0}
   left: {fileID: 0}
-  isBought: 1
+  isBought: 0
   upConnected: 0
   downConnected: 0
   rightConnected: 0

@@ -10,6 +10,8 @@ TagManager:
   - SpecialResource
   - Bomb
   - TrainWagon
+  - Crack
+  - FixObstacle
   layers:
   - Default
   - TransparentFX
