@@ -133,9 +133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067d852a66d3ae849b10f93d645ae16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  targetPosition: {fileID: 0}
+  target: {fileID: 0}
   particles: {fileID: 5758593372985148567, guid: 997fdab496d833f418bbce142a47b4fd, type: 3}
   speed: 100
+  crackSprite: {fileID: -1619015152, guid: 2e420826bb7488445b6a4d6caf901f58, type: 3}
+  curveCrackSprite: {fileID: 820324084, guid: 2e420826bb7488445b6a4d6caf901f58, type: 3}
 --- !u!61 &1072056147649855253
 BoxCollider2D:
   m_ObjectHideFlags: 0
