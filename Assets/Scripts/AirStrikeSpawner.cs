@@ -62,7 +62,7 @@ public class AirStrikeSpawner : MonoBehaviour
                         GameObject newBomb = Instantiate(bombPrefab, spawnPosition, Quaternion.identity);
 
                         Bomb bomb = newBomb.GetComponent<Bomb>();
-                        bomb.targetPosition = track;                    
+                        bomb.target = track;                    
                         
                         Rigidbody2D rb = newBomb.GetComponent<Rigidbody2D>();           
                         rb.gravityScale = customGravityScale;
