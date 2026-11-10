@@ -13,7 +13,8 @@ public class Bomb : MonoBehaviour
     {
         if(Vector3.Distance(target.transform.position, transform.position)<0.1)
         {
-            ParticleSystem explosion = Instantiate(particles, transform.position, Quaternion.identity);            
+            ParticleSystem explosion = Instantiate(particles, transform.position, Quaternion.identity);
+            AudioManager.instance.PlaySFX("Explosion");            
 
             if(target.type != TrackType.Curve)
             {

@@ -42,7 +42,7 @@ public class PlayerTrainScript : MonoBehaviour
     {
         Debug.Log("CLICKED");
         playerStart = true;
-        AudioManager.instance.PlaySFX("TrainHorn");
+        
     }
 
     void Awake()
@@ -91,6 +91,7 @@ public class PlayerTrainScript : MonoBehaviour
             GridManager.instance.Track.Add(firstTrack);  
             TimerScript.instance.StartPlayCounter();
             AirStrikeSpawner.instance.StartAirstrike();
+            AudioManager.instance.PlaySFX("TrainHorn");
         }
 
     }

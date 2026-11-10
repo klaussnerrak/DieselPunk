@@ -60,6 +60,7 @@ public class AirStrikeSpawner : MonoBehaviour
                     if (isRunning)
                     {
                         GameObject newBomb = Instantiate(bombPrefab, spawnPosition, Quaternion.identity);
+                        AudioManager.instance.PlaySFX("Whistle");
 
                         Bomb bomb = newBomb.GetComponent<Bomb>();
                         bomb.target = track;                    
