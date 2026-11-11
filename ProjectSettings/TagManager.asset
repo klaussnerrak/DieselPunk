@@ -12,6 +12,7 @@ TagManager:
   - TrainWagon
   - Crack
   - FixObstacle
+  - CollectableResource
   layers:
   - Default
   - TransparentFX

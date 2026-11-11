@@ -40,7 +40,6 @@ public class TrainTrackShop : MonoBehaviour
                 if (track.type == TrackType.Bomb)
                 {
                     Destroy(selectedItem);
-                   // Debug.Log("teste");
                 }
             }
             else
@@ -63,6 +62,7 @@ public class TrainTrackShop : MonoBehaviour
                         specialTrack.IncreasePlayerSpeed();
                         break;
                 }
+                ScoreManager.instance.SaveScoreLog(specialTrack.gameObject);
             }
             else
             {

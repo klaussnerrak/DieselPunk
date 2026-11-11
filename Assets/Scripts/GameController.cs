@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
         AudioManager.instance.PlaySFX("Supla"); 
         ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + levelReward;
         ShopManager.instance.SetShopAmount();
+        ScoreManager.instance.CalculateScore();
           
     }
 
