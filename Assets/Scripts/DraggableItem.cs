@@ -199,8 +199,8 @@ public class DraggableItem : TrainTrack
                 }
                 else if (type == TrackType.Bomb)
                 {
+                    ScoreManager.instance.SaveScoreLog(hit.gameObject);
                     Destroy(hit.gameObject);
-                    Debug.Log("teste");
                     
                 }
                 else
