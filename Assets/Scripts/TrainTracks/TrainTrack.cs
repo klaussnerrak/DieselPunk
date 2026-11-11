@@ -12,6 +12,8 @@ public enum TrackType
     TunnelOut
 }
 
+
+
 public class TrainTrack : MonoBehaviour
 {
     public TrackType type; 
@@ -31,7 +33,12 @@ public class TrainTrack : MonoBehaviour
 
     public bool isDragging = false;
 
-       
+    public Animator animator;
+
+    public void StopAnimation()
+    {
+        GetComponent<Animator>().speed = 0;
+    }  
 
 
     /*public void Configure(TrackType pieceType, bool connectsNorth, bool connectsSouth,

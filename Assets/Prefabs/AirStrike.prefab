@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 804319815093531818}
   - component: {fileID: 7511605866731564780}
   - component: {fileID: 1072056147649855253}
+  - component: {fileID: -98762492360256533}
   m_Layer: 5
   m_Name: AirStrike
   m_TagString: Untagged
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4598798572849480788, guid: 19b0d9f47bc775a408d85b8008411aac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -136,8 +137,8 @@ MonoBehaviour:
   target: {fileID: 0}
   particles: {fileID: 5758593372985148567, guid: 997fdab496d833f418bbce142a47b4fd, type: 3}
   speed: 100
-  crackSprite: {fileID: -1619015152, guid: 2e420826bb7488445b6a4d6caf901f58, type: 3}
-  curveCrackSprite: {fileID: 820324084, guid: 2e420826bb7488445b6a4d6caf901f58, type: 3}
+  crackSprite: {fileID: -4858482424647242109, guid: 198dd5eee4d9a2240ad03df423e48045, type: 3}
+  curveCrackSprite: {fileID: -4858482424647242109, guid: 198dd5eee4d9a2240ad03df423e48045, type: 3}
 --- !u!61 &1072056147649855253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,3 +185,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &-98762492360256533
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672873920205353585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf59f1047398d87489a00aa2b2312b7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
