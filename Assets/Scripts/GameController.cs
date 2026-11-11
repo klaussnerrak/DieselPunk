@@ -36,13 +36,13 @@ public class GameController : MonoBehaviour
     
     public void WinCondition()
     {        
+        ScoreManager.instance.CalculateScore();
+        ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + ScoreManager.instance.levelReward;
         gamePanel.SetActive(false);
         winPanel.SetActive(true);
         levelIndex++;
         AudioManager.instance.PlaySFX("Supla"); 
-        ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + ScoreManager.instance.levelReward;
         ShopManager.instance.SetShopAmount();
-        ScoreManager.instance.CalculateScore();
           
     }
 
