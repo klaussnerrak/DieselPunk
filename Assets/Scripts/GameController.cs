@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private  GameObject losePanel;
     [SerializeField] private  GameObject gamePanel;
     [SerializeField] private TMP_Text playerDieselText;
-    [SerializeField] private int levelReward;
+    // [SerializeField] private int levelReward;
 
     public static int levelIndex = 1;
     
@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
         winPanel.SetActive(true);
         levelIndex++;
         AudioManager.instance.PlaySFX("Supla"); 
-        ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + levelReward;
+        ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + ScoreManager.instance.levelReward;
         ShopManager.instance.SetShopAmount();
         ScoreManager.instance.CalculateScore();
           

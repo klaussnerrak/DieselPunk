@@ -1,3 +1,4 @@
+using TMPro;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,21 @@ public class ScoreManager : MonoBehaviour
 {
 
     public static ScoreManager instance;
-    private int playerExtraDiesel = 0;
+    public int levelReward = 0;
+    private int usedTrainTracks = 0;
     private int destroyedObstacles = 0;
     private int collectedResources = 0;
     private int timeResource = 0;
     private int speedUpResource = 0;
     private bool hasUsedTime = false;
     private bool hasUsedSpeedUp = false;
+
+    public TMP_Text usedTrainTracksText;
+    public TMP_Text destroyedObstaclesText;
+    public TMP_Text collectedResourcesText;
+    public TMP_Text timeResourceText;
+    public TMP_Text speedUpResourceText;
+    public TMP_Text levelRewardText;
 
 
     void Awake()
@@ -26,6 +35,7 @@ public class ScoreManager : MonoBehaviour
 
     public void CalculateScore()
     {
+        Debug.Log("I will calculate the score");
         /*
             Calculo:
             Trilhos = 10 diesel cada
@@ -46,6 +56,15 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("track amount:" + GridManager.instance.Track.Count);
         
         Debug.Log("total score" + totalScore);
+
+        usedTrainTracks = GridManager.instance.Track.Count; 
+        destroyedObstaclesText.SetText($"{destroyedObstacles}");
+        collectedResourcesText.SetText($"{collectedResources}");
+        timeResourceText.SetText($"{timeResource}");
+        speedUpResourceText.SetText($"{speedUpResource}");
+        levelRewardText.SetText($"{totalScore}");
+
+
     }
 
     public void SaveScoreLog(GameObject item)
@@ -87,7 +106,7 @@ public class ScoreManager : MonoBehaviour
 
     public void ResetPlayerScore()
     {
-        playerExtraDiesel = 0;
+        levelReward = 0;
         destroyedObstacles = 0;
         collectedResources = 0;
         timeResource = 0;
