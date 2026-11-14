@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae45f6d7a7b72547a0694948f190191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainWagonScript
-  followSpeed: 5
+  followSpeed: 1
   followDistance: 1
   train: {fileID: 0}
+  rotationSpeed: 10
+  spriteAngleOffset: 0

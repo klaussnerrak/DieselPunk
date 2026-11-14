@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class TrainWagonScript : MonoBehaviour
 { 
-    [SerializeField] private float followSpeed = 5f;
-    [SerializeField] private float followDistance = 1f; 
+    [SerializeField] private float followSpeed = 1f;
+    [SerializeField] private float followDistance = 10f; 
     [SerializeField] private Transform train;
+     [SerializeField] private float rotationSpeed = 5f;
+    [SerializeField] private float spriteAngleOffset = 0f;
+
+    private int trackIndex = 0;
+
 
     private bool isFollowing = true;
 
@@ -13,13 +18,20 @@ public class TrainWagonScript : MonoBehaviour
     {
         if (!isFollowing || train == null)
             return;
- 
-        Vector3 trainDirection = train.right; 
-        Vector3 targetPosition = train.position - trainDirection * followDistance;
+        trackIndex = PlayerTrainScript.instance.trackIndex - 1;
+        if (trackIndex == GridManager.instance.Track.Count-1)
+        {
+            trackIndex--;
+        }
+        
+       //Vector3 trainDirection = train.right;        
+       //Vector3 targetPosition = train.position - 1;// - trainDirection * followDistance;
+
+        Vector3 targetPosition = GridManager.instance.Track[trackIndex].transform.position;
  
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime);
- 
-        transform.rotation = train.rotation;
+        RotateTrain();
+       // transform.rotation = train.rotation
  
         if (PlayerTrainScript.instance != null && PlayerTrainScript.instance.IsAtMapEnd())
         {
@@ -37,5 +49,24 @@ public class TrainWagonScript : MonoBehaviour
     {
         isFollowing = false;
         train = null;
+    }
+
+    private void RotateTrain()
+    {      
+
+        Vector3 currentPoint = transform.position;
+        Vector3 nextPoint = GridManager.instance.Track[trackIndex].transform.position;
+
+        Vector3 direction = nextPoint - currentPoint;
+        //direction = direction.normalized;
+
+        if (direction.sqrMagnitude < 0.1f)
+            return;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle + spriteAngleOffset);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation,
+            rotationSpeed * Time.deltaTime);
+
     }
 }

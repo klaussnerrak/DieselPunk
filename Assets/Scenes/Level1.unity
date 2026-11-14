@@ -5207,8 +5207,8 @@ MonoBehaviour:
   maxX: 2.5
   spawnY: 4
   trackIndex: 0
-  customGravityScale: 0.03
-  flightTime: 4
+  customGravityScale: 2
+  flightTime: 1
   isRunning: 0
 --- !u!4 &2049859352
 Transform:

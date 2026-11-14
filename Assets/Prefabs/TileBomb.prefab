@@ -152,7 +152,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6841674672596373852, guid: e29c6ca063d5d974c9a455d3041829e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -189,6 +189,7 @@ MonoBehaviour:
   leftConnected: 0
   TrackLocked: 0
   isDragging: 0
+  animator: {fileID: 0}
   selectedTrack: {fileID: 2843544127461654216}
   isTrainMoving: 0
 --- !u!61 &-7976010913371025201

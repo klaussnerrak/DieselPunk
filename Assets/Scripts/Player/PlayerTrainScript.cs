@@ -20,7 +20,7 @@ public class PlayerTrainScript : MonoBehaviour
     [SerializeField] private float speed = 1f;
 
     // private int pivotIndex = 0;
-    private int trackIndex = 0;
+    public int trackIndex = 0;
     //private Vector3 lastDirection;
     bool playerStart = false;
 
