@@ -13,7 +13,7 @@ public class AirStrikeSpawner : MonoBehaviour
 
     public static AirStrikeSpawner instance;
     public int trackIndex = 0;
-    public float customGravityScale = 0.03f;
+    public float customGravityScale = 1;//0.03f;
     public float flightTime = 3f;
 
     public bool isRunning = false;
@@ -55,11 +55,12 @@ public class AirStrikeSpawner : MonoBehaviour
                 if (track != null && track.transform.position.x <= maxX && track.transform.position.x >= minX)            {
                     
                     float targetX = track.transform.position.x;
-                    Vector3 spawnPosition = new Vector3(targetX+3, spawnY, 0f);
+                    Vector3 spawnPosition = new Vector3(targetX, spawnY, 0f);
 
                     if (isRunning)
                     {
                         GameObject newBomb = Instantiate(bombPrefab, spawnPosition, Quaternion.identity);
+                        //AudioManager.instance.PlaySFX("Whistle");
 
                         Bomb bomb = newBomb.GetComponent<Bomb>();
                         bomb.target = track;                    

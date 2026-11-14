@@ -6544,8 +6544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55874ddaa818d344484ee4b4c194d508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  timeCounter: 60
-  playCounter: 60
+  timeCounter: 30
+  playCounter: 30
   timerText: {fileID: 2043305962}
   pauseTimer: 0
 --- !u!1 &2049859350
@@ -6584,8 +6584,8 @@ MonoBehaviour:
   maxX: 2.5
   spawnY: 4
   trackIndex: 0
-  customGravityScale: 0.03
-  flightTime: 4
+  customGravityScale: 2
+  flightTime: 1
   isRunning: 0
 --- !u!4 &2049859352
 Transform:
