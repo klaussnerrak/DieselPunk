@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672873920205353585}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0.12474, y: -0.24544, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &7320138210332337490
 SpriteRenderer:
   serializedVersion: 2
@@ -82,17 +82,17 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4598798572849480788, guid: 19b0d9f47bc775a408d85b8008411aac, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3125, y: 0.9625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!50 &804319815093531818
 Rigidbody2D:
@@ -136,8 +136,8 @@ MonoBehaviour:
   target: {fileID: 0}
   particles: {fileID: 5758593372985148567, guid: 997fdab496d833f418bbce142a47b4fd, type: 3}
   speed: 100
-  crackSprite: {fileID: -1619015152, guid: 2e420826bb7488445b6a4d6caf901f58, type: 3}
-  curveCrackSprite: {fileID: 820324084, guid: 2e420826bb7488445b6a4d6caf901f58, type: 3}
+  crackSprite: {fileID: -4858482424647242109, guid: 198dd5eee4d9a2240ad03df423e48045, type: 3}
+  curveCrackSprite: {fileID: -4858482424647242109, guid: 198dd5eee4d9a2240ad03df423e48045, type: 3}
 --- !u!61 &1072056147649855253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,8 +176,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.3125, y: 0.9625}
+    newSize: {x: 0.3125, y: 0.9625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6018977009089834554}
   - component: {fileID: -3040097143995528368}
   - component: {fileID: 3498246793533809501}
+  - component: {fileID: 6742155594021088249}
   m_Layer: 0
   m_Name: Tile Curve
   m_TagString: TrainTrackPiece
@@ -156,6 +157,7 @@ MonoBehaviour:
   leftConnected: 0
   TrackLocked: 0
   isDragging: 0
+  animator: {fileID: 6742155594021088249}
   selectedTrack: {fileID: 4783782241372137230}
   isTrainMoving: 0
 --- !u!61 &-3040097143995528368
@@ -220,6 +222,28 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!95 &6742155594021088249
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783782241372137230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09c78c829b47e4645a27fe9098ce49dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5419870828798684847
 GameObject:
   m_ObjectHideFlags: 0

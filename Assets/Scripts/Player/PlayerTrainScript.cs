@@ -20,7 +20,7 @@ public class PlayerTrainScript : MonoBehaviour
     [SerializeField] private float speed = 1f;
 
     // private int pivotIndex = 0;
-    private int trackIndex = 0;
+    public int trackIndex = 0;
     //private Vector3 lastDirection;
     bool playerStart = false;
 
@@ -42,7 +42,7 @@ public class PlayerTrainScript : MonoBehaviour
     {
         Debug.Log("CLICKED");
         playerStart = true;
-        AudioManager.instance.PlaySFX("TrainHorn");
+        
     }
 
     void Awake()
@@ -91,6 +91,7 @@ public class PlayerTrainScript : MonoBehaviour
             GridManager.instance.Track.Add(firstTrack);  
             TimerScript.instance.StartPlayCounter();
             AirStrikeSpawner.instance.StartAirstrike();
+            AudioManager.instance.PlaySFX("TrainHorn");
         }
 
     }
