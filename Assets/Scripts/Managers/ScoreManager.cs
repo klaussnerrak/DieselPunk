@@ -54,10 +54,16 @@ public class ScoreManager : MonoBehaviour
 
 
         Debug.Log("track amount:" + GridManager.instance.Track.Count);
-        
-        Debug.Log("total score" + totalScore);
 
-        usedTrainTracks = GridManager.instance.Track.Count; 
+        Debug.Log("total score" + totalScore);
+        Debug.Log("destroyedObstacles: " + destroyedObstacles);
+        Debug.Log("collectedResources: " + collectedResources);
+        Debug.Log("timeResource: " + timeResource);
+        Debug.Log("speedUpResource: " + speedUpResource);
+        Debug.Log("levelReward: " + levelReward);
+
+
+        usedTrainTracks = GridManager.instance.Track.Count;
         destroyedObstaclesText.SetText($"{destroyedObstacles}");
         collectedResourcesText.SetText($"{collectedResources}");
         timeResourceText.SetText($"{timeResource}");
@@ -76,9 +82,11 @@ public class ScoreManager : MonoBehaviour
             {
                 case "TrainWagon":
                     collectedResources++;
+                    Debug.Log("I'll add a collected resource" + collectedResources);
                     break;
                 case "Obstacle":
                     destroyedObstacles++;
+                    Debug.Log("I'll add a destroyed obstacle resource" + destroyedObstacles);
                     break;
                 case "SpecialResource":
                     ValidateSpecialResource(item);
@@ -94,12 +102,14 @@ public class ScoreManager : MonoBehaviour
         {
             hasUsedSpeedUp = true;
             speedUpResource++;
+            Debug.Log("I'll add a speedup resource" + speedUpResource);
             Debug.Log("has used speed up set to true");
         }
         else if (specialResource.name.Equals("TimeButton"))
         {
             hasUsedTime = true;
             timeResource++;
+            Debug.Log("I'll add a time resource" + timeResource);
             Debug.Log("has used time increase set to true");
         }
     }
