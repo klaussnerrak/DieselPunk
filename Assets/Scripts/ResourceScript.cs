@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ResourceScript : MonoBehaviour
 {
-    [SerializeField] private int dieselPoints;
+    [SerializeField] private int dieselPoints; 
     [SerializeField] private GameObject trainWagonPrefab;
     [SerializeField] private float wagonSpawnDistance = 1f;
 
@@ -13,35 +13,39 @@ public class ResourceScript : MonoBehaviour
         {
             ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + dieselPoints;
             ShopManager.instance.SetShopAmount();
-
-            SpawnTrainWagon(col.transform);
+ 
+            SpawnTrainWagon(col.gameObject);
 
             Destroy(gameObject);
         }
     }
 
-    private void SpawnTrainWagon(Transform trainTransform)
+    private void SpawnTrainWagon(GameObject train)
     {
         if (trainWagonPrefab == null)
         {
             Debug.LogWarning($"[ResourceScript] Train Wagon prefab is not assigned on {gameObject.name}.", this);
             return;
         }
-
-        Vector3 spawnPosition = trainTransform.position - trainTransform.right * wagonSpawnDistance;
+ 
+       // Vector3 spawnPosition = train.transform.position - train.transform.right * wagonSpawnDistance;
+        PlayerTrainScript.instance.wagonNumber++;
+        int trackIndex = PlayerTrainScript.instance.trackIndex - PlayerTrainScript.instance.wagonNumber;
+        Vector3 spawnPosition = GridManager.instance.Track[trackIndex].transform.position;
         GameObject wagon = Instantiate(
             trainWagonPrefab,
             spawnPosition,
-            trainTransform.rotation
+            train.transform.rotation
         );
-
-        wagon.tag = "TrainWagon";
-
+        
+       
+ 
+        wagon.tag = "TrainWagon"; 
         TrainWagonScript wagonScript = wagon.GetComponent<TrainWagonScript>();
         if (wagonScript != null)
         {
-            wagonScript.SetTrain(trainTransform);
-            ScoreManager.instance.SaveScoreLog(trainWagonPrefab);
+            wagonScript.SetTrain(train.transform);
+            wagonScript.wagonIndex = PlayerTrainScript.instance.wagonNumber;
         }
     }
 }

@@ -1419,6 +1419,8 @@ MonoBehaviour:
   rotationSpeed: 5
   spriteAngleOffset: 0
   speed: 1
+  trackIndex: 0
+  wagonNumber: 0
 --- !u!61 &726175254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1587,7 +1589,6 @@ MonoBehaviour:
   losePanel: {fileID: 1733482028}
   gamePanel: {fileID: 1677712346}
   playerDieselText: {fileID: 1960897338}
-  levelReward: 300
 --- !u!114 &748354995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3130,6 +3131,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3635440154588126572, guid: 488cd5f05fc3a794fb12577212ef933c, type: 3}
+      propertyPath: trainWagonPrefab
+      value: 
+      objectReference: {fileID: 2244183613097415529, guid: 87eb9a3c82790a34ea1f7eb658777d0c, type: 3}
     - target: {fileID: 3823423939208631772, guid: 488cd5f05fc3a794fb12577212ef933c, type: 3}
       propertyPath: m_ContactCaptureLayers.m_Bits
       value: 1056
