@@ -22,7 +22,7 @@ public class TrainWagonScript : MonoBehaviour
             return;
 
         trackIndex = PlayerTrainScript.instance.trackIndex - wagonIndex;
-        Debug.Log(PlayerTrainScript.instance.wagonNumber);
+        followSpeed = PlayerTrainScript.instance.speed;
 
         if (trackIndex == GridManager.instance.Track.Count-1)
         {

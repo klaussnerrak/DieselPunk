@@ -17,7 +17,7 @@ public class PlayerTrainScript : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float spriteAngleOffset = 0f;
-    [SerializeField] private float speed = 1f;
+    public float speed = 1f;
 
     // private int pivotIndex = 0;
     public int trackIndex = 0;
