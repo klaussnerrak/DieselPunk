@@ -1682,7 +1682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 311.22568}
+  m_AnchoredPosition: {x: 0, y: 311.22568}
   m_SizeDelta: {x: 520, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &358805296
@@ -4518,6 +4518,7 @@ MonoBehaviour:
   spriteAngleOffset: 0
   speed: 1
   trackIndex: 0
+  wagonNumber: 0
 --- !u!1 &1085355807
 GameObject:
   m_ObjectHideFlags: 0
@@ -7152,7 +7153,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123598530}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &2123713296
 GameObject:
   m_ObjectHideFlags: 0
