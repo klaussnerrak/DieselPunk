@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourceScript
   dieselPoints: 50
-  trainWagonPrefab: {fileID: 0}
+  trainWagonPrefab: {fileID: 2244183613097415529, guid: f45cb6c8db721a349b5fec8ffab1d7a4, type: 3}
   wagonSpawnDistance: 1
 --- !u!61 &5758533049124121074
 BoxCollider2D:

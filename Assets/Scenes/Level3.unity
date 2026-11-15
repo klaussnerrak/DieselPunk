@@ -1420,6 +1420,7 @@ MonoBehaviour:
   spriteAngleOffset: 0
   speed: 1
   trackIndex: 0
+  wagonNumber: 0
 --- !u!61 &726175254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3130,6 +3131,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3635440154588126572, guid: 488cd5f05fc3a794fb12577212ef933c, type: 3}
+      propertyPath: trainWagonPrefab
+      value: 
+      objectReference: {fileID: 2244183613097415529, guid: 87eb9a3c82790a34ea1f7eb658777d0c, type: 3}
     - target: {fileID: 3823423939208631772, guid: 488cd5f05fc3a794fb12577212ef933c, type: 3}
       propertyPath: m_ContactCaptureLayers.m_Bits
       value: 1056
@@ -3201,7 +3206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 369555886207084532, guid: 6a9641b62044878429d883d53f0396f0, type: 3}
+  m_Sprite: {fileID: -7038726717119396235, guid: 24704b1616934e845833dcbd2d77edb2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5151,7 +5156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1309742335341324307, guid: a5247b1a2fa2999489f48954a0423b26, type: 3}
+  m_Sprite: {fileID: 4942162735184889240, guid: 16a1085e1326690489c9b937310e351b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

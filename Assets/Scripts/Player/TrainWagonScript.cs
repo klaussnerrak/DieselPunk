@@ -7,7 +7,9 @@ public class TrainWagonScript : MonoBehaviour
     [SerializeField] private Transform train;
      [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float spriteAngleOffset = 0f;
+    public int wagonIndex;
 
+    
     private int trackIndex = 0;
 
 
@@ -18,7 +20,10 @@ public class TrainWagonScript : MonoBehaviour
     {
         if (!isFollowing || train == null)
             return;
-        trackIndex = PlayerTrainScript.instance.trackIndex - 1;
+
+        trackIndex = PlayerTrainScript.instance.trackIndex - wagonIndex;
+        Debug.Log(PlayerTrainScript.instance.wagonNumber);
+
         if (trackIndex == GridManager.instance.Track.Count-1)
         {
             trackIndex--;
