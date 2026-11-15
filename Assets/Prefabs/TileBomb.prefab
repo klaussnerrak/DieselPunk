@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   type: 5
-  dieselCost: 0
+  dieselCost: 50
   up: {fileID: 0}
   down: {fileID: 0}
   right: {fileID: 0}

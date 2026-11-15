@@ -1136,6 +1136,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3635440154588126572, guid: 488cd5f05fc3a794fb12577212ef933c, type: 3}
+      propertyPath: dieselPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635440154588126572, guid: 488cd5f05fc3a794fb12577212ef933c, type: 3}
       propertyPath: trainWagonPrefab
       value: 
       objectReference: {fileID: 2244183613097415529, guid: 87eb9a3c82790a34ea1f7eb658777d0c, type: 3}

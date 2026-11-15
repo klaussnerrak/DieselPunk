@@ -130,14 +130,17 @@ public class DraggableItem : TrainTrack
 
             GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
 
-            if (!this.isBought)
-            {
-                trainTrackShop.BuyItem(selectedTrack, initialPosition);
-            }
+            
         }
         else
         {
             transform.position = itemLastPosition;
+        }
+        
+        //returns track to inicial position if there is no money to buy
+        if (!this.isBought)
+        {
+            trainTrackShop.BuyItem(selectedTrack, initialPosition);
         }
     }
 

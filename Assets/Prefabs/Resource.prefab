@@ -168,6 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f80b3e5f954b1499c0b775c95e6cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourceScript
-  dieselPoints: 200
+  dieselPoints: 100
   trainWagonPrefab: {fileID: 2244183613097415529, guid: 87eb9a3c82790a34ea1f7eb658777d0c, type: 3}
   wagonSpawnDistance: 1
