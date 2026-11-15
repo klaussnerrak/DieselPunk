@@ -287,6 +287,8 @@ MonoBehaviour:
     soundClip: {fileID: 8300000, guid: 78190df2c83c3fb47bb58825d610c6fd, type: 3}
   - soundName: Whistle
     soundClip: {fileID: 8300000, guid: 386c393d20126ec4cb917a571100a921, type: 3}
+  - soundName: BombExplosion
+    soundClip: {fileID: 8300000, guid: 3b2e821d1afcfa749a559f62248ab9be, type: 3}
   btnVolume: {fileID: 1443790034}
 --- !u!4 &110511222
 Transform:

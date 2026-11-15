@@ -205,7 +205,7 @@ public class DraggableItem : TrainTrack
                     animator.SetBool("BombExplosion", true);
                     AudioManager.instance.PlaySFX("BombExplosion");
                     ScoreManager.instance.SaveScoreLog(hit.gameObject);
-                    Destroy(hit.gameObject,2f);
+                    Destroy(hit.gameObject,1.5f);
                     
                 }
                 else
