@@ -1699,6 +1699,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834ff9f88608de447a66abbd7484b771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  levelReward: 0
+  usedTrainTracksText: {fileID: 0}
+  destroyedObstaclesText: {fileID: 0}
+  collectedResourcesText: {fileID: 0}
+  timeResourceText: {fileID: 0}
+  speedUpResourceText: {fileID: 0}
+  levelRewardText: {fileID: 0}
 --- !u!1 &757549388
 GameObject:
   m_ObjectHideFlags: 0

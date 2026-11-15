@@ -136,7 +136,7 @@ public class DraggableItem : TrainTrack
         {
             transform.position = itemLastPosition;
         }
-        
+
         //returns track to inicial position if there is no money to buy
         if (!this.isBought)
         {
@@ -202,8 +202,10 @@ public class DraggableItem : TrainTrack
                 }
                 else if (type == TrackType.Bomb)
                 {
+                    animator.SetBool("BombExplosion", true);
+                    AudioManager.instance.PlaySFX("BombExplosion");
                     ScoreManager.instance.SaveScoreLog(hit.gameObject);
-                    Destroy(hit.gameObject);
+                    Destroy(hit.gameObject,2f);
                     
                 }
                 else

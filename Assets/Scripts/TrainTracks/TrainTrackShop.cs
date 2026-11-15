@@ -38,8 +38,8 @@ public class TrainTrackShop : MonoBehaviour
                 track.isBought = true;
 
                 if (track.type == TrackType.Bomb)
-                {
-                    Destroy(selectedItem);
+                {                    
+                    Destroy(selectedItem, 2f);
                 }
             }
             else
