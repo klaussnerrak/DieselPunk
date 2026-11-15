@@ -24,6 +24,9 @@ public class PlayerTrainScript : MonoBehaviour
     //private Vector3 lastDirection;
     bool playerStart = false;
 
+    public int wagonNumber = 0;
+
+
     //public GridManager gridManager;
 
 
@@ -60,10 +63,13 @@ public class PlayerTrainScript : MonoBehaviour
     void Start()
     {
         GameObject gridManagerObject = GameObject.Find("Grid");
+        wagonNumber = 0;
+
 
         if (gridManagerObject != null)
         {
             GridManager.instance.AddToTrackTiles(firstTrack);
+           
             //GridManager.instance.AddToTrackTiles(mapEnd);
         }
 
@@ -102,6 +108,7 @@ public class PlayerTrainScript : MonoBehaviour
 
         if (trackIndex >= GridManager.instance.Track.Count)
         {
+            
             if (GridManager.instance.Track[trackIndex - 1] == mapEnd || TimerScript.instance.timeCounter < 1)
             {
                 state = StateMachineType.Finish;
