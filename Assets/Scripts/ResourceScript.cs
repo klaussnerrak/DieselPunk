@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ResourceScript : MonoBehaviour
 {
-    [SerializeField] private int dieselPoints; 
+    [SerializeField] private int dieselPoints;
     [SerializeField] private GameObject trainWagonPrefab;
     [SerializeField] private float wagonSpawnDistance = 1f;
 
@@ -13,7 +13,7 @@ public class ResourceScript : MonoBehaviour
         {
             ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + dieselPoints;
             ShopManager.instance.SetShopAmount();
- 
+            ScoreManager.instance.SaveScoreLog(gameObject);
             SpawnTrainWagon(col.gameObject);
 
             Destroy(gameObject);
@@ -27,8 +27,8 @@ public class ResourceScript : MonoBehaviour
             Debug.LogWarning($"[ResourceScript] Train Wagon prefab is not assigned on {gameObject.name}.", this);
             return;
         }
- 
-       // Vector3 spawnPosition = train.transform.position - train.transform.right * wagonSpawnDistance;
+
+        // Vector3 spawnPosition = train.transform.position - train.transform.right * wagonSpawnDistance;
         PlayerTrainScript.instance.wagonNumber++;
         int trackIndex = PlayerTrainScript.instance.trackIndex - PlayerTrainScript.instance.wagonNumber;
         Vector3 spawnPosition = GridManager.instance.Track[trackIndex].transform.position;
@@ -37,10 +37,10 @@ public class ResourceScript : MonoBehaviour
             spawnPosition,
             train.transform.rotation
         );
-        
-       
- 
-        wagon.tag = "TrainWagon"; 
+
+
+
+        wagon.tag = "TrainWagon";
         TrainWagonScript wagonScript = wagon.GetComponent<TrainWagonScript>();
         if (wagonScript != null)
         {

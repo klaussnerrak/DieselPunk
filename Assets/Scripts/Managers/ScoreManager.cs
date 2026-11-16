@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 
 public class ScoreManager : MonoBehaviour
 {
-
     public static ScoreManager instance;
     public int levelReward = 0;
     private int usedTrainTracks = 0;
@@ -30,6 +29,11 @@ public class ScoreManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); 
         }
     }
 
@@ -48,69 +52,52 @@ public class ScoreManager : MonoBehaviour
                             + (destroyedObstacles * 5)
                             + (collectedResources * 15);
 
-        if (hasUsedTime) totalScore = totalScore - (totalScore * .2);
+        if (hasUsedTime) totalScore -= totalScore * .15;
+        if (hasUsedSpeedUp) totalScore -= totalScore * .20;
 
-        if (hasUsedSpeedUp) totalScore = totalScore - (totalScore * .15);
-
-
-        Debug.Log("track amount:" + GridManager.instance.Track.Count);
-
-        Debug.Log("total score" + totalScore);
-        Debug.Log("destroyedObstacles: " + destroyedObstacles);
-        Debug.Log("collectedResources: " + collectedResources);
-        Debug.Log("timeResource: " + timeResource);
-        Debug.Log("speedUpResource: " + speedUpResource);
-        Debug.Log("levelReward: " + levelReward);
-
-
+        levelReward = (int)totalScore;
         usedTrainTracks = GridManager.instance.Track.Count;
-       /* destroyedObstaclesText.SetText($"{destroyedObstacles}");
-        collectedResourcesText.SetText($"{collectedResources}");
-        timeResourceText.SetText($"{timeResource}");
-        speedUpResourceText.SetText($"{speedUpResource}");
-        levelRewardText.SetText($"{totalScore}");*/
-
-
+        if (usedTrainTracksText != null) usedTrainTracksText.SetText($"{usedTrainTracks}");
+        if (destroyedObstaclesText != null) destroyedObstaclesText.SetText($"{destroyedObstacles}");
+        if (collectedResourcesText != null) collectedResourcesText.SetText($"{collectedResources}");
+        if (timeResourceText != null) timeResourceText.SetText($"{timeResource}");
+        if (speedUpResourceText != null) speedUpResourceText.SetText($"{speedUpResource}");
+        if (levelRewardText != null) levelRewardText.SetText($"{levelReward}");
     }
 
     public void SaveScoreLog(GameObject item)
     {
-        Debug.Log("item tag:" + item.tag);
-        if (item != null)
+        if (item == null) { return; }
+        switch (item.tag)
         {
-            switch (item.tag)
-            {
-                case "TrainWagon":
-                    collectedResources++;
-                    Debug.Log("I'll add a collected resource" + collectedResources);
-                    break;
-                case "Obstacle":
-                    destroyedObstacles++;
-                    Debug.Log("I'll add a destroyed obstacle resource" + destroyedObstacles);
-                    break;
-                case "SpecialResource":
-                    ValidateSpecialResource(item);
-                    break;
-            }
+            case "CollectableResource":
+                collectedResources++;
+                Debug.Log("[ScoreManager] collectedResources: " + collectedResources);
+                break;
+            case "Obstacle":
+                destroyedObstacles++;
+                Debug.Log("[ScoreManager] destroyedObstacles: " + destroyedObstacles);
+                break;
+            case "SpecialResource":
+                ValidateSpecialResource(item);
+                break;
         }
-
     }
 
     private void ValidateSpecialResource(GameObject specialResource)
     {
-        if (specialResource.name.Equals("SpeedButton"))
+        SpecialTrack specialTrack = specialResource.GetComponent<SpecialTrack>();
+        if (specialTrack == null) return;
+
+        if (specialTrack.type == SpecialTrackType.SPEED)
         {
             hasUsedSpeedUp = true;
-            speedUpResource++;
-            Debug.Log("I'll add a speedup resource" + speedUpResource);
-            Debug.Log("has used speed up set to true");
+            speedUpResource++; 
         }
-        else if (specialResource.name.Equals("TimeButton"))
+        else if (specialTrack.type == SpecialTrackType.TIME)
         {
             hasUsedTime = true;
-            timeResource++;
-            Debug.Log("I'll add a time resource" + timeResource);
-            Debug.Log("has used time increase set to true");
+            timeResource++; 
         }
     }
 
@@ -123,5 +110,22 @@ public class ScoreManager : MonoBehaviour
         speedUpResource = 0;
         hasUsedTime = false;
         hasUsedSpeedUp = false;
+    }
+
+
+    public void SetScoreText(
+        TMP_Text tracksText,
+        TMP_Text obstaclesText,
+        TMP_Text resourcesText,
+        TMP_Text timeText,
+        TMP_Text speedText,
+        TMP_Text rewardText)
+    {
+        usedTrainTracksText = tracksText;
+        destroyedObstaclesText = obstaclesText;
+        collectedResourcesText = resourcesText;
+        timeResourceText = timeText;
+        speedUpResourceText = speedText;
+        levelRewardText = rewardText;
     }
 }
