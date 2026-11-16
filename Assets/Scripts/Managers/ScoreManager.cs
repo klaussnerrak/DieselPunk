@@ -64,11 +64,11 @@ public class ScoreManager : MonoBehaviour
 
 
         usedTrainTracks = GridManager.instance.Track.Count;
-        destroyedObstaclesText.SetText($"{destroyedObstacles}");
+       /* destroyedObstaclesText.SetText($"{destroyedObstacles}");
         collectedResourcesText.SetText($"{collectedResources}");
         timeResourceText.SetText($"{timeResource}");
         speedUpResourceText.SetText($"{speedUpResource}");
-        levelRewardText.SetText($"{totalScore}");
+        levelRewardText.SetText($"{totalScore}");*/
 
 
     }
