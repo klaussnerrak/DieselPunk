@@ -16,7 +16,13 @@ public class MapScript : MonoBehaviour
         AddLevel(GameController.levelIndex);
     }
         
-    
+    public void StartTutorial()
+    {
+        
+        SceneManager.LoadScene("Scenes/Tutorial");             
+        AudioManager.instance.PlayMusic("PlayMusic");
+        
+    }
     
     public void StartLevel1()
     {
