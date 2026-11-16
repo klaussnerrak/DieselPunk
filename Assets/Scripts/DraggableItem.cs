@@ -66,13 +66,11 @@ public class DraggableItem : TrainTrack
         this.isDragging = false;
         if (!CheckTrackDeleteArea())
         {
-
             //adiciona o objeto na lista do gridmanager
             if (GridManager.instance.IsNewTrack(this))
             {
                 GridManager.instance.AddToTrackTiles(this);
                 trackIndex = GridManager.instance.TrackTiles.Count - 1;
-                SnapTileToGrid();
             }
             SnapTileToGrid();
         }
@@ -130,7 +128,7 @@ public class DraggableItem : TrainTrack
 
             GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
 
-            
+
         }
         else
         {
@@ -188,16 +186,15 @@ public class DraggableItem : TrainTrack
 
                 continue;
             }
-            // if (type != TrackType.Bomb)
-            // {
+
             if (hit.CompareTag("TrainTrackPiece"))
             {
                 return false;
             }
             else if (hit.CompareTag("Obstacle"))
-            { 
+            {
                 if (type == TrackType.Bridge)
-                { 
+                {
                     return true;
                 }
                 else if (type == TrackType.Bomb)
@@ -205,29 +202,25 @@ public class DraggableItem : TrainTrack
                     animator.SetBool("BombExplosion", true);
                     AudioManager.instance.PlaySFX("BombExplosion");
                     ScoreManager.instance.SaveScoreLog(hit.gameObject);
-                    Destroy(hit.gameObject,1.5f);
-                    
+                    Destroy(hit.gameObject, 1.5f);
+
                 }
-                else
-                {
-                    return false;
-                }
-            }else if (hit.CompareTag("FixObstacle"))
-            { 
-                if (type == TrackType.Bridge)
-                { 
-                    return true;
-                }                
                 else
                 {
                     return false;
                 }
             }
-            // else
-            // {
-            //     Destroy(hit.gameObject);
-            // }
-
+            else if (hit.CompareTag("FixObstacle"))
+            {
+                if (type == TrackType.Bridge)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         return true;

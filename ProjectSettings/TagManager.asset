@@ -13,6 +13,7 @@ TagManager:
   - Crack
   - FixObstacle
   - CollectableResource
+  - CollectableResource2
   layers:
   - Default
   - TransparentFX

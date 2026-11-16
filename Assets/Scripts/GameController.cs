@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private TMP_Text usedTrainTracksText;
     [SerializeField] private TMP_Text destroyedObstaclesText;
     [SerializeField] private TMP_Text collectedResourcesText;
+    [SerializeField] private TMP_Text collectedResources2Text;
     [SerializeField] private TMP_Text timeResourceText;
     [SerializeField] private TMP_Text speedUpResourceText;
     [SerializeField] private TMP_Text levelRewardText;
@@ -30,8 +31,8 @@ public class GameController : MonoBehaviour
 
     void OnEnable()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-
+        SceneManager.sceneLoaded += OnSceneLoaded; 
+        ScoreManager.instance.ResetPlayerScore();
     }
 
     void OnDisable()
@@ -58,6 +59,7 @@ public class GameController : MonoBehaviour
         losePanel.SetActive(true);
         gamePanel.SetActive(false); 
         SetGameScore();
+        ScoreManager.instance.CalculateScore();
         AudioManager.instance.PlaySFX("HAHAHA");
     }
 
@@ -72,6 +74,7 @@ public class GameController : MonoBehaviour
     public void RestartScene()
     {
         SceneManager.LoadScene("Scenes/Level1");
+        ScoreManager.instance.ResetPlayerScore();
         levelIndex = 1;
     }
 
@@ -87,6 +90,7 @@ public class GameController : MonoBehaviour
             usedTrainTracksText,
             destroyedObstaclesText,
             collectedResourcesText,
+            collectedResources2Text,
             timeResourceText,
             speedUpResourceText,
             levelRewardText

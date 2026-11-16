@@ -11,6 +11,7 @@ public class ScoreManager : MonoBehaviour
     private int usedTrainTracks = 0;
     private int destroyedObstacles = 0;
     private int collectedResources = 0;
+    private int collectedResources2 = 0;
     private int timeResource = 0;
     private int speedUpResource = 0;
     private bool hasUsedTime = false;
@@ -19,6 +20,7 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text usedTrainTracksText;
     public TMP_Text destroyedObstaclesText;
     public TMP_Text collectedResourcesText;
+    public TMP_Text collectedResources2Text;
     public TMP_Text timeResourceText;
     public TMP_Text speedUpResourceText;
     public TMP_Text levelRewardText;
@@ -33,7 +35,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 
@@ -44,13 +46,15 @@ public class ScoreManager : MonoBehaviour
             Calculo:
             Trilhos = 10 diesel cada
             Obstaculos destruidos = +5 diesel cada
-            Recursos coletados = +15 diesel cada
+            Recursos coletados (bronze) = +15 diesel cada
+            Recursos coletados (carvão) = +10 diesel cada
             Usou velocidade = tira 20% do valor total
             Usou tempo = tira 15% do valor total
         */
         double totalScore = (GridManager.instance.Track.Count * 10)
                             + (destroyedObstacles * 5)
-                            + (collectedResources * 15);
+                            + (collectedResources * 15)
+                            + (collectedResources2 * 10);
 
         if (hasUsedTime) totalScore -= totalScore * .15;
         if (hasUsedSpeedUp) totalScore -= totalScore * .20;
@@ -60,6 +64,7 @@ public class ScoreManager : MonoBehaviour
         if (usedTrainTracksText != null) usedTrainTracksText.SetText($"{usedTrainTracks}");
         if (destroyedObstaclesText != null) destroyedObstaclesText.SetText($"{destroyedObstacles}");
         if (collectedResourcesText != null) collectedResourcesText.SetText($"{collectedResources}");
+        if (collectedResources2Text != null) collectedResources2Text.SetText($"{collectedResources2}");
         if (timeResourceText != null) timeResourceText.SetText($"{timeResource}");
         if (speedUpResourceText != null) speedUpResourceText.SetText($"{speedUpResource}");
         if (levelRewardText != null) levelRewardText.SetText($"{levelReward}");
@@ -73,6 +78,10 @@ public class ScoreManager : MonoBehaviour
             case "CollectableResource":
                 collectedResources++;
                 Debug.Log("[ScoreManager] collectedResources: " + collectedResources);
+                break;
+            case "CollectableResource2":
+                collectedResources2++;
+                Debug.Log("[ScoreManager] collectedResources2: " + collectedResources2);
                 break;
             case "Obstacle":
                 destroyedObstacles++;
@@ -92,12 +101,12 @@ public class ScoreManager : MonoBehaviour
         if (specialTrack.type == SpecialTrackType.SPEED)
         {
             hasUsedSpeedUp = true;
-            speedUpResource++; 
+            speedUpResource++;
         }
         else if (specialTrack.type == SpecialTrackType.TIME)
         {
             hasUsedTime = true;
-            timeResource++; 
+            timeResource++;
         }
     }
 
@@ -106,10 +115,18 @@ public class ScoreManager : MonoBehaviour
         levelReward = 0;
         destroyedObstacles = 0;
         collectedResources = 0;
+        collectedResources2 = 0;
         timeResource = 0;
         speedUpResource = 0;
         hasUsedTime = false;
         hasUsedSpeedUp = false;
+        if (usedTrainTracksText != null) usedTrainTracksText.SetText("");
+        if (destroyedObstaclesText != null) destroyedObstaclesText.SetText("");
+        if (collectedResourcesText != null) collectedResourcesText.SetText("");
+        if (collectedResources2Text != null) collectedResources2Text.SetText("");
+        if (timeResourceText != null) timeResourceText.SetText("");
+        if (speedUpResourceText != null) speedUpResourceText.SetText("");
+        if (levelRewardText != null) levelRewardText.SetText("");
     }
 
 
@@ -117,6 +134,7 @@ public class ScoreManager : MonoBehaviour
         TMP_Text tracksText,
         TMP_Text obstaclesText,
         TMP_Text resourcesText,
+        TMP_Text resources2Text,
         TMP_Text timeText,
         TMP_Text speedText,
         TMP_Text rewardText)
@@ -124,6 +142,7 @@ public class ScoreManager : MonoBehaviour
         usedTrainTracksText = tracksText;
         destroyedObstaclesText = obstaclesText;
         collectedResourcesText = resourcesText;
+        collectedResources2Text = resources2Text;
         timeResourceText = timeText;
         speedUpResourceText = speedText;
         levelRewardText = rewardText;
