@@ -956,11 +956,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07923384b16c9624980296778fd6c626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainTrackGenerator
-  tilemap: {fileID: 751809665}
-  layoutGrid: {fileID: 1606443728}
-  mapEnd: {fileID: 1160567166693149856, guid: e2369fec3c21b6245b5543670f29aeca, type: 3}
-  player: {fileID: 52292171177792573, guid: 2c201da25c7313c498a87e08a9747942, type: 3}
-  firstTrack: {fileID: 2843544127461654216, guid: ef915284c65252347a19a2b890f6f80b, type: 3}
 --- !u!4 &102441364
 Transform:
   m_ObjectHideFlags: 0
@@ -1330,6 +1325,10 @@ PrefabInstance:
     - target: {fileID: 200848503674941936, guid: 059f9a65de17a2d4e8ad22c40f1fff4f, type: 3}
       propertyPath: m_Name
       value: Obstacle 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 200848503674941936, guid: 059f9a65de17a2d4e8ad22c40f1fff4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6597598168909861908, guid: 059f9a65de17a2d4e8ad22c40f1fff4f, type: 3}
       propertyPath: m_LocalScale.x
@@ -9594,6 +9593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle 2
       objectReference: {fileID: 0}
+    - target: {fileID: 200848503674941936, guid: 059f9a65de17a2d4e8ad22c40f1fff4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6597598168909861908, guid: 059f9a65de17a2d4e8ad22c40f1fff4f, type: 3}
       propertyPath: m_LocalScale.x
       value: 160
@@ -11060,6 +11063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle 2
       objectReference: {fileID: 0}
+    - target: {fileID: 200848503674941936, guid: 059f9a65de17a2d4e8ad22c40f1fff4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6597598168909861908, guid: 059f9a65de17a2d4e8ad22c40f1fff4f, type: 3}
       propertyPath: m_LocalScale.x
       value: 160
@@ -11180,6 +11187,10 @@ PrefabInstance:
     - target: {fileID: 6491296119065535987, guid: 66ffdc4a7cc4cf340bba4a9908268bd3, type: 3}
       propertyPath: m_Name
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491296119065535987, guid: 66ffdc4a7cc4cf340bba4a9908268bd3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
