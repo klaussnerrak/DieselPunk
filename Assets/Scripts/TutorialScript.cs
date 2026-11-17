@@ -2,15 +2,31 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Playables;
+using System;
 public class TutorialScript : MonoBehaviour
 
 {
     [SerializeField] private Button ExitButton;
+    [SerializeField] private Button ForwardButton;
+    [SerializeField] private Button BackButton;
+    [SerializeField] private TMP_Text pageText;
+    private int page = 0;
+    private string firstText;
+
+    public PlayableDirector director;
+
 
     void Start()
     {
         ExitButton.onClick.AddListener(BackToMap);
-        Debug.Log("test");
+        ForwardButton.onClick.AddListener(GoForward);
+        BackButton.onClick.AddListener(GoBack);
+        BackButton.gameObject.SetActive(false);
+        ForwardButton.gameObject.SetActive(true);
+        firstText = pageText.text;
+        
+        
     }
     public void BackToMap()
     {
@@ -19,4 +35,118 @@ public class TutorialScript : MonoBehaviour
         AudioManager.instance.PlayMusic("MapMusic");  
                
     }
+
+    public void GoForward()
+    {
+        
+        page++;
+        if(page == 1)
+        {
+            BackButton.gameObject.SetActive(true);
+        }
+        else if(page==12)
+        {
+            //ForwardButton.gameObject.SetActive(false);
+            BackToMap();
+        }
+        Debug.Log(page);
+        IniciarSequencia();
+        ChangeText();
+    }
+
+    public void GoBack()
+    {
+        Debug.Log("Back");
+        page--;
+        if(page <= 0)
+        {
+            BackButton.gameObject.SetActive(false);
+        }
+        else if(page==10)
+        {
+            ForwardButton.gameObject.SetActive(true);
+        }
+        Debug.Log(page);
+        ChangeText();
+    }
+
+    private void ChangeText()
+    {
+        switch (page)
+            {
+                case  1:
+                    pageText.text = "Sua missão é levar o Trem até a estação final "+
+                                    "antes que seus inimigos destruam os trilhos.";                                        
+                    break;
+
+                case  2:    
+                    pageText.text = "Construa a ferrovia utilizando os trilhos na loja ao lado. "+
+                                    "Utilize o botão esquerdo do mouse para arrastar o trilho e montar seu caminho.";                                        
+                    break;
+                case  3:
+                    pageText.text = "Utilize o botão direito do mouse para girar o trilho.";
+                    break;
+
+                case  4:
+                    pageText.text = "Cuidado para não gastar todo o combustível.";
+                    break;
+
+                case  5:
+                    pageText.text = "Para conseguir mais combustível, colete os recursos do mapa. Alguns recursos podem estar escondidos ";
+                    break;
+
+                case  6:
+                    pageText.text = "A bomba pode destruir alguns obstáculos, mas nem todos";
+                    break;
+
+                case  7:
+                    pageText.text = "A Ponte pode ser utilizada para atravessar obstáculos.";
+                    break;
+
+                case  8:
+                    pageText.text = "Recursos especiais podem ser comprados para aumentar o tempo"+
+                                    " ou a velocidade do trem.";
+                    break;
+
+                case  9:
+                    pageText.text = " Para iniciar aperte o Play ou espere o tempo inicial zerar."+
+                                    " Ao som do apito começa a contagem regressiva para chegar a Estação";                                    
+                    break;
+
+                case  10:
+                    pageText.text = "Você pode vender o trilho de volta a loja atraves da lixeira.";
+                    break;   
+
+                case  11:
+                    pageText.text = "Bom jogo e Boa Sorte!.";
+                    break;                                                   
+
+                case 0:
+                    pageText.text = firstText;
+                    break;          
+            }
+    }
+
+     public void IniciarSequencia()
+    {
+        // Inicia a reprodução da Timeline
+        director.Play();
+    }
+
+    public void PausarSequencia()
+    {
+        // Pausa no ponto atual
+        director.Pause();
+    }
+
+    public void PararSequencia()
+    {
+        // Para e reseta o tempo para zero
+        director.Stop();
+    }
+   
+
+   
 }
+
+
