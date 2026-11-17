@@ -24,19 +24,33 @@ public class TrainWagonScript : MonoBehaviour
         trackIndex = PlayerTrainScript.instance.trackIndex - wagonIndex;
         followSpeed = PlayerTrainScript.instance.speed;
 
-        if (trackIndex == GridManager.instance.Track.Count-1)
+        if (trackIndex == GridManager.instance.Track.Count-wagonIndex)
         {
             trackIndex--;
         }
         
-       //Vector3 trainDirection = train.right;        
-       //Vector3 targetPosition = train.position - 1;// - trainDirection * followDistance;
-
-        Vector3 targetPosition = GridManager.instance.Track[trackIndex].transform.position;
+        if(GridManager.instance.Track[trackIndex].type == TrackType.TunnelIn)
+        {
+            
+            for(int index = 0; index<GridManager.instance.TrackTiles.Count; index++)
+            {
+                if(GridManager.instance.TrackTiles[index].type == TrackType.TunnelOut)
+                
+                {
+                    trackIndex++;
+                    GridManager.instance.Track.Add(GridManager.instance.TrackTiles[index]);
+                    transform.position = GridManager.instance.Track[trackIndex].transform.position;                   
+                    
+                }                    
+            }
+        }
+        else
+        {
+            Vector3 targetPosition = GridManager.instance.Track[trackIndex].transform.position;
  
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime);
-        RotateTrain();
-       // transform.rotation = train.rotation
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime);
+            RotateTrain();
+        }       
  
         if (PlayerTrainScript.instance != null && PlayerTrainScript.instance.IsAtMapEnd())
         {
