@@ -14,10 +14,19 @@ public class ShopManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            playerDiesel = 200; 
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
-    
+
+    void Start()
+    {
+        SetShopAmount();
+    }
+
     public void SetShopAmount()
     {
         //Debug.Log(playerDiesel);
@@ -27,7 +36,7 @@ public class ShopManager : MonoBehaviour
     public void SellTrack(TrainTrack selectedTrainTrack)
     {
         playerDiesel += (selectedTrainTrack.dieselCost / 2);
-        playerDieselText.SetText($"{playerDiesel}"); 
+        playerDieselText.SetText($"{playerDiesel}");
     }
 
 

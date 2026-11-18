@@ -29,10 +29,31 @@ public class GameController : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    { 
+        if (ShopManager.instance != null)
+        {
+            ShopManager.instance.playerDieselText = playerDieselText;
+            ShopManager.instance.SetShopAmount();
+            ScoreManager.instance.ResetPlayerScore();
+        }
+        
+
+        if (ScoreManager.instance != null)
+        {
+            ScoreManager.instance.ResetPlayerScore();
+        }
+    }
+
+
     void OnEnable()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded; 
-        ScoreManager.instance.ResetPlayerScore();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+        if (ScoreManager.instance != null)
+        {
+            ScoreManager.instance.ResetPlayerScore();
+        }
     }
 
     void OnDisable()
@@ -57,7 +78,7 @@ public class GameController : MonoBehaviour
     public void LoseCondition()
     {
         losePanel.SetActive(true);
-        gamePanel.SetActive(false); 
+        gamePanel.SetActive(false);
         SetGameScore();
         ScoreManager.instance.CalculateScore();
         AudioManager.instance.PlaySFX("HAHAHA");
@@ -99,10 +120,11 @@ public class GameController : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //Debug.Log("Loaded scene: " + scene.name);
-        //playerDieselText.SetText($"Diesel \n{ShopManager.instance.playerDiesel}");
-        ShopManager.instance.playerDieselText = playerDieselText;
-        ShopManager.instance.SetShopAmount();
+        if (ShopManager.instance != null)
+        {
+            ShopManager.instance.playerDieselText = playerDieselText;
+            ShopManager.instance.SetShopAmount();
+        }
     }
 }
 
