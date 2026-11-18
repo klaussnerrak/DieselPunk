@@ -276,6 +276,8 @@ MonoBehaviour:
     soundClip: {fileID: 8300000, guid: 4e5be67d2be33e74cb4cd94e73ae263c, type: 3}
   - soundName: MapMusic
     soundClip: {fileID: 8300000, guid: f800c4e05c0df5348b73f1cf80642f2c, type: 3}
+  - soundName: TutorialMusic
+    soundClip: {fileID: 8300000, guid: 89ce327a59c8b4b48b23ed7277eae8f6, type: 3}
   SoundEffects:
   - soundName: TrainHorn
     soundClip: {fileID: 8300000, guid: 2f98f685a9ab9304a915a0b85c1334a3, type: 3}
@@ -288,7 +290,7 @@ MonoBehaviour:
   - soundName: Whistle
     soundClip: {fileID: 8300000, guid: 386c393d20126ec4cb917a571100a921, type: 3}
   - soundName: BombExplosion
-    soundClip: {fileID: 8300000, guid: 3b2e821d1afcfa749a559f62248ab9be, type: 3}
+    soundClip: {fileID: 8300000, guid: e2ef52884a16cb140b9117d083bddbbb, type: 3}
   btnVolume: {fileID: 1443790034}
 --- !u!4 &110511222
 Transform:
@@ -1705,6 +1707,7 @@ MonoBehaviour:
   usedTrainTracksText: {fileID: 0}
   destroyedObstaclesText: {fileID: 0}
   collectedResourcesText: {fileID: 0}
+  collectedResources2Text: {fileID: 0}
   timeResourceText: {fileID: 0}
   speedUpResourceText: {fileID: 0}
   levelRewardText: {fileID: 0}

@@ -39,7 +39,7 @@ public class TrainTrackShop : MonoBehaviour
 
                 if (track.type == TrackType.Bomb)
                 {                    
-                    Destroy(selectedItem, 2f);
+                    Destroy(selectedItem,1f);
                 }
             }
             else
