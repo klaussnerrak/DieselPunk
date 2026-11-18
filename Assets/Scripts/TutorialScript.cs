@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Playables;
 using System;
+using System.Linq;
 public class TutorialScript : MonoBehaviour
 
 {
@@ -15,6 +16,7 @@ public class TutorialScript : MonoBehaviour
     private string firstText;
 
     public PlayableDirector director;
+    public GameObject[] tutorials;
 
 
     void Start()
@@ -51,6 +53,8 @@ public class TutorialScript : MonoBehaviour
         }
         Debug.Log(page);
         IniciarSequencia();
+        DisablePanels();
+        tutorials[page -1].SetActive(true);
         ChangeText();
     }
 
@@ -67,6 +71,9 @@ public class TutorialScript : MonoBehaviour
             ForwardButton.gameObject.SetActive(true);
         }
         Debug.Log(page);
+        IniciarSequencia();
+        DisablePanels();
+        if(page>1)tutorials[page -1].SetActive(true);        
         ChangeText();
     }
 
@@ -76,15 +83,18 @@ public class TutorialScript : MonoBehaviour
             {
                 case  1:
                     pageText.text = "Sua missão é levar o Trem até a estação final "+
-                                    "antes que seus inimigos destruam os trilhos.";                                        
+                                    "antes que seus inimigos destruam os trilhos.";  
+                    tutorials[page -1].SetActive(true);
+                    
                     break;
 
                 case  2:    
                     pageText.text = "Construa a ferrovia utilizando os trilhos na loja ao lado. "+
-                                    "Utilize o botão esquerdo do mouse para arrastar o trilho e montar seu caminho.";                                        
+                                    "Utilize o botão ESQUERDO do mouse para ARRASTAR o trilho e montar seu caminho.";                                        
+                    
                     break;
                 case  3:
-                    pageText.text = "Utilize o botão direito do mouse para girar o trilho.";
+                    pageText.text = "Clique com o botão DIREITO do mouse para GIRAR o trilho.";
                     break;
 
                 case  4:
@@ -145,7 +155,13 @@ public class TutorialScript : MonoBehaviour
         director.Stop();
     }
    
-
+    private void DisablePanels()
+    {
+        for(int i = 0; i<tutorials.Length; i++)
+        {
+            tutorials[i].SetActive(false);
+        }
+    }
    
 }
 
