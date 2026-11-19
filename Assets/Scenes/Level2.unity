@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 177803288}
   - component: {fileID: 177803290}
   - component: {fileID: 177803289}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: RewardText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1889,7 +1889,7 @@ GameObject:
   - component: {fileID: 559083487}
   - component: {fileID: 559083489}
   - component: {fileID: 559083488}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: TrainTracks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 562429518}
   - component: {fileID: 562429520}
   - component: {fileID: 562429519}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: TimeResourceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2243,7 +2243,7 @@ GameObject:
   - component: {fileID: 589097158}
   - component: {fileID: 589097160}
   - component: {fileID: 589097159}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Resource1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2307,53 +2307,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589097157}
   m_CullTransparentMesh: 1
---- !u!1 &612151330
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 612151331}
-  - component: {fileID: 612151332}
-  m_Layer: 0
-  m_Name: ShopManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &612151331
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612151330}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 388.94562, y: 280.408, z: -14400}
-  m_LocalScale: {x: 160, y: 160, z: 160}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 710073609}
-  m_Father: {fileID: 987806072}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &612151332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612151330}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 008edf58a0b7fb948b1bfe60613bd5b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShopManager
-  playerDiesel: 0
-  playerDieselText: {fileID: 710073610}
 --- !u!1001 &613970247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2594,16 +2547,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710073608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.00625, y: 0.00625, z: 0.00625}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 938254102}
-  m_Father: {fileID: 612151331}
+  m_Father: {fileID: 987806072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.2994995, y: 0.29074097}
+  m_AnchoredPosition: {x: 756.86554, y: 326.9265}
   m_SizeDelta: {x: 250, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &710073610
@@ -2900,7 +2853,7 @@ GameObject:
   - component: {fileID: 804568830}
   - component: {fileID: 804568832}
   - component: {fileID: 804568831}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: AddTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3059,7 +3012,7 @@ GameObject:
   - component: {fileID: 840420990}
   - component: {fileID: 840420992}
   - component: {fileID: 840420991}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: DestroyedObstaclesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4542,7 +4495,7 @@ RectTransform:
   - {fileID: 883157684}
   - {fileID: 1065345913}
   - {fileID: 895576091}
-  - {fileID: 612151331}
+  - {fileID: 710073609}
   m_Father: {fileID: 1047024494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4624,7 +4577,7 @@ GameObject:
   - component: {fileID: 997044746}
   - component: {fileID: 997044748}
   - component: {fileID: 997044747}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: CollectedResourcesText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4853,7 +4806,7 @@ GameObject:
   - component: {fileID: 1013852645}
   - component: {fileID: 1013852647}
   - component: {fileID: 1013852646}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: UsedTrainTracksText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5152,7 +5105,7 @@ GameObject:
   - component: {fileID: 1065345913}
   - component: {fileID: 1065345915}
   - component: {fileID: 1065345914}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: LosePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5758,7 +5711,7 @@ GameObject:
   - component: {fileID: 1231343879}
   - component: {fileID: 1231343881}
   - component: {fileID: 1231343880}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: LossSubText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6756,7 +6709,7 @@ GameObject:
   - component: {fileID: 1439946544}
   - component: {fileID: 1439946546}
   - component: {fileID: 1439946545}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: SpeedUpResourceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7225,7 +7178,7 @@ GameObject:
   - component: {fileID: 1654166511}
   - component: {fileID: 1654166513}
   - component: {fileID: 1654166512}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: SpeedUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7300,7 +7253,7 @@ GameObject:
   - component: {fileID: 1699508722}
   - component: {fileID: 1699508724}
   - component: {fileID: 1699508723}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7796,7 +7749,7 @@ GameObject:
   - component: {fileID: 1791306139}
   - component: {fileID: 1791306141}
   - component: {fileID: 1791306140}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Resource2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7872,7 +7825,7 @@ GameObject:
   - component: {fileID: 1792272895}
   - component: {fileID: 1792272894}
   - component: {fileID: 1792272893}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8260,7 +8213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875192052}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: ScoreTextSection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9140,7 +9093,7 @@ GameObject:
   - component: {fileID: 1995213308}
   - component: {fileID: 1995213310}
   - component: {fileID: 1995213309}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9277,7 +9230,7 @@ GameObject:
   - component: {fileID: 2033583324}
   - component: {fileID: 2033583326}
   - component: {fileID: 2033583325}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: CollectedResourcesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9412,7 +9365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2033962525}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: ScoreSection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9452,7 +9405,7 @@ GameObject:
   - component: {fileID: 2147412972}
   - component: {fileID: 2147412974}
   - component: {fileID: 2147412973}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: LossText
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -24,8 +24,8 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text timeResourceText;
     public TMP_Text speedUpResourceText;
     public TMP_Text levelRewardText;
-
-
+    
+    
     void Awake()
     {
         if (instance == null)
