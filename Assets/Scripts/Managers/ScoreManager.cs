@@ -24,40 +24,8 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text timeResourceText;
     public TMP_Text speedUpResourceText;
     public TMP_Text levelRewardText;
-
-
-// public static ScoreManager instance
-// {
-//     get
-//     {
-//         if (_instance == null)
-//         {
-//             _instance = FindFirstObjectByType<ScoreManager>();
-//             if (_instance == null)
-//             {
-//                 GameObject obj = new GameObject("ScoreManager");
-//                 _instance = obj.AddComponent<ScoreManager>();
-//             }
-//         }
-//         return _instance;
-//     }
-//     private set => _instance = value;
-// }
-// private static ScoreManager _instance;
-// void Awake()
-// {
-//     if (_instance == null)
-//     {
-//         _instance = this;
-//         DontDestroyOnLoad(gameObject);
-//     }
-//     else if (_instance != this)
-//     {
-//         Destroy(gameObject);
-//     }
-// }
-
-
+    
+    
     void Awake()
     {
         if (instance == null)

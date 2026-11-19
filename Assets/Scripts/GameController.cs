@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class GameController : MonoBehaviour
 {
@@ -22,22 +23,20 @@ public class GameController : MonoBehaviour
 
     public static int levelIndex = 1;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     void Awake()
     {
         instance = this;
     }
 
     void Start()
-    { 
+    {
         if (ShopManager.instance != null)
         {
             ShopManager.instance.playerDieselText = playerDieselText;
             ShopManager.instance.SetShopAmount();
             ScoreManager.instance.ResetPlayerScore();
         }
-        
+
 
         if (ScoreManager.instance != null)
         {
@@ -80,6 +79,7 @@ public class GameController : MonoBehaviour
         losePanel.SetActive(true);
         gamePanel.SetActive(false);
         SetGameScore();
+        RemoveWagons();
         ScoreManager.instance.CalculateScore();
         AudioManager.instance.PlaySFX("HAHAHA");
     }
@@ -125,6 +125,19 @@ public class GameController : MonoBehaviour
             ShopManager.instance.playerDieselText = playerDieselText;
             ShopManager.instance.SetShopAmount();
         }
+    }
+
+    void RemoveWagons()
+    {
+        // List<GameObject> trainWagons = new List<GameObject>();
+        // trainWagons = GameObject.FindGameObjectsWithTag("TrainWagon");
+        // if (trainWagons != null)
+        // {
+        //     foreach (GameObject trainWagon in trainWagons)
+        //     {
+        //         trainWagon.SetActive(false);
+        //     }
+        // }
     }
 }
 

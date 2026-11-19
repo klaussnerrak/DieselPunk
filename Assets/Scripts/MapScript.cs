@@ -10,59 +10,59 @@ public class MapScript : MonoBehaviour
     [SerializeField] private Button Level3Button;
     [SerializeField] private Button Level4Button;
     [SerializeField] private Button Level5Button;
-    
+
     void Start()
     {
         AddLevel(GameController.levelIndex);
     }
-        
+
     public void StartTutorial()
     {
-        
-        SceneManager.LoadScene("Scenes/Tutorial");             
+
+        SceneManager.LoadScene("Scenes/Tutorial");
         AudioManager.instance.PlayMusic("TutorialMusic");
-        
+
     }
-    
+
     public void StartLevel1()
     {
-        
-        SceneManager.LoadScene("Scenes/Level1");             
+
+        SceneManager.LoadScene("Scenes/Level1");
         AudioManager.instance.PlayMusic("PlayMusic");
-        
+
     }
     public void StartLevel2()
     {
-        
-        SceneManager.LoadScene("Scenes/Level2");             
+
+        SceneManager.LoadScene("Scenes/Level2");
         AudioManager.instance.PlayMusic("PlayMusic");
-       
+
     }
     public void StartLevel3()
     {
-        
-        SceneManager.LoadScene("Scenes/Level3");             
+
+        SceneManager.LoadScene("Scenes/Level3");
         AudioManager.instance.PlayMusic("PlayMusic");
-        
+
     }
     public void StartLevel4()
     {
-        
-        SceneManager.LoadScene("Scenes/Level4");             
+
+        SceneManager.LoadScene("Scenes/Level4");
         AudioManager.instance.PlayMusic("PlayMusic");
-        
+
     }
     public void StartLevel5()
     {
-        
-        SceneManager.LoadScene("Scenes/Level5");             
+
+        SceneManager.LoadScene("Scenes/Level5");
         AudioManager.instance.PlayMusic("PlayMusic");
-        
+
     }
 
     public void ExitGame()
     {
-        SceneManager.LoadScene("Scenes/Menu"); 
+        SceneManager.LoadScene("Scenes/Menu");
         AudioManager.instance.PlayMusic("MenuTrainSound");
         // Application.Quit();
         // Debug.Log("Quit");
@@ -70,29 +70,31 @@ public class MapScript : MonoBehaviour
 
     private void AddLevel(int level)
     {
+        if (level > 5) level = 5;
+        
         switch (level)
-            {
-                case  2:
-                    Level2Button.gameObject.SetActive(true);                    
-                    break;
+        {
+            case 2:
+                Level2Button.gameObject.SetActive(true);
+                break;
 
-                case  3:
-                    Level2Button.gameObject.SetActive(true);
-                    Level3Button.gameObject.SetActive(true);
-                    break;
+            case 3:
+                Level2Button.gameObject.SetActive(true);
+                Level3Button.gameObject.SetActive(true);
+                break;
 
-                case  4:
-                    Level2Button.gameObject.SetActive(true);
-                    Level3Button.gameObject.SetActive(true);
-                    Level4Button.gameObject.SetActive(true);
-                    break;
+            case 4:
+                Level2Button.gameObject.SetActive(true);
+                Level3Button.gameObject.SetActive(true);
+                Level4Button.gameObject.SetActive(true);
+                break;
 
-                case  5:
-                    Level2Button.gameObject.SetActive(true);
-                    Level3Button.gameObject.SetActive(true);
-                    Level4Button.gameObject.SetActive(true);
-                    Level5Button.gameObject.SetActive(true);
-                    break;            
-            }
+            case 5:
+                Level2Button.gameObject.SetActive(true);
+                Level3Button.gameObject.SetActive(true);
+                Level4Button.gameObject.SetActive(true);
+                Level5Button.gameObject.SetActive(true);
+                break;
+        }
     }
 }
