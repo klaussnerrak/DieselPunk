@@ -3140,7 +3140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 45.41388, y: 2.878296}
+  m_AnchoredPosition: {x: 45.41382, y: 2.878296}
   m_SizeDelta: {x: -334.0549, y: -186.798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660404698
@@ -3423,7 +3423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008edf58a0b7fb948b1bfe60613bd5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
-  playerDiesel: 45
+  playerDiesel: 300
   playerDieselText: {fileID: 0}
 --- !u!4 &1766489272
 Transform:

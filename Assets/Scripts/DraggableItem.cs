@@ -193,11 +193,12 @@ public class DraggableItem : TrainTrack
             }
             else if (hit.CompareTag("Obstacle"))
             {
+                
                 if (type == TrackType.Bridge)
                 {
                     return true;
                 }
-                else if (type == TrackType.Bomb)
+                else if (type == TrackType.Bomb && ShopManager.instance.playerDiesel >= this.dieselCost)
                 {
                     animator.SetBool("BombExplosion", true);
                     AudioManager.instance.PlaySFX("BombExplosion");
