@@ -45,17 +45,9 @@ public class TrainTrackShop : MonoBehaviour
             else
             {
                 track.transform.position = trackStorePosition;
+                ActivatePopUpWarning();
                 Debug.Log("Not enough diesel");
-                PopUpManager hasActivePopUp = FindAnyObjectByType<PopUpManager>();
-                if (hasActivePopUp != null)
-                {
-                    PopUpManager popUpObj = GameObject.FindGameObjectWithTag("PopUpTag").GetComponent<PopUpManager>();
 
-                    if (popUpObj != null)
-                    {
-                        popUpObj.ShowText("Saldo Insuficiente!");
-                    }
-                }
 
             }
         }
@@ -77,6 +69,7 @@ public class TrainTrackShop : MonoBehaviour
             }
             else
             {
+                ActivatePopUpWarning();
                 Debug.Log("Can't use special resource - not enough diesel");
             }
         }
@@ -100,6 +93,20 @@ public class TrainTrackShop : MonoBehaviour
     {
         ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel - dieselCost;
         ShopManager.instance.SetShopAmount();
+    }
+
+    private void ActivatePopUpWarning()
+    {
+        PopUpManager hasActivePopUp = FindAnyObjectByType<PopUpManager>();
+        if (hasActivePopUp != null)
+        { 
+            PopUpManager popUpObj = GameObject.FindGameObjectWithTag("PopUpTag").GetComponent<PopUpManager>();
+
+            if (popUpObj != null)
+            {
+                popUpObj.ShowText("Saldo Insuficiente!");
+            }
+        }
     }
 
 }
