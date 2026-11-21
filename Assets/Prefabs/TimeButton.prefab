@@ -51,7 +51,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpecialTrack
   type: 0
-  dieselCost: 5
+  player: {fileID: 0}
+  dieselCost: 40
+  velocity: 1.5
+  extraTime: 15
 --- !u!114 &1691097272774409050
 MonoBehaviour:
   m_ObjectHideFlags: 0
