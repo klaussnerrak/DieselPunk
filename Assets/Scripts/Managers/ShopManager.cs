@@ -30,13 +30,19 @@ public class ShopManager : MonoBehaviour
     public void SetShopAmount()
     {
         //Debug.Log(playerDiesel);
-        playerDieselText.SetText($"{playerDiesel}");
+        if (playerDieselText != null)
+        {
+            playerDieselText.SetText($"{playerDiesel}");
+        }
     }
 
     public void SellTrack(TrainTrack selectedTrainTrack)
     {
         playerDiesel += (selectedTrainTrack.dieselCost / 2);
-        playerDieselText.SetText($"{playerDiesel}");
+        if (playerDieselText != null)
+        {
+            playerDieselText.SetText($"{playerDiesel}");
+        }
     }
 
 
