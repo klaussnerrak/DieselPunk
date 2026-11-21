@@ -3423,7 +3423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008edf58a0b7fb948b1bfe60613bd5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
-  playerDiesel: 300
+  playerDiesel: 10
   playerDieselText: {fileID: 0}
 --- !u!4 &1766489272
 Transform:

@@ -38,14 +38,25 @@ public class TrainTrackShop : MonoBehaviour
                 track.isBought = true;
 
                 if (track.type == TrackType.Bomb)
-                {                    
-                    Destroy(selectedItem,1f);
+                {
+                    Destroy(selectedItem, 1f);
                 }
             }
             else
             {
                 track.transform.position = trackStorePosition;
                 Debug.Log("Not enough diesel");
+                PopUpManager hasActivePopUp = FindAnyObjectByType<PopUpManager>();
+                if (hasActivePopUp != null)
+                {
+                    PopUpManager popUpObj = GameObject.FindGameObjectWithTag("PopUpTag").GetComponent<PopUpManager>();
+
+                    if (popUpObj != null)
+                    {
+                        popUpObj.ShowText("Saldo Insuficiente!");
+                    }
+                }
+
             }
         }
         else if (specialTrack != null)
