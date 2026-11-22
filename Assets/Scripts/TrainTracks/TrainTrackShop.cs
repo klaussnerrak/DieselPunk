@@ -17,13 +17,16 @@ public class TrainTrackShop : MonoBehaviour
 
     public void BuyItem(GameObject selectedItem)
     {
-        BuyItem(selectedItem, trackStorePosition);
+        BuyItem(selectedItem, this.gameObject.transform.position);
     }
 
     public void BuyItem(GameObject selectedItem, Vector3 trackStorePosition)
     {
         if (selectedItem == null) return;
 
+        Debug.Log("bought item");
+
+        Debug.Log("trackStorePosition: " + trackStorePosition);
         TrainTrack track = selectedItem.GetComponent<TrainTrack>();
         SpecialTrack specialTrack = selectedItem.GetComponent<SpecialTrack>();
 
@@ -34,17 +37,19 @@ public class TrainTrackShop : MonoBehaviour
             if (playerHasCredits)
             {
                 GameObject purchasedTrack = Instantiate(selectedItem, trackStorePosition, Quaternion.identity);
+                SpriteRenderer spriteRenderer = purchasedTrack.GetComponent<SpriteRenderer>();
+                TrainTrack trackProperties = purchasedTrack.GetComponent<TrainTrack>();
                 purchasedTrack.transform.localScale = Vector3.one;
-                track.isBought = true;
 
-                if (track.type == TrackType.Bomb)
+                trackProperties.isBought = true;
+                if (spriteRenderer != null)
                 {
-                    Destroy(selectedItem, 1f);
-                }
+                    spriteRenderer.sortingOrder = 10;
+                } 
             }
             else
             {
-                track.transform.position = trackStorePosition;
+                // track.transform.position = trackStorePosition;
                 ActivatePopUpWarning();
                 Debug.Log("Not enough diesel");
 
@@ -99,7 +104,7 @@ public class TrainTrackShop : MonoBehaviour
     {
         PopUpManager hasActivePopUp = FindAnyObjectByType<PopUpManager>();
         if (hasActivePopUp != null)
-        { 
+        {
             PopUpManager popUpObj = GameObject.FindGameObjectWithTag("PopUpTag").GetComponent<PopUpManager>();
 
             if (popUpObj != null)
