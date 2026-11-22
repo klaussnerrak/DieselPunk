@@ -175,7 +175,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7554190492548416305, guid: 2e420826bb7488445b6a4d6caf901f58, type: 3}
+  m_Sprite: {fileID: 7222251595962649323, guid: a20fe1dd804cb704ba72a91cd9006293, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   leftConnected: 0
   TrackLocked: 0
   isDragging: 0
+  animator: {fileID: 0}
 --- !u!1 &8880988181557619257
 GameObject:
   m_ObjectHideFlags: 0
