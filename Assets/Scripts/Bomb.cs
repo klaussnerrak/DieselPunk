@@ -19,7 +19,7 @@ public class Bomb : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
+    { 
         if(Vector3.Distance(target.transform.position, transform.position)<0.5)
         {
             //ParticleSystem explosion = Instantiate(particles, transform.position, Quaternion.identity);

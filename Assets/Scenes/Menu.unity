@@ -1164,7 +1164,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3.375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3423,7 +3423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008edf58a0b7fb948b1bfe60613bd5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
-  playerDiesel: 10
+  playerDiesel: 300
   playerDieselText: {fileID: 0}
 --- !u!4 &1766489272
 Transform:

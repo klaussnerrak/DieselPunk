@@ -126,20 +126,33 @@ public class DraggableItem : TrainTrack
             transform.position = snappedPosition;
             itemLastPosition = transform.position;
 
+            if (TryGetComponent<SpriteRenderer>(out var sr))
+            {
+                switch (this.type)
+                {
+                    case TrackType.Bomb:
+                        sr.sortingOrder = 5;
+                        break;
+                    case TrackType.Bridge:
+                        sr.sortingOrder = 4;
+                        break;
+                    default:
+                        sr.sortingOrder = 1;
+                        break;
+                }
+            }
+
+            if (this.type == TrackType.Bomb)
+            {
+                Destroy(gameObject, 1f);
+            }
+
             GridManager.instance.TrackTiles[trackIndex].transform.position = itemLastPosition;
-
-
         }
         else
         {
             transform.position = itemLastPosition;
-        }
-
-        //returns track to inicial position if there is no money to buy
-        if (!this.isBought)
-        {
-            trainTrackShop.BuyItem(selectedTrack, initialPosition);
-        }
+        } 
     }
 
     private bool CheckTrackDeleteArea()
@@ -193,7 +206,7 @@ public class DraggableItem : TrainTrack
             }
             else if (hit.CompareTag("Obstacle"))
             {
-                
+
                 if (type == TrackType.Bridge)
                 {
                     return true;
@@ -227,5 +240,8 @@ public class DraggableItem : TrainTrack
         return true;
     }
 
-
+    public void StopAnimation()
+    {
+        Destroy(gameObject);
+    }
 }
