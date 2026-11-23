@@ -1,34 +1,10 @@
 fileFormatVersion: 2
-guid: 5aaa10d2333165c44bb8955743e702a1
+guid: 437f7cf5647b0de40aacca94e58b68dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8682959569509269902
-    second: inciar_0
-  - first:
-      213: -6939509849423082288
-    second: inciar_1
-  - first:
-      213: 6053598819608589790
-    second: inciar_2
-  - first:
-      213: 8708735328143920846
-    second: inciar_3
-  - first:
-      213: -2580325127731330287
-    second: inciar_4
-  - first:
-      213: -956109473973245412
-    second: inciar_5
-  - first:
-      213: -7808043942016361125
-    second: inciar_6
-  - first:
-      213: 9066757513767399752
-    second: inciar_7
-  - first:
-      213: -9009197759654505268
-    second: inciar_8
+      213: 861823114954080996
+    second: sair_highlight 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -120,40 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inciar_0
+      name: sair_highlight 1_0
       rect:
         serializedVersion: 2
-        x: 862
-        y: 638
-        width: 190
-        height: 75
+        x: 897
+        y: 125
+        width: 130
+        height: 78
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27e325c964eef7780800000000000000
-      internalID: -8682959569509269902
+      spriteID: 4e20f029e8fc5fb00800000000000000
+      internalID: 861823114954080996
       vertices: []
       indices: 
       edges: []
@@ -162,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 97cbb56d1ca64ba45b5483f7eea080c5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -172,15 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      inciar_0: -8682959569509269902
-      inciar_1: -6939509849423082288
-      inciar_2: 6053598819608589790
-      inciar_3: 8708735328143920846
-      inciar_4: -2580325127731330287
-      inciar_5: -956109473973245412
-      inciar_6: -7808043942016361125
-      inciar_7: 9066757513767399752
-      inciar_8: -9009197759654505268
+      sair_highlight 1_0: 861823114954080996
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
