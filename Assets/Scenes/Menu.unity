@@ -271,12 +271,20 @@ MonoBehaviour:
   SoundTrack:
   - soundName: MenuTrainSound
     soundClip: {fileID: 8300000, guid: 7b231ae930bece94fb464dfa75712452, type: 3}
-  - soundName: PlayMusic
+  - soundName: Level1
     soundClip: {fileID: 8300000, guid: 4e5be67d2be33e74cb4cd94e73ae263c, type: 3}
   - soundName: MapMusic
     soundClip: {fileID: 8300000, guid: f800c4e05c0df5348b73f1cf80642f2c, type: 3}
   - soundName: TutorialMusic
     soundClip: {fileID: 8300000, guid: 89ce327a59c8b4b48b23ed7277eae8f6, type: 3}
+  - soundName: Level2
+    soundClip: {fileID: 8300000, guid: 353456602a3957c48837c1fbfb100002, type: 3}
+  - soundName: Level3
+    soundClip: {fileID: 8300000, guid: 709e5a1e1f5d57d4fa13598c40f28f69, type: 3}
+  - soundName: Level4
+    soundClip: {fileID: 8300000, guid: 75a8984ed0375e945817080d767d7fb2, type: 3}
+  - soundName: Level5
+    soundClip: {fileID: 8300000, guid: 71a9da199872f5c4387e9990ac1fcff6, type: 3}
   SoundEffects:
   - soundName: TrainHorn
     soundClip: {fileID: 8300000, guid: 2f98f685a9ab9304a915a0b85c1334a3, type: 3}
@@ -1840,7 +1848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.136, y: 0.11159784}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 920.00006, y: -132.99998}
+  m_AnchoredPosition: {x: 920.0001, y: -132.99998}
   m_SizeDelta: {x: -463.4818, y: -316.9992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &881555035
@@ -3101,7 +3109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008edf58a0b7fb948b1bfe60613bd5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
-  playerDiesel: 300
+  playerDiesel: 70
   playerDieselText: {fileID: 0}
 --- !u!4 &1766489272
 Transform:
