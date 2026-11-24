@@ -28,35 +28,35 @@ public class MapScript : MonoBehaviour
     {
 
         SceneManager.LoadScene("Scenes/Level1");
-        AudioManager.instance.PlayMusic("PlayMusic");
+        AudioManager.instance.PlayMusic("Level1");
 
     }
     public void StartLevel2()
     {
 
         SceneManager.LoadScene("Scenes/Level2");
-        AudioManager.instance.PlayMusic("PlayMusic");
+        AudioManager.instance.PlayMusic("Level2");
 
     }
     public void StartLevel3()
     {
 
         SceneManager.LoadScene("Scenes/Level3");
-        AudioManager.instance.PlayMusic("PlayMusic");
+        AudioManager.instance.PlayMusic("Level3");
 
     }
     public void StartLevel4()
     {
 
         SceneManager.LoadScene("Scenes/Level4");
-        AudioManager.instance.PlayMusic("PlayMusic");
+        AudioManager.instance.PlayMusic("Level4");
 
     }
     public void StartLevel5()
     {
 
         SceneManager.LoadScene("Scenes/Level5");
-        AudioManager.instance.PlayMusic("PlayMusic");
+        AudioManager.instance.PlayMusic("Level5");
 
     }
 

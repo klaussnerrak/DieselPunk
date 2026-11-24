@@ -90,11 +90,12 @@ public class TutorialScript : MonoBehaviour
 
                 case  2:    
                     pageText.text = "Construa a ferrovia utilizando os trilhos na loja ao lado. "+
-                                    "Utilize o botão ESQUERDO do mouse para ARRASTAR o trilho e montar seu caminho.";                                        
+                                    "Utilize o botão ESQUERDO do mouse para COMPRAR e ARRASTAR os trilhos.";
+                                                                           
                     
                     break;
                 case  3:
-                    pageText.text = "Clique com o botão DIREITO do mouse para GIRAR o trilho.";
+                    pageText.text = "Clique com o botão DIREITO do mouse para GIRAR os trilhos.";
                     break;
 
                 case  4:
@@ -102,7 +103,8 @@ public class TutorialScript : MonoBehaviour
                     break;
 
                 case  5:
-                    pageText.text = "Para conseguir mais combustível, colete os recursos do mapa. Alguns recursos podem estar escondidos ";
+                    pageText.text = "Para conseguir mais combustível, colete os recursos do mapa."+
+                                    " Alguns recursos podem estar escondidos ";
                     break;
 
                 case  6:
@@ -124,7 +126,7 @@ public class TutorialScript : MonoBehaviour
                     break;
 
                 case  10:
-                    pageText.text = "Você pode vender o trilho de volta a loja atraves da lixeira.";
+                    pageText.text = "Ficou sem combustível? Você pode vender o trilho de volta a loja.";
                     break;   
 
                 case  11:
