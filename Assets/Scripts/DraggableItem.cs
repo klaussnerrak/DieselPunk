@@ -240,8 +240,8 @@ public class DraggableItem : TrainTrack
         return true;
     }
 
-    public void StopAnimation()
+    /*public void StopAnimation()
     {
         Destroy(gameObject);
-    }
+    }*/
 }
