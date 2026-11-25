@@ -66,8 +66,9 @@ public class GameController : MonoBehaviour
     {
         gamePanel.SetActive(false);
         winPanel.SetActive(true);
-        SetGameScore();
         ScoreManager.instance.CalculateScore();
+        SetGameScore();
+        RemoveTrainTracks();
         ShopManager.instance.playerDiesel = ShopManager.instance.playerDiesel + ScoreManager.instance.levelReward;
         levelIndex++;
         AudioManager.instance.PlaySFX("Supla");
@@ -76,11 +77,9 @@ public class GameController : MonoBehaviour
 
     public void LoseCondition()
     {
-        losePanel.SetActive(true);
         gamePanel.SetActive(false);
-        SetGameScore();
-        RemoveWagons();
-        ScoreManager.instance.CalculateScore();
+        losePanel.SetActive(true); 
+        RemoveTrainTracks(); 
         AudioManager.instance.PlaySFX("HAHAHA");
     }
 
@@ -127,17 +126,18 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void RemoveWagons()
+    void RemoveTrainTracks()
     {
-        // List<GameObject> trainWagons = new List<GameObject>();
-        // trainWagons = GameObject.FindGameObjectsWithTag("TrainWagon");
-        // if (trainWagons != null)
-        // {
-        //     foreach (GameObject trainWagon in trainWagons)
-        //     {
-        //         trainWagon.SetActive(false);
-        //     }
-        // }
+        TrainTrack[] tracks = FindObjectsByType<TrainTrack>(FindObjectsSortMode.None);
+        foreach (var track in tracks)
+        {
+            // Destroy unplaced or bought tracks, or whatever your design requires:
+            if (track.isBought)
+            {
+                // Destroy(track.gameObject);
+                track.gameObject.SetActive(false);
+            }
+        }
     }
 }
 
