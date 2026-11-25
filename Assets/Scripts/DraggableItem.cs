@@ -86,6 +86,7 @@ public class DraggableItem : TrainTrack
 
     private void RotateTrack()
     {
+
         if (!TrackLocked)
         {
             transform.Rotate(0f, 0f, 90f);
@@ -133,9 +134,9 @@ public class DraggableItem : TrainTrack
                     case TrackType.Bomb:
                         sr.sortingOrder = 5;
                         break;
-                    case TrackType.Bridge:
+                    /*case TrackType.Bridge:
                         sr.sortingOrder = 4;
-                        break;
+                        break;*/
                     default:
                         sr.sortingOrder = 1;
                         break;
@@ -207,11 +208,12 @@ public class DraggableItem : TrainTrack
             else if (hit.CompareTag("Obstacle"))
             {
 
-                if (type == TrackType.Bridge)
+                /*if (type == TrackType.Bridge)
                 {
                     return true;
                 }
-                else if (type == TrackType.Bomb && ShopManager.instance.playerDiesel >= this.dieselCost)
+                else*/ 
+                if (type == TrackType.Bomb && ShopManager.instance.playerDiesel >= this.dieselCost)
                 {
                     animator.SetBool("BombExplosion", true);
                     AudioManager.instance.PlaySFX("BombExplosion");
@@ -226,6 +228,7 @@ public class DraggableItem : TrainTrack
             }
             else if (hit.CompareTag("FixObstacle"))
             {
+                
                 if (type == TrackType.Bridge)
                 {
                     return true;
@@ -234,6 +237,10 @@ public class DraggableItem : TrainTrack
                 {
                     return false;
                 }
+            }
+            else if(hit.CompareTag("Permanent"))
+            {
+                return false;
             }
         }
 
