@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6451930920329602573}
   m_Layer: 0
   m_Name: ObstaculoFixo3
-  m_TagString: FixObstacle
+  m_TagString: Permanent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
