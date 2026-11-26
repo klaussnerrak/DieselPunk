@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7608205122168780822}
   - component: {fileID: 3192047955483751198}
   - component: {fileID: 2121269189717376838}
+  - component: {fileID: 3933900435140933459}
   m_Layer: 5
   m_Name: MapEnd
   m_TagString: TrainTrackPiece
@@ -188,7 +189,29 @@ MonoBehaviour:
   leftConnected: 0
   TrackLocked: 0
   isDragging: 0
-  animator: {fileID: 0}
+  animator: {fileID: 3933900435140933459}
+--- !u!95 &3933900435140933459
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160567166693149856}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2228183907974431718
 GameObject:
   m_ObjectHideFlags: 0

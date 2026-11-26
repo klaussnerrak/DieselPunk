@@ -15,6 +15,7 @@ TagManager:
   - CollectableResource
   - CollectableResource2
   - PopUpTag
+  - Permanent
   layers:
   - Default
   - TransparentFX

@@ -134,9 +134,9 @@ public class DraggableItem : TrainTrack
                     case TrackType.Bomb:
                         sr.sortingOrder = 5;
                         break;
-                    /*case TrackType.Bridge:
+                    case TrackType.Bridge:
                         sr.sortingOrder = 4;
-                        break;*/
+                        break;
                     default:
                         sr.sortingOrder = 1;
                         break;
@@ -213,7 +213,7 @@ public class DraggableItem : TrainTrack
                     return true;
                 }
                 else*/ 
-                if (type == TrackType.Bomb && ShopManager.instance.playerDiesel >= this.dieselCost)
+                if (type == TrackType.Bomb) // && ShopManager.instance.playerDiesel >= this.dieselCost)
                 {
                     animator.SetBool("BombExplosion", true);
                     AudioManager.instance.PlaySFX("BombExplosion");
