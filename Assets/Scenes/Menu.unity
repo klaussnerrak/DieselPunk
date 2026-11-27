@@ -710,7 +710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.136, y: 0.11159784}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 921.9999, y: -136.00002}
+  m_AnchoredPosition: {x: 921.9999, y: -136.00003}
   m_SizeDelta: {x: -463.48, y: -311}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &437587564
@@ -1848,7 +1848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.136, y: 0.11159784}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 920.0002, y: -132.99998}
+  m_AnchoredPosition: {x: 920.00024, y: -132.99998}
   m_SizeDelta: {x: -463.4818, y: -316.9992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &881555035
@@ -3109,7 +3109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008edf58a0b7fb948b1bfe60613bd5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
-  playerDiesel: 80
+  playerDiesel: 90
   playerDieselText: {fileID: 0}
 --- !u!4 &1766489272
 Transform:
